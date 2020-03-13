@@ -6,6 +6,7 @@ namespace SaveTheCookTower.Domain.Models
 	public enum TipoUnidadeMedida : ushort
 	{
 		Desconhecida,
+		Comprimento, // 1 metro
 		Unidades, // 1 uinidade de ovo
 		Massa,   // 1 kg de arroz
 		Volume,  // 1 litro de leite
