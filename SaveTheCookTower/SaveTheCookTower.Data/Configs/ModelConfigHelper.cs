@@ -4,6 +4,9 @@ using SaveTheCookTower.Domain.Models.Base;
 
 namespace SaveTheCookTower.Data.Configs
 {
+	/// <summary>
+	/// Classe de helper para fluent api de configuração dos modelos do EF
+	/// </summary>
 	public static class ModelConfigHelper
 	{
 		public static void DefineBasicConfigs<TEntity>(this EntityTypeBuilder<TEntity> entityTypeBuilder, string tableName) where TEntity : ModelBase

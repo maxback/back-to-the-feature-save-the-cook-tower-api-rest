@@ -1,4 +1,5 @@
 ﻿using SaveTheCookTower.Domain.Models.Base;
+using System;
 
 namespace SaveTheCookTower.Domain.Models
 {
@@ -8,5 +9,14 @@ namespace SaveTheCookTower.Domain.Models
 		public double Quantidade { get; set; }
 		public UnidadeMedida UnidadeMedida { get; set; }
 		public Ingrediente Ingrediente { get; set; }
+		/// <summary>
+		/// Objeto que apopnta para a receita a qual o item de lista diz respeito
+		/// </summary>
+		public virtual Receita Receita { get; set; }
+		/// <summary>
+		/// Id da receita
+		/// </summary>
+		public Guid ReceitaId{ get; set; }
+
 	}
 }

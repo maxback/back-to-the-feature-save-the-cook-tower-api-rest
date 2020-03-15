@@ -15,15 +15,30 @@ namespace SaveTheCookTower.Domain.Models
 		/// </summary>
 		public virtual List<Receita> ReceitasFilhas { get; set; }
 		/// <summary>
+		/// Referencia ao objeto da receita pai
+		/// </summary>
+		public virtual Receita ReceitaPai { get; set; }
+		/// <summary>
+		/// Id da receita pai
+		/// </summary>
+		public Guid? ReceitaPaiId { get; set; }
+		/// <summary>
 		/// Idica a categoria da receita. Exemplo: Carnes, Massas, Sobremesas
 		/// </summary>
 		public virtual Categoria Categoria { get; set; }
+
+		/// <summary>
+		/// Id da  categoria
+		/// </summary>
+		public Guid CategoriaId { get; set; }
+
 		/// <summary>
 		/// Trata-se de uma breve descrição do alimento e da receita.
 		/// Exemplo: Esse bolo de cenoura de liquidificador fica pronto em 
 		/// menos de 1 hora leva apenas 20 minutos para a massa ser preparada.
 		/// </summary>
 		public String Descricao { get; set; }
+
 		/// <summary>
 		/// Tem de preparo em minutos. *** Poderia ser mais adequado usar duas propriedades (quantidade e unidade de medida) ou DateTime ***s
 		/// </summary>
@@ -37,6 +52,10 @@ namespace SaveTheCookTower.Domain.Models
 		/// Permite indicar a fonte da receita, ou seja, quem é seu autor. Para respeitaros remeditos e remeter até ao site de origem
 		/// </summary>
 		public virtual FontePropriedadeIntelectual Fonte { get; set; }
+		/// <summary>
+		/// Id da fonte
+		/// </summary>
+		public Guid FonteId { get; set; }
 		/// <summary>
 		/// Descreve a avaliação geral (media) da receita
 		/// </summary>

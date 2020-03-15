@@ -1,5 +1,6 @@
 ﻿using SaveTheCookTower.Domain.Models.Base;
 using System;
+using System.Collections.Generic;
 
 namespace SaveTheCookTower.Domain.Models
 {
@@ -12,5 +13,7 @@ namespace SaveTheCookTower.Domain.Models
 		public Uri OrigemUri { get; set; }
 		public DateTime AcessoEm { get; set; }
 		public string Comentario { get; set; }
+
+		public List<Receita> Receitas { get; set; }
 	}
 }
