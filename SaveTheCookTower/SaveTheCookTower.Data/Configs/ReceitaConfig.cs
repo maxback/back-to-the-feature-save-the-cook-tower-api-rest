@@ -13,23 +13,34 @@ namespace SaveTheCookTower.Data.Configs
 		{
 			builder.DefineBasicConfigs(tableName: "receita");
 			
-			builder.Property(p => p.Descricao).HasColumnName("descricao");
-			builder.Property(p => p.TempoPreparoMinutos).HasColumnName("tempo_preparo_minutos");
-			builder.Property(p => p.RendimentoPorcoes).HasColumnName("redimento_porcoes");
-
-
-
 			builder.HasMany(p => p.ReceitasFilhas).WithOne(p => p.ReceitaPai).HasForeignKey(p => p.ReceitaPaiId);
+
 			builder.HasOne(p => p.ReceitaPai).WithMany(p => p.ReceitasFilhas).HasForeignKey(p => p.ReceitaPaiId);
 
 			builder.HasOne(p => p.Categoria).WithMany(p => p.Receitas).HasForeignKey(p => p.CategoriaId);
 
-			builder.HasMany(p => p.Ingredientes).WithOne(p => p.Receita).HasForeignKey(p => p.ReceitaId);
-
 			builder.HasOne(p => p.Fonte).WithMany(p => p.Receitas).HasForeignKey(p => p.FonteId);
 
+    		builder.HasOne(p => p.AvaliacaoMedia).WithOne(p => p.Receita).HasForeignKey<AvaliacaoDoUsuario>(p => p.ReceitaId);
+
 			builder.HasMany(p => p.Avaliacoes).WithOne(p => p.Receita).HasForeignKey(p => p.ReceitaId);
-			builder.HasOne(p => p.AvaliacaoMedia).WithOne(p => p.Receita).HasForeignKey<AvaliacaoDoUsuario>(p => p.ReceitaId);
+
+			builder.HasMany(p => p.Ingredientes).WithOne(p => p.Receita).HasForeignKey(p => p.ReceitaId);
+
+			builder.HasMany(p => p.EstapasDePreparo).WithOne(p => p.Receita).HasForeignKey(p => p.ReceitaId);
+
+			builder.HasMany(p => p.InformacoesNutricionaisConsolidadas).WithOne(p => p.Receita).HasForeignKey(p => p.ReceitaId);
+
+			builder.Property(p => p.ReceitaPaiId).HasColumnName("id_receita_pai");
+			builder.Property(p => p.CategoriaId).HasColumnName("id_categoria");
+			builder.Property(p => p.Descricao).HasColumnName("descricao");
+			builder.Property(p => p.TempoPreparoMinutos).HasColumnName("n_tempo_preparo_minutos");
+			builder.Property(p => p.RendimentoPorcoes).HasColumnName("n_redimento_porcoes");
+			builder.Property(p => p.FonteId).HasColumnName("id_fonte");
+			builder.Property(p => p.AvaliacaoMediaId).HasColumnName("id_avaliacao_media");
+			builder.Property(p => p.ImagensUri).HasColumnName("m_imagens_url");
+			builder.Property(p => p.VideosUri).HasColumnName("m_videos_url");
+
 		}
 	}
 }

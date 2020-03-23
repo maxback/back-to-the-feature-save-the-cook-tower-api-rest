@@ -1,4 +1,6 @@
-﻿namespace SaveTheCookTower.Domain.Models
+﻿using SaveTheCookTower.Domain.Models;
+
+namespace SaveTheCookTower.Domain.Interfaces
 {
 	public interface IItemMensuravel
 	{

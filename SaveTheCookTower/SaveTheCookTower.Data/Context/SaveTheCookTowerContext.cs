@@ -7,11 +7,11 @@ using System.Text;
 
 namespace SaveTheCookTower.Data.Context
 {
-	class SaveTheCookTower: DbContext
+	public class SaveTheCookTowerContext: DbContext
 	{
 		private readonly IConfiguration _configuration;
 
-		public SaveTheCookTower(DbContextOptions options, IConfiguration configuration) : base(options)
+		public SaveTheCookTowerContext(DbContextOptions options, IConfiguration configuration) : base(options)
 		{
 			_configuration = configuration;
 		}
@@ -27,5 +27,18 @@ namespace SaveTheCookTower.Data.Context
 		public DbSet<Receita> Receitas { get; set; }
 		public DbSet<UnidadeMedida> UnidadesMedida { get; set; }
 		public DbSet<Usuario> Usuarios { get; set; }
+
+		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+		{
+			base.OnConfiguring(optionsBuilder);
+
+			optionsBuilder.UseLazyLoadingProxies();
+		}
+
+		protected override void OnModelCreating(ModelBuilder modelBuilder)
+		{
+			modelBuilder.ApplyConfigurationsFromAssembly(typeof(SaveTheCookTowerContext).Assembly);
+
+		}
 	}
 }

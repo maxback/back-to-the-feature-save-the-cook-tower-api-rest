@@ -13,7 +13,7 @@ namespace SaveTheCookTower.Domain.Models
 		/// <summary>
 		/// Lista das eventuais receitas filhas, como um molho ou cobertura
 		/// </summary>
-		public virtual List<Receita> ReceitasFilhas { get; set; }
+		public virtual List<Receita> ReceitasFilhas { get; }
 		/// <summary>
 		/// Referencia ao objeto da receita pai
 		/// </summary>
@@ -64,31 +64,31 @@ namespace SaveTheCookTower.Domain.Models
 		/// <summary>
 		/// Lista de todas as avaliações de usuários para a receita
 		/// </summary>
-		public virtual List<AvaliacaoDoUsuario> Avaliacoes{ get; set; }
+		public virtual List<AvaliacaoDoUsuario> Avaliacoes{ get; }
 		/// <summary>
 		/// Lista de todos os igredientes da receita. Se ela possuir receita filha, os igredientes devem ser acessados por ReceitasFilhas[].Ingredientes
 		/// </summary>
-		public virtual List<ItemListaIngredientes> Ingredientes { get; set; }
+		public virtual List<ItemListaIngredientes> Ingredientes { get; }
 		/// <summary>
 		/// Lista de todas as etapas para preparo dareceita. Se ela possuir receita filha, as etapas devem ser acessados por ReceitasFilhas[].Etapas
 		/// </summary>
-		public virtual List<EtapaDePreparo> Etapas { get; set; }
+		public virtual List<EtapaDePreparo> EstapasDePreparo { get; }
 
 		/// <summary>
 		/// Lista de Uris para acessar imagens da receita. A primeira poderia ser a de capa e as demais complementares
 		/// Verificar se podeser um repositório estático ou um caminho apra consultar a api com GET
 		/// </summary>
-		public virtual List<Uri> ImagensUri { get; set; }
+		public string ImagensUri { get; set; }
 		/// <summary>
 		/// Lista de Uris para acessar videos da receita.
 		/// Verificar se podeser um repositório estático ou um caminho apra consultar a api com GET
 		/// </summary>
-		public virtual List<Uri> VideosUri { get; set; }
+		public string VideosUri { get; set; }
 
 		/// <summary>
 		/// Além de ter nos ingredientes do item de ingredientes tem o consolidado aqui as informações nutricuionais dos igredientes diretos da receita 
 		/// e dos valores consolidados de todas as receitas filhas (que computam seus igredientes e de eventuais receitas filhas)
 		/// </summary>
-		public virtual List<InformacaoNutricional> InformacaoNutricionalConsolidada { get; set; }
+		public virtual List<InformacaoNutricional> InformacoesNutricionaisConsolidadas { get; }
 	}
 }

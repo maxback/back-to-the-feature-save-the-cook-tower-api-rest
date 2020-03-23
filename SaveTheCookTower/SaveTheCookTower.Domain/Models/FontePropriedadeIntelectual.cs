@@ -8,12 +8,11 @@ namespace SaveTheCookTower.Domain.Models
 	{
 		public string Autor { get; set; }
 		public string Titulo { get; set; }
-		public int? PaginaDoLibro { get; set; }
+		public int? PaginaDoLivro { get; set; }
 		public string EdicaoDoLivro { get; set; }
 		public Uri OrigemUri { get; set; }
-		public DateTime AcessoEm { get; set; }
+		public DateTime AcessoEmUtc { get; set; }
 		public string Comentario { get; set; }
-
-		public List<Receita> Receitas { get; set; }
+		public List<Receita> Receitas { get;  }
 	}
 }

@@ -8,9 +8,9 @@ namespace SaveTheCookTower.Domain.Models.Base
 	{
 		public Guid? Id { get; set; }
 		public DateTime? CriadoEmUtc { get; set; }
-		public Guid? CriadoPor { get; set; }
+		public Guid? CriadoPorId { get; set; }
 		public DateTime? AtualizadoEmUtc { get; set; }
-		public Guid? AtualizadoPor { get; set; }
+		public Guid? AtualizadoPorId { get; set; }
 		public bool ForaDeUso { get; set; }
 		public string Nome { get; set; }
 		/// <summary>
@@ -25,16 +25,21 @@ namespace SaveTheCookTower.Domain.Models.Base
 
 		public ModelBase()
 		{
+			IncializarNovoObjeto();
+		}
+
+		public void IncializarNovoObjeto()
+		{
 			Id = Guid.NewGuid();
 			CriadoEmUtc = DateTime.UtcNow;
 			AtualizadoEmUtc = DateTime.UtcNow;
 			ForaDeUso = false;
 		}
 
-		void RegistrarAlteracao(Guid? atualizadoPor, DateTime? atualizadoEmUtl)
+		public void RegistrarAlteracao(Guid? atualizadoPorId, DateTime? atualizadoEmUtl)
 		{
-			if (atualizadoPor != null)
-				AtualizadoPor = atualizadoPor;
+			if (atualizadoPorId != null)
+				AtualizadoPorId = atualizadoPorId;
 				
 			if (atualizadoEmUtl != null)
 				AtualizadoEmUtc = atualizadoEmUtl;

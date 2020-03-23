@@ -1,11 +1,14 @@
 ﻿using SaveTheCookTower.Domain.Models.Base;
+using System;
 
 namespace SaveTheCookTower.Domain.Models
 {
 	public class EquivalenciaEntreUnidadesDeMedida: ModelBase
 	{
 		public virtual UnidadeMedida Origem { get; set; }
+		public Guid OrigemId { get; set; }
 		public virtual UnidadeMedida Destino { get; set; }
+		public Guid DestinoId { get; set; }
 		/// <summary>
 		/// Razão entre a Unidade de Origem ("Origem") com quantidade 1 e a quantidade equivalente na Unidade de Destino ("Destino").
 		/// Seria Origem/Destino. Logo se Origem for "Xicara" e Destino for "MiliLitros" estas razão serial
@@ -27,5 +30,14 @@ namespace SaveTheCookTower.Domain.Models
 		/// </summary>
 		public double RazaoOrigemDestino { get; set; }
 
+		/// <summary>
+		/// Calculado a partir de RazaoOrigemDestino, salvo
+		/// para ser escolhido se conveniente
+		/// </summary>
+		public double RazaoDestinoOrigem { get
+			{
+				return ((double)1.0 / RazaoOrigemDestino); 
+			}
+		}
 	}
 }

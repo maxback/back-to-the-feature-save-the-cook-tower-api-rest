@@ -7,9 +7,14 @@ namespace SaveTheCookTower.Domain.Models
 	public class Ingrediente: ModelBase
 	{
 		public virtual Categoria Categoria { get; set; }
-		public virtual List<Uri> ImagensUri { get; set; }
+		public Guid CategoriaId { get; set; }
+		public string ImagensUri { get; set; }
 
-		public virtual List<InformacaoNutricional> InformacaoNutricional { get; set; }
+		public virtual List<InformacaoNutricional> InformacoesNutricionais { get; }
 
+		/// <summary>
+		/// Referencias de iten de lista de ingredientes que usam este ingrediente
+		/// </summary>
+		public virtual List<ItemListaIngredientes> ItensListaIngredientes { get; }
 	}
 }

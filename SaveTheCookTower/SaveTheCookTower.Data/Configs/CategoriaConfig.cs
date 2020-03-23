@@ -13,6 +13,11 @@ namespace SaveTheCookTower.Data.Configs
 			builder.HasMany(p => p.Receitas).WithOne(p => p.Categoria).HasForeignKey(p => p.CategoriaId);
 
 			builder.HasMany(p => p.CategoriasFilhas).WithOne(p => p.CategoriaPai).HasForeignKey(p => p.CategoriaPaiId);
+
+			builder.HasOne(p => p.CategoriaPai).WithMany(p => p.CategoriasFilhas).HasForeignKey(p => p.CategoriaPaiId);
+
+			builder.Property(p => p.CategoriaPaiId).HasColumnName("id_categoria_pai");
+
 		}
 	}
 }

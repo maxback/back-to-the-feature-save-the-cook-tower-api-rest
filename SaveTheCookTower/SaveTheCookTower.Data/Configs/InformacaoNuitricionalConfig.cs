@@ -9,6 +9,14 @@ namespace SaveTheCookTower.Data.Configs
 		public void Configure(EntityTypeBuilder<InformacaoNutricional> builder)
 		{
 			builder.DefineBasicConfigs(tableName: "info_nutricional");
+
+			builder.HasOne(p => p.UnidadeMedida).WithMany(p => p.InformacoesNutricionais).HasForeignKey(p => p.UnidadeMedidaId);
+
+			builder.HasOne(p => p.Receita).WithMany(p => p.InformacoesNutricionaisConsolidadas).HasForeignKey(p => p.ReceitaId);
+
+			builder.Property(p => p.Quantidade).HasColumnName("n_quantidade");
+			builder.Property(p => p.UnidadeMedidaId).HasColumnName("id_unidade_medida");
+			builder.Property(p => p.IngredienteId).HasColumnName("id_ingrediente");
 		}
 	}
 }

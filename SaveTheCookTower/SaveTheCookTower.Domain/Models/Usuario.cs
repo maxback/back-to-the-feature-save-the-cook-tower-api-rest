@@ -1,4 +1,5 @@
 ﻿using SaveTheCookTower.Domain.Models.Base;
+using System.Collections.Generic;
 
 namespace SaveTheCookTower.Domain.Models
 {
@@ -19,9 +20,13 @@ namespace SaveTheCookTower.Domain.Models
 		public string Password { get; set; }
 
 		/// <summary>
-		/// Token da sessão do usuário
+		/// Token de API do usuário para integração (via API fornecida a parceiros)
 		/// </summary>        
 		public string Token { get; set; }
 
+		/// <summary>
+		/// Lista de avaliações feitas pelo usuário
+		/// </summary>
+		public virtual List<AvaliacaoDoUsuario> AvaliacoesFeitasPeloUsuario { get; }
 	}
 }
