@@ -12,4 +12,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SaveTheCookTower.CrossCutting\SaveTheCookTower.CrossCutting.csproj" />
+  </ItemGroup>
+
 </Project>

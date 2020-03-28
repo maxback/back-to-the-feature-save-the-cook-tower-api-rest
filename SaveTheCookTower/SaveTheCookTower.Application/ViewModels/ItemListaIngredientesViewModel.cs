@@ -1,11 +1,17 @@
-﻿using SaveTheCookTower.Domain.Interfaces;
-using SaveTheCookTower.Domain.Models.Base;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace SaveTheCookTower.Domain.Models
+namespace SaveTheCookTower.Application.ViewModels
 {
-	public class ItemListaIngredientes: ModelBase, IItemMensuravel
+	public class ItemListaIngredientesViewModel
 	{
+		public Guid? Id { get; set; }
+		public string Nome { get; set; }
+		public string Sinonimos { get; set; }
+		public Uri ItemUri { get; set; }
+		public bool ForaDeUso { get; set; }
+
 		/// <summary>
 		/// Indica a ordem do item na lsita de ingredientes
 		/// </summary>
@@ -17,18 +23,18 @@ namespace SaveTheCookTower.Domain.Models
 		/// <summary>
 		/// Indica a unidade de medida da receita
 		/// </summary>
-		public UnidadeMedida UnidadeMedida { get; set; }
+		public UnidadeMedidaViewModel UnidadeMedida { get; set; }
 		public Guid UnidadeMedidaId { get; set; }
 		/// <summary>
 		/// Indica a ingrediente cadastrado a ser utilziado
 		/// </summary>
-		public Ingrediente Ingrediente { get; set; }
+		public IngredienteViewModel Ingrediente { get; set; }
 		public Guid IngredienteId { get; set; }
 		/// <summary>
 		/// Indica a que receita pertence esse ingrediente
 		/// </summary>
-		public virtual Receita Receita { get; set; }
-		public Guid ReceitaId{ get; set; }
+		public virtual ReceitaViewModel Receita { get; set; }
+		public Guid ReceitaId { get; set; }
 
 	}
 }

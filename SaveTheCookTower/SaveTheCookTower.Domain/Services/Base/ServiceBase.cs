@@ -2,6 +2,7 @@
 using SaveTheCookTower.Domain.Models.Base;
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace SaveTheCookTower.Domain.Services.Base
@@ -19,7 +20,7 @@ namespace SaveTheCookTower.Domain.Services.Base
 			return _repositoryBase.Add(obj);
 		}
 
-		public IList<TModel> Find(Func<TModel, bool> predicate, int? fromIndex, int? toIndex)
+		public IList<TModel> Find(Expression<Func<TModel, bool>> predicate, int? fromIndex, int? toIndex)
 		{
 			return _repositoryBase.Find(predicate, fromIndex, toIndex);
 		}
@@ -34,7 +35,7 @@ namespace SaveTheCookTower.Domain.Services.Base
 			return _repositoryBase.GetById(id);
 		}
 
-		public int GetCount(Func<TModel, bool> predicate)
+		public int GetCount(Expression<Func<TModel, bool>> predicate)
 		{
 			return _repositoryBase.GetCount(predicate);
 		}

@@ -1,12 +1,18 @@
-﻿using SaveTheCookTower.Domain.Models.Base;
+﻿using SaveTheCookTower.CrossCutting.Utils;
 using System;
 using System.Collections.Generic;
-using SaveTheCookTower.CrossCutting.Utils;
+using System.Text;
 
-namespace SaveTheCookTower.Domain.Models
+namespace SaveTheCookTower.Application.ViewModels
 {
-	public class UnidadeMedida: ModelBase
+	public class UnidadeMedidaViewModel
 	{
+		public Guid? Id { get; set; }
+		public string Nome { get; set; }
+		public string Sinonimos { get; set; }
+		public Uri ItemUri { get; set; }
+		public bool ForaDeUso { get; set; }
+
 		/// <summary>
 		/// Indica que tipo de unidade é esta. Ver TiposDeUnidadesDeMedida
 		/// </summary>
@@ -24,23 +30,23 @@ namespace SaveTheCookTower.Domain.Models
 		/// como um quilo de trigo.
 		/// Neste caso aponta para as equivalências de que consta como origem
 		/// </summary>
-		public virtual List<EquivalenciaEntreUnidadesDeMedida> EquivalenciasOrigem { get; }
+		public List<EquivalenciaEntreUnidadesDeMedidaViewModel> EquivalenciasOrigem { get; }
 
 		/// <summary>
 		/// Mesmo de EquivalenciasOrigem
 		/// Neste caso aponta para as equivalências de que consta como destino
 		/// </summary>
-		public virtual List<EquivalenciaEntreUnidadesDeMedida> EquivalenciasDestino { get; }
+		public List<EquivalenciaEntreUnidadesDeMedidaViewModel> EquivalenciasDestino { get; }
 
 		/// <summary>
 		/// Referencia para as inf. nutricionais que usam a unidade
 		/// </summary>
-		public virtual List<InformacaoNutricional> InformacoesNutricionais { get; }
+		public List<InformacaoNutricionalViewModel> InformacoesNutricionais { get; }
 
 		/// <summary>
 		/// Referencias de iten de lista de ingredientes que usam esta unidade
 		/// Sei, é terrível. Queria fugir disto
 		/// </summary>
-		public virtual List<ItemListaIngredientes> ItensListaIngredientes { get; }
+		public List<ItemListaIngredientesViewModel> ItensListaIngredientes { get; }
 	}
 }

@@ -4,6 +4,7 @@ using SaveTheCookTower.Domain.Models.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace SaveTheCookTower.Data.Repositories.Base
@@ -27,7 +28,7 @@ namespace SaveTheCookTower.Data.Repositories.Base
 			return obj;
 		}
 
-		protected virtual int DoFind(out IList<TModel> result, Func<TModel, bool> predicate, int? fromIndex = 0, int? toIndex = 0, bool onlyCount = false)
+		protected virtual int DoFind(out IList<TModel> result, Expression<Func<TModel, bool>> predicate, int? fromIndex = 0, int? toIndex = 0, bool onlyCount = false)
 		{
 			int skip = fromIndex.GetValueOrDefault();
 			int take = toIndex.GetValueOrDefault() - skip;
@@ -60,7 +61,7 @@ namespace SaveTheCookTower.Data.Repositories.Base
 			}
 		}
 
-		public IList<TModel> Find(Func<TModel, bool> predicate, int? fromIndex = 0, int? toIndex = 0)
+		public IList<TModel> Find(Expression<Func<TModel, bool>> predicate, int? fromIndex = 0, int? toIndex = 0)
 		{
 			IList<TModel> result;
 
@@ -79,7 +80,7 @@ namespace SaveTheCookTower.Data.Repositories.Base
 			return _context.Set<TModel>().FirstOrDefault(p => p.Id == id);
 		}
 
-		public int GetCount(Func<TModel, bool> predicate)
+		public int GetCount(Expression<Func<TModel, bool>> predicate)
 		{
 			IList<TModel> result;
 

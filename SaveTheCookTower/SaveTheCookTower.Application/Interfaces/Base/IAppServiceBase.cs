@@ -3,22 +3,22 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
 
-namespace SaveTheCookTower.Domain.Interfaces.Base
+namespace SaveTheCookTower.Application.Interfaces.Base
 {
-	public interface IServiceBase<TModel> where TModel : class
+	public interface IAppServiceBase<TViewTModel> where TViewTModel : class
 	{
 		/// <summary>
 		/// Adiciona objeto ao repositório
 		/// </summary>
 		/// <param name="obj">Objeto com todos os dados a serem incluidos</param>
 		/// <returns></returns>
-		TModel Add(TModel obj);
+		TViewTModel Add(TViewTModel obj);
 
 		/// <summary>
 		/// Atualiza objeto norepositório
 		/// </summary>
 		/// <param name="obj">Objeto com dados editado</param>
-		void Update(TModel obj);
+		void Update(TViewTModel obj);
 
 		/// <summary>
 		/// Remove o bjeto com o id 
@@ -31,13 +31,13 @@ namespace SaveTheCookTower.Domain.Interfaces.Base
 		/// </summary>
 		/// <param name="id"></param>
 		/// <returns></returns>
-		TModel GetById(Guid id);
+		TViewTModel GetById(Guid id);
 
 		/// <summary>
 		/// Retorna todos os objetos.
 		/// </summary>
 		/// <returns></returns>
-		IList<TModel> GetAll();
+		IList<TViewTModel> GetAll();
 
 		/// <summary>
 		/// Procura os objetos correspondetes ao predicado.
@@ -46,14 +46,14 @@ namespace SaveTheCookTower.Domain.Interfaces.Base
 		/// <param name="fromIndex">Índice inicial do resultado. Se definido indica o offset do inicio subgrupo do resultado de predicado que deve resultar</param>
 		/// <param name="toIndex">Índice final do resultado. Se definido indica o final do inicio subgrupo do resultado de predicado que deve resultar</param>
 		/// <returns></returns>
-		IList<TModel> Find(Expression<Func<TModel, bool>> predicate, int? fromIndex, int? toIndex);
+		IList<TViewTModel> Find(Expression<Func<TViewTModel, bool>> predicate, int? fromIndex, int? toIndex);
 
 		/// <summary>
 		/// Retorna a quantidade de objetos correspondente ao predicado
 		/// </summary>
 		/// <param name="predicate"></param>
 		/// <returns></returns>
-		int GetCount(Expression<Func<TModel, bool>> predicate);
+		int GetCount(Expression<Func<TViewTModel, bool>> predicate);
 
 		/// <summary>
 		/// Retorna a quantidade de objetos

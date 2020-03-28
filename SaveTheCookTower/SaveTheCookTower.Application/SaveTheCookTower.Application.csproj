@@ -6,10 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="ApplicationServices\" />
-    <Folder Include="Interfaces\" />
-    <Folder Include="Mapping\" />
-    <Folder Include="ViewModels\" />
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SaveTheCookTower.CrossCutting\SaveTheCookTower.CrossCutting.csproj" />
+    <ProjectReference Include="..\SaveTheCookTower.Domain\SaveTheCookTower.Domain.csproj" />
   </ItemGroup>
 
 </Project>

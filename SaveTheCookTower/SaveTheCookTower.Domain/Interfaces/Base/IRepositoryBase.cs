@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace SaveTheCookTower.Domain.Interfaces.Base
@@ -45,14 +46,14 @@ namespace SaveTheCookTower.Domain.Interfaces.Base
 		/// <param name="fromIndex">Índice inicial do resultado. Se definido indica o offset do inicio subgrupo do resultado de predicado que deve resultar</param>
 		/// <param name="toIndex">Índice final do resultado. Se definido indica o final do inicio subgrupo do resultado de predicado que deve resultar</param>
 		/// <returns></returns>
-		IList<TModel> Find(Func<TModel, bool> predicate, int? fromIndex, int?toIndex);
+		IList<TModel> Find(Expression<Func<TModel, bool>> predicate, int? fromIndex, int?toIndex);
 
 		/// <summary>
 		/// Retorna a quantidade de objetos correspondente ao predicado
 		/// </summary>
 		/// <param name="predicate"></param>
 		/// <returns></returns>
-		int GetCount(Func<TModel, bool> predicate);
+		int GetCount(Expression<Func<TModel, bool>> predicate);
 
 		/// <summary>
 		/// Retorna a quantidade de objetos

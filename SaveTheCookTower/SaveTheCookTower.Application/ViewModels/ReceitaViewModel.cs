@@ -1,23 +1,25 @@
-﻿using SaveTheCookTower.Domain.Models.Base;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SaveTheCookTower.Domain.Models
+namespace SaveTheCookTower.Application.ViewModels
 {
-	/// <summary>
-	/// Modelo para uma receita, com categoria, receitas filhas e demais dados
-	/// </summary>
-	public class Receita: ModelBase
+	public class ReceitaViewModel
 	{
+		public Guid? Id { get; set; }
+		public string Nome { get; set; }
+		public string Sinonimos { get; set; }
+		public Uri ItemUri { get; set; }
+		public bool ForaDeUso { get; set; }
+
 		/// <summary>
 		/// Lista das eventuais receitas filhas, como um molho ou cobertura
 		/// </summary>
-		public virtual List<Receita> ReceitasFilhas { get; }
+		public List<ReceitaViewModel> ReceitasFilhas { get; }
 		/// <summary>
 		/// Referencia ao objeto da receita pai
 		/// </summary>
-		public virtual Receita ReceitaPai { get; set; }
+		public ReceitaViewModel ReceitaPai { get; set; }
 		/// <summary>
 		/// Id da receita pai
 		/// </summary>
@@ -25,7 +27,7 @@ namespace SaveTheCookTower.Domain.Models
 		/// <summary>
 		/// Idica a categoria da receita. Exemplo: Carnes, Massas, Sobremesas
 		/// </summary>
-		public virtual Categoria Categoria { get; set; }
+		public CategoriaViewModel Categoria { get; set; }
 
 		/// <summary>
 		/// Id da  categoria
@@ -51,7 +53,7 @@ namespace SaveTheCookTower.Domain.Models
 		/// <summary>
 		/// Permite indicar a fonte da receita, ou seja, quem é seu autor. Para respeitaros remeditos e remeter até ao site de origem
 		/// </summary>
-		public virtual FontePropriedadeIntelectual Fonte { get; set; }
+		public FontePropriedadeIntelectualViewModel Fonte { get; set; }
 		/// <summary>
 		/// Id da fonte
 		/// </summary>
@@ -59,20 +61,20 @@ namespace SaveTheCookTower.Domain.Models
 		/// <summary>
 		/// Descreve a avaliação geral (media) da receita
 		/// </summary>
-		public virtual AvaliacaoDoUsuario AvaliacaoMedia { get; set; }
+		public AvaliacaoDoUsuarioViewModel AvaliacaoMedia { get; set; }
 		public Guid AvaliacaoMediaId { get; set; }
 		/// <summary>
 		/// Lista de todas as avaliações de usuários para a receita
 		/// </summary>
-		public virtual List<AvaliacaoDoUsuario> Avaliacoes{ get; }
+		public List<AvaliacaoDoUsuarioViewModel> Avaliacoes { get; }
 		/// <summary>
 		/// Lista de todos os igredientes da receita. Se ela possuir receita filha, os igredientes devem ser acessados por ReceitasFilhas[].Ingredientes
 		/// </summary>
-		public virtual List<ItemListaIngredientes> Ingredientes { get; }
+		public List<ItemListaIngredientesViewModel> Ingredientes { get; }
 		/// <summary>
 		/// Lista de todas as etapas para preparo dareceita. Se ela possuir receita filha, as etapas devem ser acessados por ReceitasFilhas[].Etapas
 		/// </summary>
-		public virtual List<EtapaDePreparo> EstapasDePreparo { get; }
+		public List<EtapaDePreparoViewModel> EstapasDePreparo { get; }
 
 		/// <summary>
 		/// Lista de Uris para acessar imagens da receita. A primeira poderia ser a de capa e as demais complementares
@@ -89,6 +91,7 @@ namespace SaveTheCookTower.Domain.Models
 		/// Além de ter nos ingredientes do item de ingredientes tem o consolidado aqui as informações nutricuionais dos igredientes diretos da receita 
 		/// e dos valores consolidados de todas as receitas filhas (que computam seus igredientes e de eventuais receitas filhas)
 		/// </summary>
-		public virtual List<InformacaoNutricional> InformacoesNutricionaisConsolidadas { get; }
+		public List<InformacaoNutricionalViewModel> InformacoesNutricionaisConsolidadas { get; }
+
 	}
 }

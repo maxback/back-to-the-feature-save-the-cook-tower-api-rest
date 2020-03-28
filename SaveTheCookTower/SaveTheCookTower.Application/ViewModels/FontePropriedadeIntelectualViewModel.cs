@@ -1,11 +1,17 @@
-﻿using SaveTheCookTower.Domain.Models.Base;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
-namespace SaveTheCookTower.Domain.Models
+namespace SaveTheCookTower.Application.ViewModels
 {
-	public class FontePropriedadeIntelectual: ModelBase
+	public class FontePropriedadeIntelectualViewModel
 	{
+		public Guid? Id { get; set; }
+		public string Nome { get; set; }
+		public string Sinonimos { get; set; }
+		public Uri ItemUri { get; set; }
+		public bool ForaDeUso { get; set; }
+
 		/// <summary>
 		/// Além da propriedade Nome, Esta define o autor (como de um livro, artigo, etc) 
 		/// </summary>
@@ -37,6 +43,7 @@ namespace SaveTheCookTower.Domain.Models
 		/// <summary>
 		/// Referência as receitas com esta mesma fonte
 		/// </summary>
-		public List<Receita> Receitas { get;  }
+		public List<ReceitaViewModel> Receitas { get; }
+
 	}
 }
