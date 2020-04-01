@@ -10,9 +10,11 @@ namespace SaveTheCookTower.Data.Configs
 		{
 			builder.DefineBasicConfigs(tableName: "unidade_medida");
 
-			builder.HasMany(p => p.EquivalenciasOrigem).WithOne(p => p.Origem).HasForeignKey(p => p.OrigemId);
+			builder.HasMany(p => p.EquivalenciasOrigem).WithOne(p => p.Origem).HasForeignKey(p => p.OrigemId)
+				.OnDelete(DeleteBehavior.Restrict);
 
-			builder.HasMany(p => p.EquivalenciasDestino).WithOne(p => p.Destino).HasForeignKey(p => p.DestinoId);
+			builder.HasMany(p => p.EquivalenciasDestino).WithOne(p => p.Destino).HasForeignKey(p => p.DestinoId)
+				.OnDelete(DeleteBehavior.Restrict);
 
 			builder.HasMany(p => p.InformacoesNutricionais).WithOne(p => p.UnidadeMedida).HasForeignKey(p => p.UnidadeMedidaId);
 

@@ -15,13 +15,14 @@ namespace SaveTheCookTower.Data.Configs
 			
 			builder.HasMany(p => p.ReceitasFilhas).WithOne(p => p.ReceitaPai).HasForeignKey(p => p.ReceitaPaiId);
 
-			builder.HasOne(p => p.ReceitaPai).WithMany(p => p.ReceitasFilhas).HasForeignKey(p => p.ReceitaPaiId);
+			builder.HasOne(p => p.ReceitaPai).WithMany(p => p.ReceitasFilhas).HasForeignKey(p => p.ReceitaPaiId)
+				.OnDelete(DeleteBehavior.Restrict);
 
 			builder.HasOne(p => p.Categoria).WithMany(p => p.Receitas).HasForeignKey(p => p.CategoriaId);
 
 			builder.HasOne(p => p.Fonte).WithMany(p => p.Receitas).HasForeignKey(p => p.FonteId);
 
-    		builder.HasOne(p => p.AvaliacaoMedia).WithOne(p => p.Receita).HasForeignKey<AvaliacaoDoUsuario>(p => p.ReceitaId);
+			builder.HasOne(p => p.AvaliacaoMedia).WithOne(p => p.ReceitaDeQuemEhAvaliacaoMedia).HasForeignKey<AvaliacaoDoUsuario>(p => p.ReceitaDeQuemEhAvaliacaoMediaId);
 
 			builder.HasMany(p => p.Avaliacoes).WithOne(p => p.Receita).HasForeignKey(p => p.ReceitaId);
 

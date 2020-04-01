@@ -14,7 +14,7 @@ namespace SaveTheCookTower.Data.Configs
 			entityTypeBuilder.ToTable(tableName);
 			entityTypeBuilder.HasKey(p => p.Id);
 			entityTypeBuilder.Property(p => p.AtualizadoEmUtc).HasColumnName("dt_atualizacao").IsRequired();
-			entityTypeBuilder.Property(p => p.AtualizadoPorId).HasColumnName("iduUsu_atualizacao").IsRequired();
+			entityTypeBuilder.Property(p => p.AtualizadoPorId).HasColumnName("id_Usu_atualizacao").IsRequired();
 			entityTypeBuilder.Property(p => p.CriadoEmUtc).HasColumnName("dt_criacao").IsRequired();
 			entityTypeBuilder.Property(p => p.CriadoPorId).HasColumnName("id_usu_criacao").IsRequired();
 			entityTypeBuilder.Property(p => p.ForaDeUso).HasColumnName("b_fora_uso").IsRequired();

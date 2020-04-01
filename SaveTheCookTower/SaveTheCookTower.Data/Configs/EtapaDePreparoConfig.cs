@@ -10,7 +10,8 @@ namespace SaveTheCookTower.Data.Configs
 		{
 			builder.DefineBasicConfigs(tableName: "etapa_preparo");
 
-			builder.HasOne(p => p.Receita).WithMany(p => p.EstapasDePreparo).HasForeignKey(p => p.ReceitaId);
+			builder.HasOne(p => p.Receita).WithMany(p => p.EstapasDePreparo).HasForeignKey(p => p.ReceitaId)
+				.OnDelete(DeleteBehavior.Restrict);
 
 			builder.Property(p => p.ReceitaId).HasColumnName("id_receita");
 			builder.Property(p => p.Ordem).HasColumnName("n_ordem");

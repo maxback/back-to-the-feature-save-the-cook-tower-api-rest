@@ -37,6 +37,6 @@ namespace SaveTheCookTower.Domain.Models
 		/// <summary>
 		/// Referência as receitas com esta mesma fonte
 		/// </summary>
-		public List<Receita> Receitas { get;  }
+		public virtual List<Receita> Receitas { get;  }
 	}
 }

@@ -22,7 +22,7 @@ namespace SaveTheCookTower.Domain.Models
 		/// <summary>
 		/// Indica a ingrediente cadastrado a ser utilziado
 		/// </summary>
-		public Ingrediente Ingrediente { get; set; }
+		public virtual Ingrediente Ingrediente { get; set; }
 		public Guid IngredienteId { get; set; }
 		/// <summary>
 		/// Indica a que receita pertence esse ingrediente

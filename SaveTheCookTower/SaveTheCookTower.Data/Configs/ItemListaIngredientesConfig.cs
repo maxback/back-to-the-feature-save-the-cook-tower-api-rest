@@ -17,7 +17,8 @@ namespace SaveTheCookTower.Data.Configs
 
 			builder.HasOne(p => p.Ingrediente).WithMany(p => p.ItensListaIngredientes).HasForeignKey(p => p.IngredienteId);
 
-			builder.HasOne(p => p.Receita).WithMany(p => p.Ingredientes).HasForeignKey(p => p.ReceitaId);
+			builder.HasOne(p => p.Receita).WithMany(p => p.Ingredientes).HasForeignKey(p => p.ReceitaId)
+				.OnDelete(DeleteBehavior.Restrict);
 
 			builder.Property(p => p.Ordem).HasColumnName("n_ordem");
 			builder.Property(p => p.Quantidade).HasColumnName("n_quantidade");
