@@ -10,7 +10,7 @@ using System.Text;
 
 namespace SaveTheCookTower.Application.ApplicationServices
 {
-	class FontePropriedadeIntelectualAppService : IFontePropriedadeIntelectualAppService
+	public class FontePropriedadeIntelectualAppService : IFontePropriedadeIntelectualAppService
 	{
 		private readonly IServiceBase<FontePropriedadeIntelectual> _service;
 		private readonly IMapper _mapper;

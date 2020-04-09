@@ -32,7 +32,6 @@ namespace SaveTheCookTower.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<Guid?>("AtualizadoPorId")
-                        .IsRequired()
                         .HasColumnName("id_Usu_atualizacao")
                         .HasColumnType("uniqueidentifier");
 
@@ -46,7 +45,6 @@ namespace SaveTheCookTower.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<Guid?>("CriadoPorId")
-                        .IsRequired()
                         .HasColumnName("id_usu_criacao")
                         .HasColumnType("uniqueidentifier");
 
@@ -55,7 +53,6 @@ namespace SaveTheCookTower.Data.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("ItemUri")
-                        .IsRequired()
                         .HasColumnName("s_uri")
                         .HasColumnType("nvarchar(max)");
 
@@ -110,7 +107,6 @@ namespace SaveTheCookTower.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<Guid?>("AtualizadoPorId")
-                        .IsRequired()
                         .HasColumnName("id_Usu_atualizacao")
                         .HasColumnType("uniqueidentifier");
 
@@ -124,7 +120,6 @@ namespace SaveTheCookTower.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<Guid?>("CriadoPorId")
-                        .IsRequired()
                         .HasColumnName("id_usu_criacao")
                         .HasColumnType("uniqueidentifier");
 
@@ -133,7 +128,6 @@ namespace SaveTheCookTower.Data.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("ItemUri")
-                        .IsRequired()
                         .HasColumnName("s_uri")
                         .HasColumnType("nvarchar(max)");
 
@@ -166,7 +160,6 @@ namespace SaveTheCookTower.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<Guid?>("AtualizadoPorId")
-                        .IsRequired()
                         .HasColumnName("id_Usu_atualizacao")
                         .HasColumnType("uniqueidentifier");
 
@@ -176,7 +169,6 @@ namespace SaveTheCookTower.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<Guid?>("CriadoPorId")
-                        .IsRequired()
                         .HasColumnName("id_usu_criacao")
                         .HasColumnType("uniqueidentifier");
 
@@ -189,7 +181,6 @@ namespace SaveTheCookTower.Data.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("ItemUri")
-                        .IsRequired()
                         .HasColumnName("s_uri")
                         .HasColumnType("nvarchar(max)");
 
@@ -232,7 +223,6 @@ namespace SaveTheCookTower.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<Guid?>("AtualizadoPorId")
-                        .IsRequired()
                         .HasColumnName("id_Usu_atualizacao")
                         .HasColumnType("uniqueidentifier");
 
@@ -242,7 +232,6 @@ namespace SaveTheCookTower.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<Guid?>("CriadoPorId")
-                        .IsRequired()
                         .HasColumnName("id_usu_criacao")
                         .HasColumnType("uniqueidentifier");
 
@@ -255,7 +244,6 @@ namespace SaveTheCookTower.Data.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("ItemUri")
-                        .IsRequired()
                         .HasColumnName("s_uri")
                         .HasColumnType("nvarchar(max)");
 
@@ -300,7 +288,6 @@ namespace SaveTheCookTower.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<Guid?>("AtualizadoPorId")
-                        .IsRequired()
                         .HasColumnName("id_Usu_atualizacao")
                         .HasColumnType("uniqueidentifier");
 
@@ -318,7 +305,6 @@ namespace SaveTheCookTower.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<Guid?>("CriadoPorId")
-                        .IsRequired()
                         .HasColumnName("id_usu_criacao")
                         .HasColumnType("uniqueidentifier");
 
@@ -331,7 +317,6 @@ namespace SaveTheCookTower.Data.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("ItemUri")
-                        .IsRequired()
                         .HasColumnName("s_uri")
                         .HasColumnType("nvarchar(max)");
 
@@ -374,7 +359,6 @@ namespace SaveTheCookTower.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<Guid?>("AtualizadoPorId")
-                        .IsRequired()
                         .HasColumnName("id_Usu_atualizacao")
                         .HasColumnType("uniqueidentifier");
 
@@ -384,7 +368,6 @@ namespace SaveTheCookTower.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<Guid?>("CriadoPorId")
-                        .IsRequired()
                         .HasColumnName("id_usu_criacao")
                         .HasColumnType("uniqueidentifier");
 
@@ -397,7 +380,6 @@ namespace SaveTheCookTower.Data.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ItemUri")
-                        .IsRequired()
                         .HasColumnName("s_uri")
                         .HasColumnType("nvarchar(max)");
 
@@ -445,7 +427,6 @@ namespace SaveTheCookTower.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<Guid?>("AtualizadoPorId")
-                        .IsRequired()
                         .HasColumnName("id_Usu_atualizacao")
                         .HasColumnType("uniqueidentifier");
 
@@ -459,7 +440,6 @@ namespace SaveTheCookTower.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<Guid?>("CriadoPorId")
-                        .IsRequired()
                         .HasColumnName("id_usu_criacao")
                         .HasColumnType("uniqueidentifier");
 
@@ -472,7 +452,6 @@ namespace SaveTheCookTower.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ItemUri")
-                        .IsRequired()
                         .HasColumnName("s_uri")
                         .HasColumnType("nvarchar(max)");
 
@@ -505,7 +484,6 @@ namespace SaveTheCookTower.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<Guid?>("AtualizadoPorId")
-                        .IsRequired()
                         .HasColumnName("id_Usu_atualizacao")
                         .HasColumnType("uniqueidentifier");
 
@@ -515,7 +493,6 @@ namespace SaveTheCookTower.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<Guid?>("CriadoPorId")
-                        .IsRequired()
                         .HasColumnName("id_usu_criacao")
                         .HasColumnType("uniqueidentifier");
 
@@ -528,7 +505,6 @@ namespace SaveTheCookTower.Data.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ItemUri")
-                        .IsRequired()
                         .HasColumnName("s_uri")
                         .HasColumnType("nvarchar(max)");
 
@@ -581,7 +557,6 @@ namespace SaveTheCookTower.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<Guid?>("AtualizadoPorId")
-                        .IsRequired()
                         .HasColumnName("id_Usu_atualizacao")
                         .HasColumnType("uniqueidentifier");
 
@@ -599,7 +574,6 @@ namespace SaveTheCookTower.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<Guid?>("CriadoPorId")
-                        .IsRequired()
                         .HasColumnName("id_usu_criacao")
                         .HasColumnType("uniqueidentifier");
 
@@ -620,7 +594,6 @@ namespace SaveTheCookTower.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ItemUri")
-                        .IsRequired()
                         .HasColumnName("s_uri")
                         .HasColumnType("nvarchar(max)");
 
@@ -673,7 +646,6 @@ namespace SaveTheCookTower.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<Guid?>("AtualizadoPorId")
-                        .IsRequired()
                         .HasColumnName("id_Usu_atualizacao")
                         .HasColumnType("uniqueidentifier");
 
@@ -683,7 +655,6 @@ namespace SaveTheCookTower.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<Guid?>("CriadoPorId")
-                        .IsRequired()
                         .HasColumnName("id_usu_criacao")
                         .HasColumnType("uniqueidentifier");
 
@@ -692,7 +663,6 @@ namespace SaveTheCookTower.Data.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("ItemUri")
-                        .IsRequired()
                         .HasColumnName("s_uri")
                         .HasColumnType("nvarchar(max)");
 
@@ -716,6 +686,41 @@ namespace SaveTheCookTower.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("unidade_medida");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("414e63b7-5d01-481d-9e30-fef78f89982b"),
+                            AtualizadoEmUtc = new DateTime(2020, 4, 4, 18, 29, 52, 548, DateTimeKind.Utc).AddTicks(3585),
+                            CriadoEmUtc = new DateTime(2020, 4, 4, 18, 29, 52, 548, DateTimeKind.Utc).AddTicks(3562),
+                            ForaDeUso = false,
+                            Nome = "grama",
+                            NomeResumido = "g",
+                            Sinonimos = "gramas,grama(g)",
+                            Tipo = 3
+                        },
+                        new
+                        {
+                            Id = new Guid("8f74e3cb-8022-4238-9de4-f396bb468d33"),
+                            AtualizadoEmUtc = new DateTime(2020, 4, 4, 18, 29, 52, 548, DateTimeKind.Utc).AddTicks(8342),
+                            CriadoEmUtc = new DateTime(2020, 4, 4, 18, 29, 52, 548, DateTimeKind.Utc).AddTicks(8322),
+                            ForaDeUso = false,
+                            Nome = "kilograma",
+                            NomeResumido = "kg",
+                            Sinonimos = "kilo,kilos,kilo gramas,kilogramas,kilograma(kg)",
+                            Tipo = 3
+                        },
+                        new
+                        {
+                            Id = new Guid("80209f07-2c14-4b49-a971-e29ef06fdc6f"),
+                            AtualizadoEmUtc = new DateTime(2020, 4, 4, 18, 29, 52, 548, DateTimeKind.Utc).AddTicks(8659),
+                            CriadoEmUtc = new DateTime(2020, 4, 4, 18, 29, 52, 548, DateTimeKind.Utc).AddTicks(8651),
+                            ForaDeUso = false,
+                            Nome = "metro",
+                            NomeResumido = "m",
+                            Sinonimos = "metros,metro(m)",
+                            Tipo = 1
+                        });
                 });
 
             modelBuilder.Entity("SaveTheCookTower.Domain.Models.Usuario", b =>
@@ -731,7 +736,6 @@ namespace SaveTheCookTower.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<Guid?>("AtualizadoPorId")
-                        .IsRequired()
                         .HasColumnName("id_Usu_atualizacao")
                         .HasColumnType("uniqueidentifier");
 
@@ -741,7 +745,6 @@ namespace SaveTheCookTower.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<Guid?>("CriadoPorId")
-                        .IsRequired()
                         .HasColumnName("id_usu_criacao")
                         .HasColumnType("uniqueidentifier");
 
@@ -754,7 +757,6 @@ namespace SaveTheCookTower.Data.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("ItemUri")
-                        .IsRequired()
                         .HasColumnName("s_uri")
                         .HasColumnType("nvarchar(max)");
 
@@ -782,6 +784,30 @@ namespace SaveTheCookTower.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("usuario");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("3be60d8e-ed4b-476c-a8b5-764c86301b69"),
+                            AtualizadoEmUtc = new DateTime(2020, 4, 4, 18, 29, 52, 535, DateTimeKind.Utc).AddTicks(8078),
+                            CriadoEmUtc = new DateTime(2020, 4, 4, 18, 29, 52, 535, DateTimeKind.Utc).AddTicks(6858),
+                            Email = "adm@adm.com",
+                            ForaDeUso = false,
+                            Login = "adm",
+                            Nome = "Administrador do sistema",
+                            Password = "202cb962ac59075b964b07152d234b70"
+                        },
+                        new
+                        {
+                            Id = new Guid("a118bd37-7899-42a7-b61b-3b094d996846"),
+                            AtualizadoEmUtc = new DateTime(2020, 4, 4, 18, 29, 52, 548, DateTimeKind.Utc).AddTicks(420),
+                            CriadoEmUtc = new DateTime(2020, 4, 4, 18, 29, 52, 548, DateTimeKind.Utc).AddTicks(367),
+                            Email = "teste@teste.com",
+                            ForaDeUso = false,
+                            Login = "string",
+                            Nome = "ususrio de testes com login string esenha string",
+                            Password = "b45cffe084dd3d20d928bee85e7b0f21"
+                        });
                 });
 
             modelBuilder.Entity("SaveTheCookTower.Domain.Models.AvaliacaoDoUsuario", b =>

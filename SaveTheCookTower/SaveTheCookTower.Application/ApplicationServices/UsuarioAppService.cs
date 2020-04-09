@@ -1,10 +1,12 @@
 ﻿using AutoMapper;
 using SaveTheCookTower.Application.Interfaces;
 using SaveTheCookTower.Application.ViewModels;
+using SaveTheCookTower.CrossCutting.Utils;
 using SaveTheCookTower.Domain.Interfaces.Base;
 using SaveTheCookTower.Domain.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 
@@ -32,11 +34,34 @@ namespace SaveTheCookTower.Application.ApplicationServices
 
 		public IList<UsuarioViewModel> Find(Expression<Func<UsuarioViewModel, bool>> predicate, int? fromIndex, int? toIndex)
 		{
+		//erro ao resolver o mapp do expression
+		//ver como mapear
+		https://stackoverflow.com/questions/53940242/automapper-expression-mapping-issue
 			var newPredicate = _mapper.Map<Expression<Func<Usuario, bool>>>(predicate);
-
 			var modelObjs = _service.Find(newPredicate, fromIndex, toIndex);
 
 			return _mapper.Map<List<UsuarioViewModel>>(modelObjs);
+		}
+
+		/// <summary>
+		/// Metofdo que testa se os dados de login correspondem e retorna um objeto do usuário
+		/// </summary>
+		/// <param name="login"></param>
+		/// <param name="password"></param>
+		/// <param name="usuario"> Usuário correspondente ao login (ou nulo)</param>
+		/// <returns>True se aceitou o login</returns>
+		public bool Login(string login, string password, out UsuarioViewModel usuario)
+		{
+			Usuario usuarioModel;
+			usuarioModel = _service.Find(p => (p.Email == login || p.Login == login)
+						                 && p.Password == password.ToHashMD5()
+										 && !p.ForaDeUso,
+						                  0, 0).FirstOrDefault();
+
+			usuario = _mapper.Map<UsuarioViewModel>(usuarioModel);
+
+			return (usuario != null);
+
 		}
 
 		public IList<UsuarioViewModel> GetAll()

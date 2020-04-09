@@ -9,7 +9,7 @@ using System.Linq.Expressions;
 
 namespace SaveTheCookTower.Application.ApplicationServices
 {
-	class AvaliacaoDoUsuarioAppService : IAvaliacaoDoUsuarioAppService
+	public class AvaliacaoDoUsuarioAppService : IAvaliacaoDoUsuarioAppService
 	{
 		private readonly IServiceBase<AvaliacaoDoUsuario> _service;
 		private readonly IMapper _mapper;

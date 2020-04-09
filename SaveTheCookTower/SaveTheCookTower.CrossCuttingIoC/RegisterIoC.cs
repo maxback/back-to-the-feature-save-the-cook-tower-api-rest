@@ -6,6 +6,11 @@ using SaveTheCookTower.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using SaveTheCookTower.Application.Interfaces;
+using SaveTheCookTower.Application.ApplicationServices;
+using SaveTheCookTower.Application.Interfaces.Base;
+using SaveTheCookTower.Application.ViewModels;
+using Microsoft.Extensions.Localization;
 
 namespace SaveTheCookTower.CrossCuttingIoC
 {
@@ -14,8 +19,31 @@ namespace SaveTheCookTower.CrossCuttingIoC
 		public static void Register(IServiceCollection serviceCollection)
 		{
 			// AppServices
+			serviceCollection.AddScoped<IAvaliacaoDoUsuarioAppService, AvaliacaoDoUsuarioAppService>();
+			serviceCollection.AddScoped<ICategoriaAppService, CategoriaAppService>();
+			serviceCollection.AddScoped<IEquivalenciaEntreUnidadesDeMedidaAppService, EquivalenciaEntreUnidadesDeMedidaAppService>();
+			serviceCollection.AddScoped<IEtapaDePreparoAppService, EtapaDePreparoAppService>();
+			serviceCollection.AddScoped<IFontePropriedadeIntelectualAppService, FontePropriedadeIntelectualAppService>();
+			serviceCollection.AddScoped<IInformacaoNutricionalAppService, InformacaoNutricionalAppService>();
+			serviceCollection.AddScoped<IIngredienteAppService, IngredienteAppService>();
+			serviceCollection.AddScoped<IItemListaIngredientesAppService, ItemListaIngredientesAppServiceAppService>();
+			serviceCollection.AddScoped<IReceitaAppService, ReceitaAppService>();
+			serviceCollection.AddScoped<IUnidadeMedidaAppService, UnidadeMedidaAppService>();
+			serviceCollection.AddScoped<IUnidadeMedidaAppService, UnidadeMedidaAppService>();
+			serviceCollection.AddScoped<IUsuarioAppService, UsuarioAppService>();
 
 
+			serviceCollection.AddScoped<IAppServiceBase<AvaliacaoDoUsuarioViewModel>, AvaliacaoDoUsuarioAppService>();
+			serviceCollection.AddScoped<IAppServiceBase<CategoriaViewModel>, CategoriaAppService>();
+			serviceCollection.AddScoped<IAppServiceBase<EquivalenciaEntreUnidadesDeMedidaViewModel>, EquivalenciaEntreUnidadesDeMedidaAppService>();
+			serviceCollection.AddScoped<IAppServiceBase<EtapaDePreparoViewModel>, EtapaDePreparoAppService>();
+			serviceCollection.AddScoped<IAppServiceBase<FontePropriedadeIntelectualViewModel>, FontePropriedadeIntelectualAppService>();
+			serviceCollection.AddScoped<IAppServiceBase<InformacaoNutricionalViewModel>, InformacaoNutricionalAppService>();
+			serviceCollection.AddScoped<IAppServiceBase<IngredienteViewModel>, IngredienteAppService>();
+			serviceCollection.AddScoped<IAppServiceBase<ItemListaIngredientesViewModel>, ItemListaIngredientesAppServiceAppService>();
+			serviceCollection.AddScoped<IAppServiceBase<ReceitaViewModel>, ReceitaAppService>();
+			serviceCollection.AddScoped<IAppServiceBase<UsuarioViewModel>, UsuarioAppService>();
+			serviceCollection.AddScoped<IAppServiceBase<UnidadeMedidaViewModel>, UnidadeMedidaAppService>();
 
 			// services
 			serviceCollection.AddScoped<IServiceBase<AvaliacaoDoUsuario>, ServiceBase<AvaliacaoDoUsuario>>();

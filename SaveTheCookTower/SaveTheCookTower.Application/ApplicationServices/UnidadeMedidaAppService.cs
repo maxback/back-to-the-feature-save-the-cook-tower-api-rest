@@ -15,6 +15,7 @@ namespace SaveTheCookTower.Application.ApplicationServices
 		private readonly IServiceBase<UnidadeMedida> _service;
 		private readonly IMapper _mapper;
 
+
 		public UnidadeMedidaAppService(IServiceBase<UnidadeMedida> UnidadeMedidaService, IMapper mapper)
 		{
 			_service = UnidadeMedidaService;
@@ -48,9 +49,9 @@ namespace SaveTheCookTower.Application.ApplicationServices
 
 		public UnidadeMedidaViewModel GetById(Guid id)
 		{
-			var madelObj = _service.GetById(id);
+			var modelObj = _service.GetById(id);
 
-			return _mapper.Map<UnidadeMedidaViewModel>(madelObj);
+			return _mapper.Map<UnidadeMedidaViewModel>(modelObj);
 		}
 
 		public int GetCount(Expression<Func<UnidadeMedidaViewModel, bool>> predicate)

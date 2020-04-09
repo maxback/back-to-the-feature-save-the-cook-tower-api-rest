@@ -1,9 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using SaveTheCookTower.Domain.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using SaveTheCookTower.CrossCutting.Utils;
 
 namespace SaveTheCookTower.Data.Context
 {
@@ -38,6 +37,41 @@ namespace SaveTheCookTower.Data.Context
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			modelBuilder.ApplyConfigurationsFromAssembly(typeof(SaveTheCookTowerContext).Assembly);
+
+			modelBuilder.Entity<Usuario>().HasData(new Usuario
+			{
+				Email = "adm@adm.com",
+				Login = "adm",
+				Nome = "Administrador do sistema",
+				Password = "123".ToHashMD5()
+			});
+
+			modelBuilder.Entity<Usuario>().HasData(new Usuario
+			{
+				Email = "teste@teste.com",
+				Login = "string",
+				Nome = "Usuário de testes com login string e senha string",
+				Password = "string".ToHashMD5()
+			});
+
+			modelBuilder.Entity<UnidadeMedida>().HasData(new UnidadeMedida { Nome = "grama", NomeResumido = "g", 
+				Sinonimos = "gramas,grama(g)", Tipo = CrossCutting.Utils.Enumerations.TiposDeUnidadesDeMedida.Massa});
+
+			modelBuilder.Entity<UnidadeMedida>().HasData(new UnidadeMedida
+			{
+				Nome = "kilograma",
+				NomeResumido = "kg",
+				Sinonimos = "kilo,kilos,kilo gramas,kilogramas,kilograma(kg)",
+				Tipo = CrossCutting.Utils.Enumerations.TiposDeUnidadesDeMedida.Massa
+			});
+
+			modelBuilder.Entity<UnidadeMedida>().HasData(new UnidadeMedida
+			{
+				Nome = "metro",
+				NomeResumido = "m",
+				Sinonimos = "metros,metro(m)",
+				Tipo = CrossCutting.Utils.Enumerations.TiposDeUnidadesDeMedida.Comprimento
+			});
 
 		}
 	}

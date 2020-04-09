@@ -46,7 +46,7 @@ namespace SaveTheCookTower.Application.Interfaces.Base
 		/// <param name="fromIndex">Índice inicial do resultado. Se definido indica o offset do inicio subgrupo do resultado de predicado que deve resultar</param>
 		/// <param name="toIndex">Índice final do resultado. Se definido indica o final do inicio subgrupo do resultado de predicado que deve resultar</param>
 		/// <returns></returns>
-		IList<TViewTModel> Find(Expression<Func<TViewTModel, bool>> predicate, int? fromIndex, int? toIndex);
+		IList<TViewTModel> Find(Expression<Func<TViewTModel, bool>> predicate, int? fromIndex = null, int? toIndex = null);
 
 		/// <summary>
 		/// Retorna a quantidade de objetos correspondente ao predicado

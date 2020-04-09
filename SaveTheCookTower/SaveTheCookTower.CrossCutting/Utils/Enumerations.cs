@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SaveTheCookTower.CrossCutting.Utils
+namespace SaveTheCookTower.CrossCutting.Utils.Enumerations
 {
 
 	public enum TiposDeUnidadesDeMedida : Int32

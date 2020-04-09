@@ -13,13 +13,13 @@ namespace SaveTheCookTower.Data.Migrations
                 {
                     id = table.Column<Guid>(nullable: false),
                     dt_criacao = table.Column<DateTime>(nullable: false),
-                    id_usu_criacao = table.Column<Guid>(nullable: false),
+                    id_usu_criacao = table.Column<Guid>(nullable: true),
                     dt_atualizacao = table.Column<DateTime>(nullable: false),
-                    id_Usu_atualizacao = table.Column<Guid>(nullable: false),
+                    id_Usu_atualizacao = table.Column<Guid>(nullable: true),
                     b_fora_uso = table.Column<bool>(nullable: false),
                     s_nome = table.Column<string>(nullable: false),
                     m_sinonimos = table.Column<string>(nullable: true),
-                    s_uri = table.Column<string>(nullable: false),
+                    s_uri = table.Column<string>(nullable: true),
                     id_categoria_pai = table.Column<Guid>(nullable: false)
                 },
                 constraints: table =>
@@ -39,13 +39,13 @@ namespace SaveTheCookTower.Data.Migrations
                 {
                     id = table.Column<Guid>(nullable: false),
                     dt_criacao = table.Column<DateTime>(nullable: false),
-                    id_usu_criacao = table.Column<Guid>(nullable: false),
+                    id_usu_criacao = table.Column<Guid>(nullable: true),
                     dt_atualizacao = table.Column<DateTime>(nullable: false),
-                    id_Usu_atualizacao = table.Column<Guid>(nullable: false),
+                    id_Usu_atualizacao = table.Column<Guid>(nullable: true),
                     b_fora_uso = table.Column<bool>(nullable: false),
                     s_nome = table.Column<string>(nullable: false),
                     m_sinonimos = table.Column<string>(nullable: true),
-                    s_uri = table.Column<string>(nullable: false),
+                    s_uri = table.Column<string>(nullable: true),
                     s_autor = table.Column<string>(nullable: true),
                     s_titulo = table.Column<string>(nullable: true),
                     n_pagina_livro = table.Column<int>(nullable: true),
@@ -65,13 +65,13 @@ namespace SaveTheCookTower.Data.Migrations
                 {
                     id = table.Column<Guid>(nullable: false),
                     dt_criacao = table.Column<DateTime>(nullable: false),
-                    id_usu_criacao = table.Column<Guid>(nullable: false),
+                    id_usu_criacao = table.Column<Guid>(nullable: true),
                     dt_atualizacao = table.Column<DateTime>(nullable: false),
-                    id_Usu_atualizacao = table.Column<Guid>(nullable: false),
+                    id_Usu_atualizacao = table.Column<Guid>(nullable: true),
                     b_fora_uso = table.Column<bool>(nullable: false),
                     s_nome = table.Column<string>(nullable: false),
                     m_sinonimos = table.Column<string>(nullable: true),
-                    s_uri = table.Column<string>(nullable: false),
+                    s_uri = table.Column<string>(nullable: true),
                     n_tipo = table.Column<int>(nullable: false),
                     _nome_resumido = table.Column<string>(nullable: true)
                 },
@@ -86,13 +86,13 @@ namespace SaveTheCookTower.Data.Migrations
                 {
                     id = table.Column<Guid>(nullable: false),
                     dt_criacao = table.Column<DateTime>(nullable: false),
-                    id_usu_criacao = table.Column<Guid>(nullable: false),
+                    id_usu_criacao = table.Column<Guid>(nullable: true),
                     dt_atualizacao = table.Column<DateTime>(nullable: false),
-                    id_Usu_atualizacao = table.Column<Guid>(nullable: false),
+                    id_Usu_atualizacao = table.Column<Guid>(nullable: true),
                     b_fora_uso = table.Column<bool>(nullable: false),
                     s_nome = table.Column<string>(nullable: false),
                     m_sinonimos = table.Column<string>(nullable: true),
-                    s_uri = table.Column<string>(nullable: false),
+                    s_uri = table.Column<string>(nullable: true),
                     s_email = table.Column<string>(nullable: true),
                     s_login = table.Column<string>(nullable: true),
                     s_password = table.Column<string>(nullable: true),
@@ -109,13 +109,13 @@ namespace SaveTheCookTower.Data.Migrations
                 {
                     id = table.Column<Guid>(nullable: false),
                     dt_criacao = table.Column<DateTime>(nullable: false),
-                    id_usu_criacao = table.Column<Guid>(nullable: false),
+                    id_usu_criacao = table.Column<Guid>(nullable: true),
                     dt_atualizacao = table.Column<DateTime>(nullable: false),
-                    id_Usu_atualizacao = table.Column<Guid>(nullable: false),
+                    id_Usu_atualizacao = table.Column<Guid>(nullable: true),
                     b_fora_uso = table.Column<bool>(nullable: false),
                     s_nome = table.Column<string>(nullable: false),
                     m_sinonimos = table.Column<string>(nullable: true),
-                    s_uri = table.Column<string>(nullable: false),
+                    s_uri = table.Column<string>(nullable: true),
                     id_categoria = table.Column<Guid>(nullable: false),
                     m_imagens_url = table.Column<string>(nullable: true)
                 },
@@ -136,13 +136,13 @@ namespace SaveTheCookTower.Data.Migrations
                 {
                     id = table.Column<Guid>(nullable: false),
                     dt_criacao = table.Column<DateTime>(nullable: false),
-                    id_usu_criacao = table.Column<Guid>(nullable: false),
+                    id_usu_criacao = table.Column<Guid>(nullable: true),
                     dt_atualizacao = table.Column<DateTime>(nullable: false),
-                    id_Usu_atualizacao = table.Column<Guid>(nullable: false),
+                    id_Usu_atualizacao = table.Column<Guid>(nullable: true),
                     b_fora_uso = table.Column<bool>(nullable: false),
                     s_nome = table.Column<string>(nullable: false),
                     m_sinonimos = table.Column<string>(nullable: true),
-                    s_uri = table.Column<string>(nullable: false),
+                    s_uri = table.Column<string>(nullable: true),
                     id_receita_pai = table.Column<Guid>(nullable: true),
                     id_categoria = table.Column<Guid>(nullable: false),
                     descricao = table.Column<string>(nullable: true),
@@ -182,13 +182,13 @@ namespace SaveTheCookTower.Data.Migrations
                 {
                     id = table.Column<Guid>(nullable: false),
                     dt_criacao = table.Column<DateTime>(nullable: false),
-                    id_usu_criacao = table.Column<Guid>(nullable: false),
+                    id_usu_criacao = table.Column<Guid>(nullable: true),
                     dt_atualizacao = table.Column<DateTime>(nullable: false),
-                    id_Usu_atualizacao = table.Column<Guid>(nullable: false),
+                    id_Usu_atualizacao = table.Column<Guid>(nullable: true),
                     b_fora_uso = table.Column<bool>(nullable: false),
                     s_nome = table.Column<string>(nullable: false),
                     m_sinonimos = table.Column<string>(nullable: true),
-                    s_uri = table.Column<string>(nullable: false),
+                    s_uri = table.Column<string>(nullable: true),
                     id_unidade_orig = table.Column<Guid>(nullable: false),
                     id_unidade_dest = table.Column<Guid>(nullable: false),
                     nu_razao_orig_dest = table.Column<double>(nullable: false)
@@ -216,13 +216,13 @@ namespace SaveTheCookTower.Data.Migrations
                 {
                     id = table.Column<Guid>(nullable: false),
                     dt_criacao = table.Column<DateTime>(nullable: false),
-                    id_usu_criacao = table.Column<Guid>(nullable: false),
+                    id_usu_criacao = table.Column<Guid>(nullable: true),
                     dt_atualizacao = table.Column<DateTime>(nullable: false),
-                    id_Usu_atualizacao = table.Column<Guid>(nullable: false),
+                    id_Usu_atualizacao = table.Column<Guid>(nullable: true),
                     b_fora_uso = table.Column<bool>(nullable: false),
                     s_nome = table.Column<string>(nullable: false),
                     m_sinonimos = table.Column<string>(nullable: true),
-                    s_uri = table.Column<string>(nullable: false),
+                    s_uri = table.Column<string>(nullable: true),
                     qtd_estrelas = table.Column<int>(nullable: true),
                     id_usuario = table.Column<Guid>(nullable: false),
                     id_receita = table.Column<Guid>(nullable: true),
@@ -258,13 +258,13 @@ namespace SaveTheCookTower.Data.Migrations
                 {
                     id = table.Column<Guid>(nullable: false),
                     dt_criacao = table.Column<DateTime>(nullable: false),
-                    id_usu_criacao = table.Column<Guid>(nullable: false),
+                    id_usu_criacao = table.Column<Guid>(nullable: true),
                     dt_atualizacao = table.Column<DateTime>(nullable: false),
-                    id_Usu_atualizacao = table.Column<Guid>(nullable: false),
+                    id_Usu_atualizacao = table.Column<Guid>(nullable: true),
                     b_fora_uso = table.Column<bool>(nullable: false),
                     s_nome = table.Column<string>(nullable: false),
                     m_sinonimos = table.Column<string>(nullable: true),
-                    s_uri = table.Column<string>(nullable: false),
+                    s_uri = table.Column<string>(nullable: true),
                     id_receita = table.Column<Guid>(nullable: false),
                     n_ordem = table.Column<int>(nullable: false),
                     m_descricao = table.Column<string>(nullable: true)
@@ -286,13 +286,13 @@ namespace SaveTheCookTower.Data.Migrations
                 {
                     id = table.Column<Guid>(nullable: false),
                     dt_criacao = table.Column<DateTime>(nullable: false),
-                    id_usu_criacao = table.Column<Guid>(nullable: false),
+                    id_usu_criacao = table.Column<Guid>(nullable: true),
                     dt_atualizacao = table.Column<DateTime>(nullable: false),
-                    id_Usu_atualizacao = table.Column<Guid>(nullable: false),
+                    id_Usu_atualizacao = table.Column<Guid>(nullable: true),
                     b_fora_uso = table.Column<bool>(nullable: false),
                     s_nome = table.Column<string>(nullable: false),
                     m_sinonimos = table.Column<string>(nullable: true),
-                    s_uri = table.Column<string>(nullable: false),
+                    s_uri = table.Column<string>(nullable: true),
                     n_quantidade = table.Column<double>(nullable: false),
                     id_unidade_medida = table.Column<Guid>(nullable: false),
                     id_ingrediente = table.Column<Guid>(nullable: false),
@@ -327,13 +327,13 @@ namespace SaveTheCookTower.Data.Migrations
                 {
                     id = table.Column<Guid>(nullable: false),
                     dt_criacao = table.Column<DateTime>(nullable: false),
-                    id_usu_criacao = table.Column<Guid>(nullable: false),
+                    id_usu_criacao = table.Column<Guid>(nullable: true),
                     dt_atualizacao = table.Column<DateTime>(nullable: false),
-                    id_Usu_atualizacao = table.Column<Guid>(nullable: false),
+                    id_Usu_atualizacao = table.Column<Guid>(nullable: true),
                     b_fora_uso = table.Column<bool>(nullable: false),
                     s_nome = table.Column<string>(nullable: false),
                     m_sinonimos = table.Column<string>(nullable: true),
-                    s_uri = table.Column<string>(nullable: false),
+                    s_uri = table.Column<string>(nullable: true),
                     n_ordem = table.Column<int>(nullable: false),
                     n_quantidade = table.Column<double>(nullable: false),
                     id_unidade_medida = table.Column<Guid>(nullable: false),
@@ -361,6 +361,25 @@ namespace SaveTheCookTower.Data.Migrations
                         principalTable: "unidade_medida",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "unidade_medida",
+                columns: new[] { "id", "dt_atualizacao", "id_Usu_atualizacao", "dt_criacao", "id_usu_criacao", "b_fora_uso", "s_uri", "s_nome", "_nome_resumido", "m_sinonimos", "n_tipo" },
+                values: new object[,]
+                {
+                    { new Guid("414e63b7-5d01-481d-9e30-fef78f89982b"), new DateTime(2020, 4, 4, 18, 29, 52, 548, DateTimeKind.Utc).AddTicks(3585), null, new DateTime(2020, 4, 4, 18, 29, 52, 548, DateTimeKind.Utc).AddTicks(3562), null, false, null, "grama", "g", "gramas,grama(g)", 3 },
+                    { new Guid("8f74e3cb-8022-4238-9de4-f396bb468d33"), new DateTime(2020, 4, 4, 18, 29, 52, 548, DateTimeKind.Utc).AddTicks(8342), null, new DateTime(2020, 4, 4, 18, 29, 52, 548, DateTimeKind.Utc).AddTicks(8322), null, false, null, "kilograma", "kg", "kilo,kilos,kilo gramas,kilogramas,kilograma(kg)", 3 },
+                    { new Guid("80209f07-2c14-4b49-a971-e29ef06fdc6f"), new DateTime(2020, 4, 4, 18, 29, 52, 548, DateTimeKind.Utc).AddTicks(8659), null, new DateTime(2020, 4, 4, 18, 29, 52, 548, DateTimeKind.Utc).AddTicks(8651), null, false, null, "metro", "m", "metros,metro(m)", 1 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "usuario",
+                columns: new[] { "id", "dt_atualizacao", "id_Usu_atualizacao", "dt_criacao", "id_usu_criacao", "s_email", "b_fora_uso", "s_uri", "s_login", "s_nome", "s_password", "m_sinonimos", "s_token" },
+                values: new object[,]
+                {
+                    { new Guid("3be60d8e-ed4b-476c-a8b5-764c86301b69"), new DateTime(2020, 4, 4, 18, 29, 52, 535, DateTimeKind.Utc).AddTicks(8078), null, new DateTime(2020, 4, 4, 18, 29, 52, 535, DateTimeKind.Utc).AddTicks(6858), null, "adm@adm.com", false, null, "adm", "Administrador do sistema", "202cb962ac59075b964b07152d234b70", null, null },
+                    { new Guid("a118bd37-7899-42a7-b61b-3b094d996846"), new DateTime(2020, 4, 4, 18, 29, 52, 548, DateTimeKind.Utc).AddTicks(420), null, new DateTime(2020, 4, 4, 18, 29, 52, 548, DateTimeKind.Utc).AddTicks(367), null, "teste@teste.com", false, null, "string", "ususrio de testes com login string esenha string", "b45cffe084dd3d20d928bee85e7b0f21", null, null }
                 });
 
             migrationBuilder.CreateIndex(

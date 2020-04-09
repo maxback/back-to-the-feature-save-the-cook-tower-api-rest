@@ -5,17 +5,20 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
+using SaveTheCookTower.CrossCutting.Utils;
+using Microsoft.Extensions.Localization;
 
 namespace SaveTheCookTower.Data.Repositories.Base
 {
 	public class RepositoryBase<TModel> : IRepositoryBase<TModel> where TModel : ModelBase
 	{
 		protected readonly SaveTheCookTowerContext _context;
+		protected readonly IStringLocalizer<SharedResource> _localizer;
 
-		public RepositoryBase(SaveTheCookTowerContext context)
+		public RepositoryBase(SaveTheCookTowerContext context, IStringLocalizer<SharedResource> localizer)
 		{
 			_context = context;
+			_localizer = localizer;
 		}
 
 		public TModel Add(TModel obj)
@@ -98,7 +101,13 @@ namespace SaveTheCookTower.Data.Repositories.Base
 
 		public void Remove(Guid id)
 		{
-			_context.Set<TModel>().Remove(this.GetById(id));
+			var obj = this.GetById(id);
+			if (obj == null)
+			{
+				string s = _localizer["Objeto não localizado para excluir {0}", id].Value;
+				throw new Exception(s);
+			}
+			_context.Set<TModel>().Remove(obj);
 			_context.SaveChanges();
 		}
 

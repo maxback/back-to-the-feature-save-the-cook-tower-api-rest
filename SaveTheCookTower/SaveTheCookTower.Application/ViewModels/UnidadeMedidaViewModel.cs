@@ -1,7 +1,6 @@
-﻿using SaveTheCookTower.CrossCutting.Utils;
+﻿using SaveTheCookTower.CrossCutting.Utils.Enumerations;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace SaveTheCookTower.Application.ViewModels
 {

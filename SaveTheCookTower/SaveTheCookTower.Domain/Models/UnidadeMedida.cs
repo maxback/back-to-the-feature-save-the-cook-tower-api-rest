@@ -1,7 +1,7 @@
 ﻿using SaveTheCookTower.Domain.Models.Base;
 using System;
 using System.Collections.Generic;
-using SaveTheCookTower.CrossCutting.Utils;
+using SaveTheCookTower.CrossCutting.Utils.Enumerations;
 
 namespace SaveTheCookTower.Domain.Models
 {
@@ -20,7 +20,7 @@ namespace SaveTheCookTower.Domain.Models
 
 		/// <summary>
 		/// Esta lista de equivalencias é importante para permitir montar listas de compras ou
-		/// calcular quando da receita se pode fazer a partir de uma undiade de determinado produto,
+		/// calcular quando da receita se pode fazer a partir de uma unidiade de determinado produto,
 		/// como um quilo de trigo.
 		/// Neste caso aponta para as equivalências de que consta como origem
 		/// </summary>
