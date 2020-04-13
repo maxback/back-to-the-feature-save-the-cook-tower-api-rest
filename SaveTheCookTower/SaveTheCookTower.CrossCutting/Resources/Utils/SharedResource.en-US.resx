@@ -121,6 +121,10 @@
     <value>(Original error message: {0})</value>
     <comment>DefaultControllerForAppServiceController</comment>
   </data>
+  <data name="Equivalência entre Unidades de Medida" xml:space="preserve">
+    <value>Units of Measure Equivalence</value>
+    <comment>EquivalenciaEntreUnidadesDeMedidaController</comment>
+  </data>
   <data name="Falha ao obter o Id do objeto{0}." xml:space="preserve">
     <value>Failed to get object id {0}.</value>
     <comment>DefaultControllerForAppServiceController</comment>

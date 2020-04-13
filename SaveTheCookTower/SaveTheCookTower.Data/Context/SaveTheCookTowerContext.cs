@@ -65,12 +65,63 @@ namespace SaveTheCookTower.Data.Context
 				Tipo = CrossCutting.Utils.Enumerations.TiposDeUnidadesDeMedida.Massa
 			});
 
-			modelBuilder.Entity<UnidadeMedida>().HasData(new UnidadeMedida
+			var l = new UnidadeMedida
+			{
+				Nome = "litro",
+				NomeResumido = "l",
+				Sinonimos = "litros,litro(l)",
+				Tipo = CrossCutting.Utils.Enumerations.TiposDeUnidadesDeMedida.Volume
+			};
+			modelBuilder.Entity<UnidadeMedida>().HasData(l);
+
+
+			var xic = new UnidadeMedida
+			{
+				Nome = "xícara de chá",
+				NomeResumido = "xíc",
+				Sinonimos = "xic,cicara de cha, xícara chá, xícaras de chá,xícara(chá)",
+				Tipo = CrossCutting.Utils.Enumerations.TiposDeUnidadesDeMedida.Volume
+			};
+			modelBuilder.Entity<UnidadeMedida>().HasData(xic);
+
+
+			var m = new UnidadeMedida
 			{
 				Nome = "metro",
 				NomeResumido = "m",
 				Sinonimos = "metros,metro(m)",
 				Tipo = CrossCutting.Utils.Enumerations.TiposDeUnidadesDeMedida.Comprimento
+			};
+			modelBuilder.Entity<UnidadeMedida>().HasData(m);
+
+			var mm = new UnidadeMedida
+			{
+				Nome = "milimetro",
+				NomeResumido = "mm",
+				Sinonimos = "milimetros,milimetro(ml)",
+				Tipo = CrossCutting.Utils.Enumerations.TiposDeUnidadesDeMedida.Comprimento
+			};
+
+
+			modelBuilder.Entity<UnidadeMedida>().HasData(mm);
+
+
+			modelBuilder.Entity<EquivalenciaEntreUnidadesDeMedida>().HasData(new EquivalenciaEntreUnidadesDeMedida
+			{
+				Nome = "metro para milimetros",
+				OrigemId = m.Id,
+				DestinoId = mm.Id,
+				RazaoOrigemDestino = 1.0 / 1000.0,
+				Sinonimos = "razão m/ml, metro para milimetros,m para ml"
+			});
+
+			modelBuilder.Entity<EquivalenciaEntreUnidadesDeMedida>().HasData(new EquivalenciaEntreUnidadesDeMedida
+			{
+				Nome = "xícaras de chá pra litros",
+				OrigemId = xic.Id,
+				DestinoId = l.Id,
+				RazaoOrigemDestino = 250.0 / 1000.0,
+				Sinonimos = "razão xíc/l, xícara de chá apra litros,xíc para l,xic para l"
 			});
 
 		}

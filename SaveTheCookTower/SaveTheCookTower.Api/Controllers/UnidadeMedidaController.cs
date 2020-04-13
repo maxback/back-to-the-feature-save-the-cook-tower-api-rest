@@ -10,20 +10,19 @@ using SaveTheCookTower.Api.Controllers.Base;
 using SaveTheCookTower.Application.Interfaces.Base;
 using SaveTheCookTower.Application.ViewModels;
 using SaveTheCookTower.CrossCutting.Utils;
-using SaveTheCookTower.CrossCuttingIoC;
 
 namespace SaveTheCookTower.Api.Controllers
 {
     [Authorize]
     [Route("api/[controller]")]
+    [Route("api/UnitMeasure")]
+    [Route("api/um")]
     [ApiController]
+    [NomeParaUsuario("Unidade de Medida")]
     public class UnidadeMedidaController : DefaultControllerForAppServiceController<UnidadeMedidaViewModel>
     {
-        const string NOME_PARA_USUARIO = "Unidade de Medida";
-
         public UnidadeMedidaController(IAppServiceBase<UnidadeMedidaViewModel> appService,
-            IStringLocalizer<SharedResource> localizer) 
-            : base(appService, localizer, NOME_PARA_USUARIO)
+            IStringLocalizer<SharedResource> localizer)  : base(appService, localizer)
         {
             //
         }

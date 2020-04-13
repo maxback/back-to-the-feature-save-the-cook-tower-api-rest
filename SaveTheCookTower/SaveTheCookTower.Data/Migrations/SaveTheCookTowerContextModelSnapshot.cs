@@ -172,7 +172,7 @@ namespace SaveTheCookTower.Data.Migrations
                         .HasColumnName("id_usu_criacao")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("DestinoId")
+                    b.Property<Guid?>("DestinoId")
                         .HasColumnName("id_unidade_dest")
                         .HasColumnType("uniqueidentifier");
 
@@ -189,7 +189,7 @@ namespace SaveTheCookTower.Data.Migrations
                         .HasColumnName("s_nome")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("OrigemId")
+                    b.Property<Guid?>("OrigemId")
                         .HasColumnName("id_unidade_orig")
                         .HasColumnType("uniqueidentifier");
 
@@ -208,6 +208,32 @@ namespace SaveTheCookTower.Data.Migrations
                     b.HasIndex("OrigemId");
 
                     b.ToTable("unidade_medida_equiv");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("0f1da101-6a3f-426c-8af6-8fc762037b4e"),
+                            AtualizadoEmUtc = new DateTime(2020, 4, 12, 20, 8, 31, 545, DateTimeKind.Utc).AddTicks(1548),
+                            CriadoEmUtc = new DateTime(2020, 4, 12, 20, 8, 31, 545, DateTimeKind.Utc).AddTicks(1540),
+                            DestinoId = new Guid("bd55f7d9-6fd5-42f3-a9b2-dc4075a5d050"),
+                            ForaDeUso = false,
+                            Nome = "metro para milimetros",
+                            OrigemId = new Guid("8264cadc-84ac-4d10-86f1-a6d97a76bcee"),
+                            RazaoOrigemDestino = 0.001,
+                            Sinonimos = "razão m/ml, metro para milimetros,m para ml"
+                        },
+                        new
+                        {
+                            Id = new Guid("68bf6e23-a6ad-4688-b535-2f91eb8d3c38"),
+                            AtualizadoEmUtc = new DateTime(2020, 4, 12, 20, 8, 31, 545, DateTimeKind.Utc).AddTicks(6102),
+                            CriadoEmUtc = new DateTime(2020, 4, 12, 20, 8, 31, 545, DateTimeKind.Utc).AddTicks(6094),
+                            DestinoId = new Guid("afc884e4-4d8c-46f7-8c86-481db5f2808d"),
+                            ForaDeUso = false,
+                            Nome = "xícaras de chá pra litros",
+                            OrigemId = new Guid("7bb61175-c019-4f8a-8f9f-4a431a065ed5"),
+                            RazaoOrigemDestino = 0.25,
+                            Sinonimos = "razão xíc/l, xícara de chá apra litros,xíc para l,xic para l"
+                        });
                 });
 
             modelBuilder.Entity("SaveTheCookTower.Domain.Models.EtapaDePreparo", b =>
@@ -690,9 +716,9 @@ namespace SaveTheCookTower.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("414e63b7-5d01-481d-9e30-fef78f89982b"),
-                            AtualizadoEmUtc = new DateTime(2020, 4, 4, 18, 29, 52, 548, DateTimeKind.Utc).AddTicks(3585),
-                            CriadoEmUtc = new DateTime(2020, 4, 4, 18, 29, 52, 548, DateTimeKind.Utc).AddTicks(3562),
+                            Id = new Guid("4ac7a168-bd0f-4b2c-b804-2fa3505f3df7"),
+                            AtualizadoEmUtc = new DateTime(2020, 4, 12, 20, 8, 31, 544, DateTimeKind.Utc).AddTicks(6865),
+                            CriadoEmUtc = new DateTime(2020, 4, 12, 20, 8, 31, 544, DateTimeKind.Utc).AddTicks(6855),
                             ForaDeUso = false,
                             Nome = "grama",
                             NomeResumido = "g",
@@ -701,9 +727,9 @@ namespace SaveTheCookTower.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("8f74e3cb-8022-4238-9de4-f396bb468d33"),
-                            AtualizadoEmUtc = new DateTime(2020, 4, 4, 18, 29, 52, 548, DateTimeKind.Utc).AddTicks(8342),
-                            CriadoEmUtc = new DateTime(2020, 4, 4, 18, 29, 52, 548, DateTimeKind.Utc).AddTicks(8322),
+                            Id = new Guid("c71cbb3f-fd40-4d4c-a870-c8566d3c9cb3"),
+                            AtualizadoEmUtc = new DateTime(2020, 4, 12, 20, 8, 31, 545, DateTimeKind.Utc).AddTicks(114),
+                            CriadoEmUtc = new DateTime(2020, 4, 12, 20, 8, 31, 545, DateTimeKind.Utc).AddTicks(106),
                             ForaDeUso = false,
                             Nome = "kilograma",
                             NomeResumido = "kg",
@@ -712,13 +738,46 @@ namespace SaveTheCookTower.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("80209f07-2c14-4b49-a971-e29ef06fdc6f"),
-                            AtualizadoEmUtc = new DateTime(2020, 4, 4, 18, 29, 52, 548, DateTimeKind.Utc).AddTicks(8659),
-                            CriadoEmUtc = new DateTime(2020, 4, 4, 18, 29, 52, 548, DateTimeKind.Utc).AddTicks(8651),
+                            Id = new Guid("afc884e4-4d8c-46f7-8c86-481db5f2808d"),
+                            AtualizadoEmUtc = new DateTime(2020, 4, 12, 20, 8, 31, 545, DateTimeKind.Utc).AddTicks(218),
+                            CriadoEmUtc = new DateTime(2020, 4, 12, 20, 8, 31, 545, DateTimeKind.Utc).AddTicks(216),
+                            ForaDeUso = false,
+                            Nome = "litro",
+                            NomeResumido = "l",
+                            Sinonimos = "litros,litro(l)",
+                            Tipo = 4
+                        },
+                        new
+                        {
+                            Id = new Guid("7bb61175-c019-4f8a-8f9f-4a431a065ed5"),
+                            AtualizadoEmUtc = new DateTime(2020, 4, 12, 20, 8, 31, 545, DateTimeKind.Utc).AddTicks(303),
+                            CriadoEmUtc = new DateTime(2020, 4, 12, 20, 8, 31, 545, DateTimeKind.Utc).AddTicks(300),
+                            ForaDeUso = false,
+                            Nome = "xícara de chá",
+                            NomeResumido = "xíc",
+                            Sinonimos = "xic,cicara de cha, xícara chá, xícaras de chá,xícara(chá)",
+                            Tipo = 4
+                        },
+                        new
+                        {
+                            Id = new Guid("8264cadc-84ac-4d10-86f1-a6d97a76bcee"),
+                            AtualizadoEmUtc = new DateTime(2020, 4, 12, 20, 8, 31, 545, DateTimeKind.Utc).AddTicks(366),
+                            CriadoEmUtc = new DateTime(2020, 4, 12, 20, 8, 31, 545, DateTimeKind.Utc).AddTicks(363),
                             ForaDeUso = false,
                             Nome = "metro",
                             NomeResumido = "m",
                             Sinonimos = "metros,metro(m)",
+                            Tipo = 1
+                        },
+                        new
+                        {
+                            Id = new Guid("bd55f7d9-6fd5-42f3-a9b2-dc4075a5d050"),
+                            AtualizadoEmUtc = new DateTime(2020, 4, 12, 20, 8, 31, 545, DateTimeKind.Utc).AddTicks(435),
+                            CriadoEmUtc = new DateTime(2020, 4, 12, 20, 8, 31, 545, DateTimeKind.Utc).AddTicks(432),
+                            ForaDeUso = false,
+                            Nome = "milimetro",
+                            NomeResumido = "mm",
+                            Sinonimos = "milimetros,milimetro(ml)",
                             Tipo = 1
                         });
                 });
@@ -788,9 +847,9 @@ namespace SaveTheCookTower.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("3be60d8e-ed4b-476c-a8b5-764c86301b69"),
-                            AtualizadoEmUtc = new DateTime(2020, 4, 4, 18, 29, 52, 535, DateTimeKind.Utc).AddTicks(8078),
-                            CriadoEmUtc = new DateTime(2020, 4, 4, 18, 29, 52, 535, DateTimeKind.Utc).AddTicks(6858),
+                            Id = new Guid("64c3f76a-26df-41b5-8c04-0d57ea4164ed"),
+                            AtualizadoEmUtc = new DateTime(2020, 4, 12, 20, 8, 31, 534, DateTimeKind.Utc).AddTicks(3787),
+                            CriadoEmUtc = new DateTime(2020, 4, 12, 20, 8, 31, 534, DateTimeKind.Utc).AddTicks(2550),
                             Email = "adm@adm.com",
                             ForaDeUso = false,
                             Login = "adm",
@@ -799,13 +858,13 @@ namespace SaveTheCookTower.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("a118bd37-7899-42a7-b61b-3b094d996846"),
-                            AtualizadoEmUtc = new DateTime(2020, 4, 4, 18, 29, 52, 548, DateTimeKind.Utc).AddTicks(420),
-                            CriadoEmUtc = new DateTime(2020, 4, 4, 18, 29, 52, 548, DateTimeKind.Utc).AddTicks(367),
+                            Id = new Guid("09eac9e8-9274-4fe1-b621-a23da0b29e23"),
+                            AtualizadoEmUtc = new DateTime(2020, 4, 12, 20, 8, 31, 544, DateTimeKind.Utc).AddTicks(4773),
+                            CriadoEmUtc = new DateTime(2020, 4, 12, 20, 8, 31, 544, DateTimeKind.Utc).AddTicks(4737),
                             Email = "teste@teste.com",
                             ForaDeUso = false,
                             Login = "string",
-                            Nome = "ususrio de testes com login string esenha string",
+                            Nome = "Usuário de testes com login string e senha string",
                             Password = "b45cffe084dd3d20d928bee85e7b0f21"
                         });
                 });
@@ -842,14 +901,12 @@ namespace SaveTheCookTower.Data.Migrations
                     b.HasOne("SaveTheCookTower.Domain.Models.UnidadeMedida", "Destino")
                         .WithMany("EquivalenciasDestino")
                         .HasForeignKey("DestinoId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("SaveTheCookTower.Domain.Models.UnidadeMedida", "Origem")
                         .WithMany("EquivalenciasOrigem")
                         .HasForeignKey("OrigemId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
 
             modelBuilder.Entity("SaveTheCookTower.Domain.Models.EtapaDePreparo", b =>

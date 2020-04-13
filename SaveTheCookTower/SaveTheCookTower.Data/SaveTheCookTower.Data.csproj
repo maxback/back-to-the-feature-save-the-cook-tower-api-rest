@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SaveTheCookTower.CrossCutting\SaveTheCookTower.CrossCutting.csproj" />
     <ProjectReference Include="..\SaveTheCookTower.Domain\SaveTheCookTower.Domain.csproj" />
   </ItemGroup>
 

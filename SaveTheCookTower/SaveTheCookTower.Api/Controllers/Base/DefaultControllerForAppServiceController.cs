@@ -23,14 +23,25 @@ namespace SaveTheCookTower.Api.Controllers.Base
         protected readonly string _nomeParaUsuario;
         const bool INC_MSG_EXCEPTION = true;
 
+        protected string RecuperarAtributoNomeParaUsuario()
+        {
+            NomeParaUsuarioAttribute npu = (NomeParaUsuarioAttribute) Attribute.GetCustomAttribute( this.GetType(),
+             typeof(NomeParaUsuarioAttribute));
+
+            if (npu == null)
+                return string.Empty;
+
+            return npu.Nome;
+        }
         public DefaultControllerForAppServiceController(IAppServiceBase<TViewTModel> appService,
-            IStringLocalizer<SharedResource> localizer, 
-            string nomeParaUsuario)
+            IStringLocalizer<SharedResource> localizer)
         {
             _appService = appService;
 
             var type = typeof(SharedResource);
             _localizer = localizer;
+
+            string nomeParaUsuario = RecuperarAtributoNomeParaUsuario();
 
             _nomeParaUsuario = _localizer[nomeParaUsuario];
 
