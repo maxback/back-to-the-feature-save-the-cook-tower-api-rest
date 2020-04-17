@@ -54,6 +54,15 @@ namespace SaveTheCookTower.Data.Context
 				Password = "string".ToHashMD5()
 			});
 
+			var unidade = new UnidadeMedida
+			{
+				Nome = "unidade",
+				NomeResumido = "un",
+				Sinonimos = "unidades,unidade(un)",
+				Tipo = CrossCutting.Utils.Enumerations.TiposDeUnidadesDeMedida.Unidades
+			};
+			modelBuilder.Entity<UnidadeMedida>().HasData(unidade);
+
 			modelBuilder.Entity<UnidadeMedida>().HasData(new UnidadeMedida { Nome = "grama", NomeResumido = "g", 
 				Sinonimos = "gramas,grama(g)", Tipo = CrossCutting.Utils.Enumerations.TiposDeUnidadesDeMedida.Massa});
 
@@ -123,6 +132,119 @@ namespace SaveTheCookTower.Data.Context
 				RazaoOrigemDestino = 250.0 / 1000.0,
 				Sinonimos = "razão xíc/l, xícara de chá apra litros,xíc para l,xic para l"
 			});
+
+			var cp = new Categoria
+			{
+				Nome = "Categorias",
+				Sinonimos = "Categoria Raiz",
+				CategoriaPai = null
+			};
+
+			modelBuilder.Entity<Categoria>().HasData(cp);
+
+			var cat_ing = new Categoria
+			{
+				Nome = "Ingredientes",
+				Sinonimos = "Categoria Raiz dos Ingredientes",
+				CategoriaPaiId = cp.Id
+			};
+
+			modelBuilder.Entity<Categoria>().HasData(cat_ing);
+
+			var rec = new Categoria
+			{
+				Nome = "Receitas",
+				Sinonimos = "Categoria Raiz das Receitas",
+				CategoriaPaiId = cp.Id
+			};
+
+			modelBuilder.Entity<Categoria>().HasData(rec);
+
+			modelBuilder.Entity<Categoria>().HasData(new Categoria
+			{
+				Nome = "Tortas",
+				Sinonimos = "Categoria Raiz das tortas",
+				CategoriaPaiId = rec.Id
+			});
+
+			var cat_cafe = new Categoria
+			{
+				Nome = "Café da manhã",
+				Sinonimos = "Cafe da manha",
+				CategoriaPaiId = rec.Id
+			};
+
+			modelBuilder.Entity<Categoria>().HasData(cat_cafe);
+
+			modelBuilder.Entity<Categoria>().HasData(new Categoria
+			{
+				Nome = "Jantar",
+				Sinonimos = "Categoria Raiz dos Jantares",
+				CategoriaPaiId = rec.Id
+			});
+
+			var farinha = new Ingrediente
+			{
+				Nome = "Farinha de Trigo",
+				CategoriaId = cat_ing.Id,
+				Sinonimos = "Trigo"
+			};
+			modelBuilder.Entity<Ingrediente>().HasData(farinha);
+
+			var fermento = new Ingrediente
+			{
+				Nome = "Fermento para Pão",
+				CategoriaId = cat_ing.Id,
+				Sinonimos = "Fermento biológico"
+			};
+			modelBuilder.Entity<Ingrediente>().HasData(fermento);
+
+			var ovo = new Ingrediente
+			{
+				Nome = "Ovo de galinha",
+				CategoriaId = cat_ing.Id,
+				Sinonimos = "Ovo"
+			};
+			modelBuilder.Entity<Ingrediente>().HasData(ovo);
+
+			var agua = new Ingrediente
+			{
+				Nome = "Água",
+				CategoriaId = cat_ing.Id,
+				Sinonimos = "Agua"
+			};
+			modelBuilder.Entity<Ingrediente>().HasData(agua);
+
+
+			var rec1 = new Receita
+			{
+				Nome = "Pão de Forma",
+				Sinonimos = "Pão assado,pao assado",
+				ReceitaPaiId = null,
+				TempoPreparoMinutos = 120,
+				RendimentoPorcoes = 5,
+				CategoriaId = cat_cafe.Id
+
+			};
+			modelBuilder.Entity<Receita>().HasData(rec1);
+
+			var li1 = new ItemListaIngredientes { ReceitaId = rec1.Id, Nome = farinha.Nome, IngredienteId = farinha.Id, Ordem = 0, Quantidade = 3, UnidadeMedidaId = xic.Id };
+			modelBuilder.Entity<ItemListaIngredientes>().HasData(li1);
+			var li2 = new ItemListaIngredientes { ReceitaId = rec1.Id, Nome = farinha.Nome, IngredienteId = farinha.Id, Ordem = 0, Quantidade = 3, UnidadeMedidaId = xic.Id };
+			modelBuilder.Entity<ItemListaIngredientes>().HasData(li2);
+			var li3 = new ItemListaIngredientes { ReceitaId = rec1.Id, Nome = fermento.Nome, IngredienteId = fermento.Id, Ordem = 1, Quantidade = 1, UnidadeMedidaId = xic.Id };
+			modelBuilder.Entity<ItemListaIngredientes>().HasData(li3);
+			var li4 = new ItemListaIngredientes { ReceitaId = rec1.Id, Nome = ovo.Nome, IngredienteId = ovo.Id, Ordem = 2, Quantidade = 5, UnidadeMedidaId = unidade.Id };
+			modelBuilder.Entity<ItemListaIngredientes>().HasData(li4);
+			var li5 = new ItemListaIngredientes { ReceitaId = rec1.Id, Nome = agua.Nome, IngredienteId = agua.Id, Ordem = 3, Quantidade = 0.5, UnidadeMedidaId = l.Id };
+			modelBuilder.Entity<ItemListaIngredientes>().HasData(li5);
+
+			/*
+			rec1.Ingredientes.Add(new ItemListaIngredientes {  });
+			rec1.Ingredientes.Add(new ItemListaIngredientes {  });
+			rec1.Ingredientes.Add(new ItemListaIngredientes {  });
+			rec1.Ingredientes.Add(new ItemListaIngredientes {  });
+			*/
 
 		}
 	}

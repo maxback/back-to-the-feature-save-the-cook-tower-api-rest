@@ -13,7 +13,7 @@ namespace SaveTheCookTower.Application.ViewModels
 		public bool ForaDeUso { get; set; }
 
 		public CategoriaViewModel CategoriaPai { get; set; }
-		public Guid CategoriaPaiId { get; set; }
+		public Guid? CategoriaPaiId { get; set; }
 		public List<CategoriaViewModel> CategoriasFilhas { get; }
 		public List<ReceitaViewModel> Receitas { get; }
 		public List<IngredienteViewModel> Ingredientes { get; }

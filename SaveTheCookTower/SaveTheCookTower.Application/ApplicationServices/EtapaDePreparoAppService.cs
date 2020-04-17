@@ -30,6 +30,25 @@ namespace SaveTheCookTower.Application.ApplicationServices
 			return _mapper.Map<EtapaDePreparoViewModel>(modelObj);
 		}
 
+
+		public IList<EtapaDePreparoViewModel> Find(string text, int? fromIndex = null, int? toIndex = null)
+		{
+			IList<EtapaDePreparo> modelObjs = null;
+
+			if (string.IsNullOrEmpty(text))
+			{
+				modelObjs = _service.Find(p => true, fromIndex, toIndex);
+			}
+			else
+			{
+				modelObjs = _service.Find(
+				   p => (p.Nome.ToLower().Contains(text.ToLower()))
+				   || (p.Sinonimos.ToLower().Contains(text.ToLower()))
+				   , fromIndex, toIndex);
+			}
+			return _mapper.Map<List<EtapaDePreparoViewModel>>(modelObjs);
+		}
+
 		public IList<EtapaDePreparoViewModel> Find(Expression<Func<EtapaDePreparoViewModel, bool>> predicate, int? fromIndex, int? toIndex)
 		{
 			var newPredicate = _mapper.Map<Expression<Func<EtapaDePreparo, bool>>>(predicate);

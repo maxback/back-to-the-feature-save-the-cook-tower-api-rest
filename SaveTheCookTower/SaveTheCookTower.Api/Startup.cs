@@ -185,7 +185,7 @@ namespace SaveTheCookTower.Api
 			//app.UseHttpsRedirection();
 
 			// global cors policy
-			//app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+			app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
 
 			app.UseSwagger();

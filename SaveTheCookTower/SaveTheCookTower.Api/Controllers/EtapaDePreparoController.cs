@@ -13,16 +13,16 @@ using SaveTheCookTower.CrossCutting.Utils;
 
 namespace SaveTheCookTower.Api.Controllers
 {
-    //[Authorize]
+    [Authorize]
     [Route("api/[controller]")]
-    [Route("api/UnitMeasure")]
-    [Route("api/um")]
+    [Route("api/PreparationStep")]
+    [Route("api/PrepStep")]
     [ApiController]
-    [NomeParaUsuario("Unidade de Medida")]
-    public class UnidadeMedidaController : DefaultControllerForAppServiceController<UnidadeMedidaViewModel>
+    [NomeParaUsuario("Etapa de Preparo")]
+    public class EtapaDePreparoController : DefaultControllerForAppServiceController<EtapaDePreparoViewModel>
     {
-        public UnidadeMedidaController(IAppServiceBase<UnidadeMedidaViewModel> appService,
-            IStringLocalizer<SharedResource> localizer)  : base(appService, localizer)
+        public EtapaDePreparoController(IAppServiceBase<EtapaDePreparoViewModel> appService, 
+            IStringLocalizer<SharedResource> localizer) : base(appService, localizer)
         {
             //
         }

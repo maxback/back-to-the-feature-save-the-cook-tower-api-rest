@@ -20,7 +20,7 @@ namespace SaveTheCookTower.Data.Migrations
                     s_nome = table.Column<string>(nullable: false),
                     m_sinonimos = table.Column<string>(nullable: true),
                     s_uri = table.Column<string>(nullable: true),
-                    id_categoria_pai = table.Column<Guid>(nullable: false)
+                    id_categoria_pai = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -148,8 +148,8 @@ namespace SaveTheCookTower.Data.Migrations
                     descricao = table.Column<string>(nullable: true),
                     n_tempo_preparo_minutos = table.Column<int>(nullable: true),
                     n_redimento_porcoes = table.Column<int>(nullable: true),
-                    id_fonte = table.Column<Guid>(nullable: false),
-                    id_avaliacao_media = table.Column<Guid>(nullable: false),
+                    id_fonte = table.Column<Guid>(nullable: true),
+                    id_avaliacao_media = table.Column<Guid>(nullable: true),
                     m_imagens_url = table.Column<string>(nullable: true),
                     m_videos_url = table.Column<string>(nullable: true)
                 },
@@ -167,7 +167,7 @@ namespace SaveTheCookTower.Data.Migrations
                         column: x => x.id_fonte,
                         principalTable: "fonte_prop_intelec",
                         principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_receita_receita_id_receita_pai",
                         column: x => x.id_receita_pai,
@@ -364,16 +364,22 @@ namespace SaveTheCookTower.Data.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "categoria",
+                columns: new[] { "id", "dt_atualizacao", "id_Usu_atualizacao", "id_categoria_pai", "dt_criacao", "id_usu_criacao", "b_fora_uso", "s_uri", "s_nome", "m_sinonimos" },
+                values: new object[] { new Guid("80d70986-379f-4075-bcce-3384ff191f39"), new DateTime(2020, 4, 15, 5, 2, 23, 879, DateTimeKind.Utc).AddTicks(7131), null, null, new DateTime(2020, 4, 15, 5, 2, 23, 879, DateTimeKind.Utc).AddTicks(7121), null, false, null, "Categorias", "Categoria Raiz" });
+
+            migrationBuilder.InsertData(
                 table: "unidade_medida",
                 columns: new[] { "id", "dt_atualizacao", "id_Usu_atualizacao", "dt_criacao", "id_usu_criacao", "b_fora_uso", "s_uri", "s_nome", "_nome_resumido", "m_sinonimos", "n_tipo" },
                 values: new object[,]
                 {
-                    { new Guid("4ac7a168-bd0f-4b2c-b804-2fa3505f3df7"), new DateTime(2020, 4, 12, 20, 8, 31, 544, DateTimeKind.Utc).AddTicks(6865), null, new DateTime(2020, 4, 12, 20, 8, 31, 544, DateTimeKind.Utc).AddTicks(6855), null, false, null, "grama", "g", "gramas,grama(g)", 3 },
-                    { new Guid("c71cbb3f-fd40-4d4c-a870-c8566d3c9cb3"), new DateTime(2020, 4, 12, 20, 8, 31, 545, DateTimeKind.Utc).AddTicks(114), null, new DateTime(2020, 4, 12, 20, 8, 31, 545, DateTimeKind.Utc).AddTicks(106), null, false, null, "kilograma", "kg", "kilo,kilos,kilo gramas,kilogramas,kilograma(kg)", 3 },
-                    { new Guid("afc884e4-4d8c-46f7-8c86-481db5f2808d"), new DateTime(2020, 4, 12, 20, 8, 31, 545, DateTimeKind.Utc).AddTicks(218), null, new DateTime(2020, 4, 12, 20, 8, 31, 545, DateTimeKind.Utc).AddTicks(216), null, false, null, "litro", "l", "litros,litro(l)", 4 },
-                    { new Guid("7bb61175-c019-4f8a-8f9f-4a431a065ed5"), new DateTime(2020, 4, 12, 20, 8, 31, 545, DateTimeKind.Utc).AddTicks(303), null, new DateTime(2020, 4, 12, 20, 8, 31, 545, DateTimeKind.Utc).AddTicks(300), null, false, null, "xícara de chá", "xíc", "xic,cicara de cha, xícara chá, xícaras de chá,xícara(chá)", 4 },
-                    { new Guid("8264cadc-84ac-4d10-86f1-a6d97a76bcee"), new DateTime(2020, 4, 12, 20, 8, 31, 545, DateTimeKind.Utc).AddTicks(366), null, new DateTime(2020, 4, 12, 20, 8, 31, 545, DateTimeKind.Utc).AddTicks(363), null, false, null, "metro", "m", "metros,metro(m)", 1 },
-                    { new Guid("bd55f7d9-6fd5-42f3-a9b2-dc4075a5d050"), new DateTime(2020, 4, 12, 20, 8, 31, 545, DateTimeKind.Utc).AddTicks(435), null, new DateTime(2020, 4, 12, 20, 8, 31, 545, DateTimeKind.Utc).AddTicks(432), null, false, null, "milimetro", "mm", "milimetros,milimetro(ml)", 1 }
+                    { new Guid("16029883-a148-4cf7-970f-8a276daf5fe5"), new DateTime(2020, 4, 15, 5, 2, 23, 877, DateTimeKind.Utc).AddTicks(7955), null, new DateTime(2020, 4, 15, 5, 2, 23, 877, DateTimeKind.Utc).AddTicks(7944), null, false, null, "unidade", "un", "unidades,unidade(un)", 2 },
+                    { new Guid("52895e0c-c100-433b-9357-6571433ca979"), new DateTime(2020, 4, 15, 5, 2, 23, 878, DateTimeKind.Utc).AddTicks(5872), null, new DateTime(2020, 4, 15, 5, 2, 23, 878, DateTimeKind.Utc).AddTicks(5848), null, false, null, "grama", "g", "gramas,grama(g)", 3 },
+                    { new Guid("215fdea2-3fdc-484f-a4a6-3d751f6375a2"), new DateTime(2020, 4, 15, 5, 2, 23, 878, DateTimeKind.Utc).AddTicks(6096), null, new DateTime(2020, 4, 15, 5, 2, 23, 878, DateTimeKind.Utc).AddTicks(6090), null, false, null, "kilograma", "kg", "kilo,kilos,kilo gramas,kilogramas,kilograma(kg)", 3 },
+                    { new Guid("0842234b-4cd9-4b3a-bd08-886daff27f16"), new DateTime(2020, 4, 15, 5, 2, 23, 878, DateTimeKind.Utc).AddTicks(6119), null, new DateTime(2020, 4, 15, 5, 2, 23, 878, DateTimeKind.Utc).AddTicks(6116), null, false, null, "litro", "l", "litros,litro(l)", 4 },
+                    { new Guid("ee21c099-374f-41db-92b1-54c73ac80ecf"), new DateTime(2020, 4, 15, 5, 2, 23, 878, DateTimeKind.Utc).AddTicks(6233), null, new DateTime(2020, 4, 15, 5, 2, 23, 878, DateTimeKind.Utc).AddTicks(6228), null, false, null, "xícara de chá", "xíc", "xic,cicara de cha, xícara chá, xícaras de chá,xícara(chá)", 4 },
+                    { new Guid("7f4bd4f8-e2dd-4829-948f-23e4126f9a87"), new DateTime(2020, 4, 15, 5, 2, 23, 878, DateTimeKind.Utc).AddTicks(6416), null, new DateTime(2020, 4, 15, 5, 2, 23, 878, DateTimeKind.Utc).AddTicks(6411), null, false, null, "metro", "m", "metros,metro(m)", 1 },
+                    { new Guid("b6a495ab-d3ed-4086-8c56-3a78767fbdb4"), new DateTime(2020, 4, 15, 5, 2, 23, 878, DateTimeKind.Utc).AddTicks(6531), null, new DateTime(2020, 4, 15, 5, 2, 23, 878, DateTimeKind.Utc).AddTicks(6526), null, false, null, "milimetro", "mm", "milimetros,milimetro(ml)", 1 }
                 });
 
             migrationBuilder.InsertData(
@@ -381,19 +387,65 @@ namespace SaveTheCookTower.Data.Migrations
                 columns: new[] { "id", "dt_atualizacao", "id_Usu_atualizacao", "dt_criacao", "id_usu_criacao", "s_email", "b_fora_uso", "s_uri", "s_login", "s_nome", "s_password", "m_sinonimos", "s_token" },
                 values: new object[,]
                 {
-                    { new Guid("64c3f76a-26df-41b5-8c04-0d57ea4164ed"), new DateTime(2020, 4, 12, 20, 8, 31, 534, DateTimeKind.Utc).AddTicks(3787), null, new DateTime(2020, 4, 12, 20, 8, 31, 534, DateTimeKind.Utc).AddTicks(2550), null, "adm@adm.com", false, null, "adm", "Administrador do sistema", "202cb962ac59075b964b07152d234b70", null, null },
-                    { new Guid("09eac9e8-9274-4fe1-b621-a23da0b29e23"), new DateTime(2020, 4, 12, 20, 8, 31, 544, DateTimeKind.Utc).AddTicks(4773), null, new DateTime(2020, 4, 12, 20, 8, 31, 544, DateTimeKind.Utc).AddTicks(4737), null, "teste@teste.com", false, null, "string", "Usuário de testes com login string e senha string", "b45cffe084dd3d20d928bee85e7b0f21", null, null }
+                    { new Guid("c71f5695-1eaa-4659-8b26-e7635ec820c1"), new DateTime(2020, 4, 15, 5, 2, 23, 866, DateTimeKind.Utc).AddTicks(5839), null, new DateTime(2020, 4, 15, 5, 2, 23, 866, DateTimeKind.Utc).AddTicks(4174), null, "adm@adm.com", false, null, "adm", "Administrador do sistema", "202cb962ac59075b964b07152d234b70", null, null },
+                    { new Guid("f232ec53-810e-4465-91b6-ddf0efd5ad5b"), new DateTime(2020, 4, 15, 5, 2, 23, 877, DateTimeKind.Utc).AddTicks(5741), null, new DateTime(2020, 4, 15, 5, 2, 23, 877, DateTimeKind.Utc).AddTicks(5700), null, "teste@teste.com", false, null, "string", "Usuário de testes com login string e senha string", "b45cffe084dd3d20d928bee85e7b0f21", null, null }
+                });
+
+            migrationBuilder.InsertData(
+                table: "categoria",
+                columns: new[] { "id", "dt_atualizacao", "id_Usu_atualizacao", "id_categoria_pai", "dt_criacao", "id_usu_criacao", "b_fora_uso", "s_uri", "s_nome", "m_sinonimos" },
+                values: new object[,]
+                {
+                    { new Guid("99302cab-7501-4ac6-94ef-a738a1edbc31"), new DateTime(2020, 4, 15, 5, 2, 23, 879, DateTimeKind.Utc).AddTicks(9043), null, new Guid("80d70986-379f-4075-bcce-3384ff191f39"), new DateTime(2020, 4, 15, 5, 2, 23, 879, DateTimeKind.Utc).AddTicks(9030), null, false, null, "Ingredientes", "Categoria Raiz dos Ingredientes" },
+                    { new Guid("54be2e31-e394-4dc8-a5ef-a12d13bc623b"), new DateTime(2020, 4, 15, 5, 2, 23, 880, DateTimeKind.Utc).AddTicks(876), null, new Guid("80d70986-379f-4075-bcce-3384ff191f39"), new DateTime(2020, 4, 15, 5, 2, 23, 880, DateTimeKind.Utc).AddTicks(865), null, false, null, "Receitas", "Categoria Raiz das Receitas" }
                 });
 
             migrationBuilder.InsertData(
                 table: "unidade_medida_equiv",
                 columns: new[] { "id", "dt_atualizacao", "id_Usu_atualizacao", "dt_criacao", "id_usu_criacao", "id_unidade_dest", "b_fora_uso", "s_uri", "s_nome", "id_unidade_orig", "nu_razao_orig_dest", "m_sinonimos" },
-                values: new object[] { new Guid("68bf6e23-a6ad-4688-b535-2f91eb8d3c38"), new DateTime(2020, 4, 12, 20, 8, 31, 545, DateTimeKind.Utc).AddTicks(6102), null, new DateTime(2020, 4, 12, 20, 8, 31, 545, DateTimeKind.Utc).AddTicks(6094), null, new Guid("afc884e4-4d8c-46f7-8c86-481db5f2808d"), false, null, "xícaras de chá pra litros", new Guid("7bb61175-c019-4f8a-8f9f-4a431a065ed5"), 0.25, "razão xíc/l, xícara de chá apra litros,xíc para l,xic para l" });
+                values: new object[,]
+                {
+                    { new Guid("f86cd186-ef27-4bb4-9e08-b4eba89b4f27"), new DateTime(2020, 4, 15, 5, 2, 23, 879, DateTimeKind.Utc).AddTicks(5667), null, new DateTime(2020, 4, 15, 5, 2, 23, 879, DateTimeKind.Utc).AddTicks(5645), null, new Guid("0842234b-4cd9-4b3a-bd08-886daff27f16"), false, null, "xícaras de chá pra litros", new Guid("ee21c099-374f-41db-92b1-54c73ac80ecf"), 0.25, "razão xíc/l, xícara de chá apra litros,xíc para l,xic para l" },
+                    { new Guid("5e4a0fa3-e450-444b-9fdb-0b4745f7f689"), new DateTime(2020, 4, 15, 5, 2, 23, 878, DateTimeKind.Utc).AddTicks(8271), null, new DateTime(2020, 4, 15, 5, 2, 23, 878, DateTimeKind.Utc).AddTicks(8260), null, new Guid("b6a495ab-d3ed-4086-8c56-3a78767fbdb4"), false, null, "metro para milimetros", new Guid("7f4bd4f8-e2dd-4829-948f-23e4126f9a87"), 0.001, "razão m/ml, metro para milimetros,m para ml" }
+                });
 
             migrationBuilder.InsertData(
-                table: "unidade_medida_equiv",
-                columns: new[] { "id", "dt_atualizacao", "id_Usu_atualizacao", "dt_criacao", "id_usu_criacao", "id_unidade_dest", "b_fora_uso", "s_uri", "s_nome", "id_unidade_orig", "nu_razao_orig_dest", "m_sinonimos" },
-                values: new object[] { new Guid("0f1da101-6a3f-426c-8af6-8fc762037b4e"), new DateTime(2020, 4, 12, 20, 8, 31, 545, DateTimeKind.Utc).AddTicks(1548), null, new DateTime(2020, 4, 12, 20, 8, 31, 545, DateTimeKind.Utc).AddTicks(1540), null, new Guid("bd55f7d9-6fd5-42f3-a9b2-dc4075a5d050"), false, null, "metro para milimetros", new Guid("8264cadc-84ac-4d10-86f1-a6d97a76bcee"), 0.001, "razão m/ml, metro para milimetros,m para ml" });
+                table: "categoria",
+                columns: new[] { "id", "dt_atualizacao", "id_Usu_atualizacao", "id_categoria_pai", "dt_criacao", "id_usu_criacao", "b_fora_uso", "s_uri", "s_nome", "m_sinonimos" },
+                values: new object[,]
+                {
+                    { new Guid("16978972-b5be-40ae-ba64-3a397de420e2"), new DateTime(2020, 4, 15, 5, 2, 23, 880, DateTimeKind.Utc).AddTicks(1116), null, new Guid("54be2e31-e394-4dc8-a5ef-a12d13bc623b"), new DateTime(2020, 4, 15, 5, 2, 23, 880, DateTimeKind.Utc).AddTicks(1109), null, false, null, "Tortas", "Categoria Raiz das tortas" },
+                    { new Guid("433e8455-4724-4e30-bedd-7ae9c8ce50c1"), new DateTime(2020, 4, 15, 5, 2, 23, 880, DateTimeKind.Utc).AddTicks(1138), null, new Guid("54be2e31-e394-4dc8-a5ef-a12d13bc623b"), new DateTime(2020, 4, 15, 5, 2, 23, 880, DateTimeKind.Utc).AddTicks(1135), null, false, null, "Café da manhã", "Cafe da manha" },
+                    { new Guid("d4b68030-acfb-4132-b4a9-21ae2ad692a6"), new DateTime(2020, 4, 15, 5, 2, 23, 880, DateTimeKind.Utc).AddTicks(1319), null, new Guid("54be2e31-e394-4dc8-a5ef-a12d13bc623b"), new DateTime(2020, 4, 15, 5, 2, 23, 880, DateTimeKind.Utc).AddTicks(1315), null, false, null, "Jantar", "Categoria Raiz dos Jantares" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "ingrediente",
+                columns: new[] { "id", "dt_atualizacao", "id_Usu_atualizacao", "id_categoria", "dt_criacao", "id_usu_criacao", "b_fora_uso", "m_imagens_url", "s_uri", "s_nome", "m_sinonimos" },
+                values: new object[,]
+                {
+                    { new Guid("a9ff59b2-ed86-411c-846a-ef146263e9cd"), new DateTime(2020, 4, 15, 5, 2, 23, 880, DateTimeKind.Utc).AddTicks(2503), null, new Guid("99302cab-7501-4ac6-94ef-a738a1edbc31"), new DateTime(2020, 4, 15, 5, 2, 23, 880, DateTimeKind.Utc).AddTicks(2492), null, false, null, null, "Farinha de Trigo", "Trigo" },
+                    { new Guid("c06746fd-cb4b-4405-8a1d-a367fc4df506"), new DateTime(2020, 4, 15, 5, 2, 23, 880, DateTimeKind.Utc).AddTicks(3968), null, new Guid("99302cab-7501-4ac6-94ef-a738a1edbc31"), new DateTime(2020, 4, 15, 5, 2, 23, 880, DateTimeKind.Utc).AddTicks(3959), null, false, null, null, "Fermento para Pão", "Fermento biológico" },
+                    { new Guid("1c43a6c1-f1d6-4860-b654-3a9c972361f8"), new DateTime(2020, 4, 15, 5, 2, 23, 880, DateTimeKind.Utc).AddTicks(4090), null, new Guid("99302cab-7501-4ac6-94ef-a738a1edbc31"), new DateTime(2020, 4, 15, 5, 2, 23, 880, DateTimeKind.Utc).AddTicks(4086), null, false, null, null, "Ovo de galinha", "Ovo" },
+                    { new Guid("ad8e82d2-84a1-4bca-8b11-29ff87034636"), new DateTime(2020, 4, 15, 5, 2, 23, 880, DateTimeKind.Utc).AddTicks(4164), null, new Guid("99302cab-7501-4ac6-94ef-a738a1edbc31"), new DateTime(2020, 4, 15, 5, 2, 23, 880, DateTimeKind.Utc).AddTicks(4161), null, false, null, null, "Água", "Agua" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "receita",
+                columns: new[] { "id", "dt_atualizacao", "id_Usu_atualizacao", "id_avaliacao_media", "id_categoria", "dt_criacao", "id_usu_criacao", "descricao", "id_fonte", "b_fora_uso", "m_imagens_url", "s_uri", "s_nome", "id_receita_pai", "n_redimento_porcoes", "m_sinonimos", "n_tempo_preparo_minutos", "m_videos_url" },
+                values: new object[] { new Guid("2cbc0ee5-be06-4e78-b094-70e9f21b55a2"), new DateTime(2020, 4, 15, 5, 2, 23, 880, DateTimeKind.Utc).AddTicks(5198), null, null, new Guid("433e8455-4724-4e30-bedd-7ae9c8ce50c1"), new DateTime(2020, 4, 15, 5, 2, 23, 880, DateTimeKind.Utc).AddTicks(5189), null, null, null, false, null, null, "Pão de Forma", null, 5, "Pão assado", 120, null });
+
+            migrationBuilder.InsertData(
+                table: "item_lista_ingrediente",
+                columns: new[] { "id", "dt_atualizacao", "id_Usu_atualizacao", "dt_criacao", "id_usu_criacao", "b_fora_uso", "id_ingrediente", "s_uri", "s_nome", "n_ordem", "n_quantidade", "id_receia", "m_sinonimos", "id_unidade_medida" },
+                values: new object[,]
+                {
+                    { new Guid("0e6e5a5b-8c66-4fc3-82c9-69205ba957e6"), new DateTime(2020, 4, 15, 5, 2, 23, 881, DateTimeKind.Utc).AddTicks(2470), null, new DateTime(2020, 4, 15, 5, 2, 23, 881, DateTimeKind.Utc).AddTicks(2457), null, false, new Guid("a9ff59b2-ed86-411c-846a-ef146263e9cd"), null, "Farinha de Trigo", 0, 3.0, new Guid("2cbc0ee5-be06-4e78-b094-70e9f21b55a2"), null, new Guid("ee21c099-374f-41db-92b1-54c73ac80ecf") },
+                    { new Guid("2c649115-d4f2-4ea7-9c1e-8d47506b4a15"), new DateTime(2020, 4, 15, 5, 2, 23, 881, DateTimeKind.Utc).AddTicks(8335), null, new DateTime(2020, 4, 15, 5, 2, 23, 881, DateTimeKind.Utc).AddTicks(8324), null, false, new Guid("a9ff59b2-ed86-411c-846a-ef146263e9cd"), null, "Farinha de Trigo", 0, 3.0, new Guid("2cbc0ee5-be06-4e78-b094-70e9f21b55a2"), null, new Guid("ee21c099-374f-41db-92b1-54c73ac80ecf") },
+                    { new Guid("5703b3b6-7948-4811-b314-0adad8f0ffec"), new DateTime(2020, 4, 15, 5, 2, 23, 881, DateTimeKind.Utc).AddTicks(8531), null, new DateTime(2020, 4, 15, 5, 2, 23, 881, DateTimeKind.Utc).AddTicks(8526), null, false, new Guid("c06746fd-cb4b-4405-8a1d-a367fc4df506"), null, "Fermento para Pão", 1, 1.0, new Guid("2cbc0ee5-be06-4e78-b094-70e9f21b55a2"), null, new Guid("ee21c099-374f-41db-92b1-54c73ac80ecf") },
+                    { new Guid("620808ef-ee31-4747-8b41-df2fb1d1145c"), new DateTime(2020, 4, 15, 5, 2, 23, 881, DateTimeKind.Utc).AddTicks(8607), null, new DateTime(2020, 4, 15, 5, 2, 23, 881, DateTimeKind.Utc).AddTicks(8603), null, false, new Guid("1c43a6c1-f1d6-4860-b654-3a9c972361f8"), null, "Ovo de galinha", 2, 5.0, new Guid("2cbc0ee5-be06-4e78-b094-70e9f21b55a2"), null, new Guid("16029883-a148-4cf7-970f-8a276daf5fe5") },
+                    { new Guid("469b1a76-8a82-4761-939f-53db9317e70f"), new DateTime(2020, 4, 15, 5, 2, 23, 881, DateTimeKind.Utc).AddTicks(8676), null, new DateTime(2020, 4, 15, 5, 2, 23, 881, DateTimeKind.Utc).AddTicks(8673), null, false, new Guid("ad8e82d2-84a1-4bca-8b11-29ff87034636"), null, "Água", 3, 0.5, new Guid("2cbc0ee5-be06-4e78-b094-70e9f21b55a2"), null, new Guid("0842234b-4cd9-4b3a-bd08-886daff27f16") }
+                });
 
             migrationBuilder.CreateIndex(
                 name: "IX_avaliacao_usuario_id_receita_media",

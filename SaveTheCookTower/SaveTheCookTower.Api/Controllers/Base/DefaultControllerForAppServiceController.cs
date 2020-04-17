@@ -48,11 +48,28 @@ namespace SaveTheCookTower.Api.Controllers.Base
         }
 
         [HttpGet]
-        public ActionResult Get()
+        public ActionResult Get([FromQuery] string? text, [FromQuery] int? from, [FromQuery] int? to)
         {
             try
             {
-                var result = _appService.GetAll();
+                IList<TViewTModel> result = null;
+                bool temTexto = text != null;
+                bool temIndice = from != null && to != null;
+                if ( temTexto || temIndice)
+                {
+                    if(temTexto)
+                    {
+                        result = _appService.Find(text, from, to);
+                        return Ok(result);
+                    }
+                    else
+                    {
+                        result = _appService.Find(string.Empty, from, to);
+                        return Ok(result);
+                    }
+                }
+                result = _appService.GetAll();
+                
                 return Ok(result);
             }
             catch (Exception e)

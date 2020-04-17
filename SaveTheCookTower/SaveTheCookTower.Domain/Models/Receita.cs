@@ -51,16 +51,16 @@ namespace SaveTheCookTower.Domain.Models
 		/// <summary>
 		/// Permite indicar a fonte da receita, ou seja, quem é seu autor. Para respeitaros remeditos e remeter até ao site de origem
 		/// </summary>
-		public virtual FontePropriedadeIntelectual Fonte { get; set; }
+		public virtual FontePropriedadeIntelectual? Fonte { get; set; }
 		/// <summary>
 		/// Id da fonte
 		/// </summary>
-		public Guid FonteId { get; set; }
+		public Guid? FonteId { get; set; }
 		/// <summary>
 		/// Descreve a avaliação geral (media) da receita
 		/// </summary>
-		public virtual AvaliacaoDoUsuario AvaliacaoMedia { get; set; }
-		public Guid AvaliacaoMediaId { get; set; }
+		public virtual AvaliacaoDoUsuario? AvaliacaoMedia { get; set; }
+		public Guid? AvaliacaoMediaId { get; set; }
 		/// <summary>
 		/// Lista de todas as avaliações de usuários para a receita
 		/// </summary>

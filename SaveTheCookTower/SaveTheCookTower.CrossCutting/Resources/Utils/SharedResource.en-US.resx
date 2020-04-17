@@ -121,13 +121,41 @@
     <value>(Original error message: {0})</value>
     <comment>DefaultControllerForAppServiceController</comment>
   </data>
+  <data name="Avaliação do Usuário" xml:space="preserve">
+    <value>User Rating</value>
+    <comment>AvaliacaoDoUsuarioController</comment>
+  </data>
+  <data name="Categoria" xml:space="preserve">
+    <value>Category</value>
+    <comment>CategoriaController</comment>
+  </data>
   <data name="Equivalência entre Unidades de Medida" xml:space="preserve">
     <value>Units of Measure Equivalence</value>
     <comment>EquivalenciaEntreUnidadesDeMedidaController</comment>
   </data>
+  <data name="Etapa de Preparo" xml:space="preserve">
+    <value>Preparation Step</value>
+    <comment>EtapaDePreparoViewModel</comment>
+  </data>
   <data name="Falha ao obter o Id do objeto{0}." xml:space="preserve">
     <value>Failed to get object id {0}.</value>
     <comment>DefaultControllerForAppServiceController</comment>
+  </data>
+  <data name="Fonte da Propriedade ntelectual" xml:space="preserve">
+    <value>Source of Intellectual Property</value>
+    <comment>FontePropriedadeIntelectualController</comment>
+  </data>
+  <data name="Informação Nutricional" xml:space="preserve">
+    <value>Nutritional information</value>
+    <comment>InformacaoNutricionalController</comment>
+  </data>
+  <data name="Ingrediente" xml:space="preserve">
+    <value>Ingredient</value>
+    <comment>IngredienteController</comment>
+  </data>
+  <data name="Item de Lista de Ingredientes" xml:space="preserve">
+    <value>Ingredient List Item</value>
+    <comment>ItemListaIngredientesController</comment>
   </data>
   <data name="O Id passado na query ({0}) difere do id no objeto({1})" xml:space="preserve">
     <value>The Id passed in the query ({0}) differs from the id in the object ({1})</value>
@@ -157,8 +185,16 @@
     <value>An error occurred while fetching the record data for {0} with id {1}. {2}</value>
     <comment>DefaultControllerForAppServiceController</comment>
   </data>
+  <data name="Receita" xml:space="preserve">
+    <value>Recipe</value>
+    <comment>ReceitaController</comment>
+  </data>
   <data name="Unidade de Medida" xml:space="preserve">
     <value>Unit of Measurement</value>
     <comment>DefaultControllerForAppServiceController</comment>
+  </data>
+  <data name="Usuário" xml:space="preserve">
+    <value>User</value>
+    <comment>UsuarioController</comment>
   </data>
 </root>

@@ -32,6 +32,27 @@ namespace SaveTheCookTower.Application.ApplicationServices
 			return _mapper.Map<UsuarioViewModel>(modelObj);
 		}
 
+		public IList<UsuarioViewModel> Find(string text, int? fromIndex = null, int? toIndex = null)
+		{
+			IList<Usuario> modelObjs = null;
+
+			if (string.IsNullOrEmpty(text))
+			{
+				modelObjs = _service.Find(p => true, fromIndex, toIndex);
+			}
+			else
+			{
+				modelObjs = _service.Find(
+				   p => (p.Nome.ToLower().Contains(text.ToLower()))
+				   || (p.Login.ToLower().Contains(text.ToLower()))
+				   || (p.Token.ToLower().Contains(text.ToLower()))
+				   || (p.Sinonimos.ToLower().Contains(text.ToLower()))
+				   , fromIndex, toIndex);
+			}
+			return _mapper.Map<List<UsuarioViewModel>>(modelObjs);
+		}
+
+
 		public IList<UsuarioViewModel> Find(Expression<Func<UsuarioViewModel, bool>> predicate, int? fromIndex, int? toIndex)
 		{
 		//erro ao resolver o mapp do expression

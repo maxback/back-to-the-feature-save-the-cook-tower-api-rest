@@ -40,6 +40,15 @@ namespace SaveTheCookTower.Application.Interfaces.Base
 		IList<TViewTModel> GetAll();
 
 		/// <summary>
+		/// Procura os objetos correspondetes ao predicado por texto, independente da propriedade do objeto.
+		/// </summary>
+		/// <param name="text">texto para procura
+		/// <param name="fromIndex">Índice inicial do resultado. Se definido indica o offset do inicio subgrupo do resultado de predicado que deve resultar</param>
+		/// <param name="toIndex">Índice final do resultado. Se definido indica o final do inicio subgrupo do resultado de predicado que deve resultar</param>
+		/// <returns></returns>
+		IList<TViewTModel> Find(string text, int? fromIndex = null, int? toIndex = null);
+
+		/// <summary>
 		/// Procura os objetos correspondetes ao predicado.
 		/// </summary>
 		/// <param name="predicate">predicado (lambda de pesquisa como no LINQ)</param>

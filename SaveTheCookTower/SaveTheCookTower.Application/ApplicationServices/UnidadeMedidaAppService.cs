@@ -31,6 +31,26 @@ namespace SaveTheCookTower.Application.ApplicationServices
 			return _mapper.Map<UnidadeMedidaViewModel>(modelObj);
 		}
 
+		public IList<UnidadeMedidaViewModel> Find(string text, int? fromIndex = null, int? toIndex = null)
+		{
+			IList<UnidadeMedida> modelObjs = null;
+
+			if (string.IsNullOrEmpty(text))
+			{
+				modelObjs = _service.Find(p => true, fromIndex, toIndex);
+			}
+			else
+			{
+				modelObjs = _service.Find(
+				   p => (p.Nome.ToLower().Contains(text.ToLower()))
+				   || (p.NomeResumido.ToLower().Contains(text.ToLower()))
+				   || (p.Sinonimos.ToLower().Contains(text.ToLower()))
+				   , fromIndex, toIndex);
+			}
+			return _mapper.Map<List<UnidadeMedidaViewModel>>(modelObjs);
+		}
+
+
 		public IList<UnidadeMedidaViewModel> Find(Expression<Func<UnidadeMedidaViewModel, bool>> predicate, int? fromIndex, int? toIndex)
 		{
 			var newPredicate = _mapper.Map<Expression<Func<UnidadeMedida, bool>>>(predicate);

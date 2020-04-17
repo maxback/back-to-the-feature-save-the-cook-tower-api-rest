@@ -10,7 +10,7 @@ using SaveTheCookTower.Data.Context;
 namespace SaveTheCookTower.Data.Migrations
 {
     [DbContext(typeof(SaveTheCookTowerContext))]
-    [Migration("20200412200832_ini")]
+    [Migration("20200415050225_ini")]
     partial class ini
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,7 +23,7 @@ namespace SaveTheCookTower.Data.Migrations
 
             modelBuilder.Entity("SaveTheCookTower.Domain.Models.AvaliacaoDoUsuario", b =>
                 {
-                    b.Property<Guid?>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("id")
                         .HasColumnType("uniqueidentifier");
@@ -98,7 +98,7 @@ namespace SaveTheCookTower.Data.Migrations
 
             modelBuilder.Entity("SaveTheCookTower.Domain.Models.Categoria", b =>
                 {
-                    b.Property<Guid?>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("id")
                         .HasColumnType("uniqueidentifier");
@@ -112,7 +112,7 @@ namespace SaveTheCookTower.Data.Migrations
                         .HasColumnName("id_Usu_atualizacao")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("CategoriaPaiId")
+                    b.Property<Guid?>("CategoriaPaiId")
                         .HasColumnName("id_categoria_pai")
                         .HasColumnType("uniqueidentifier");
 
@@ -147,11 +147,72 @@ namespace SaveTheCookTower.Data.Migrations
                     b.HasIndex("CategoriaPaiId");
 
                     b.ToTable("categoria");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("80d70986-379f-4075-bcce-3384ff191f39"),
+                            AtualizadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 879, DateTimeKind.Utc).AddTicks(7131),
+                            CriadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 879, DateTimeKind.Utc).AddTicks(7121),
+                            ForaDeUso = false,
+                            Nome = "Categorias",
+                            Sinonimos = "Categoria Raiz"
+                        },
+                        new
+                        {
+                            Id = new Guid("99302cab-7501-4ac6-94ef-a738a1edbc31"),
+                            AtualizadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 879, DateTimeKind.Utc).AddTicks(9043),
+                            CategoriaPaiId = new Guid("80d70986-379f-4075-bcce-3384ff191f39"),
+                            CriadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 879, DateTimeKind.Utc).AddTicks(9030),
+                            ForaDeUso = false,
+                            Nome = "Ingredientes",
+                            Sinonimos = "Categoria Raiz dos Ingredientes"
+                        },
+                        new
+                        {
+                            Id = new Guid("54be2e31-e394-4dc8-a5ef-a12d13bc623b"),
+                            AtualizadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 880, DateTimeKind.Utc).AddTicks(876),
+                            CategoriaPaiId = new Guid("80d70986-379f-4075-bcce-3384ff191f39"),
+                            CriadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 880, DateTimeKind.Utc).AddTicks(865),
+                            ForaDeUso = false,
+                            Nome = "Receitas",
+                            Sinonimos = "Categoria Raiz das Receitas"
+                        },
+                        new
+                        {
+                            Id = new Guid("16978972-b5be-40ae-ba64-3a397de420e2"),
+                            AtualizadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 880, DateTimeKind.Utc).AddTicks(1116),
+                            CategoriaPaiId = new Guid("54be2e31-e394-4dc8-a5ef-a12d13bc623b"),
+                            CriadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 880, DateTimeKind.Utc).AddTicks(1109),
+                            ForaDeUso = false,
+                            Nome = "Tortas",
+                            Sinonimos = "Categoria Raiz das tortas"
+                        },
+                        new
+                        {
+                            Id = new Guid("433e8455-4724-4e30-bedd-7ae9c8ce50c1"),
+                            AtualizadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 880, DateTimeKind.Utc).AddTicks(1138),
+                            CategoriaPaiId = new Guid("54be2e31-e394-4dc8-a5ef-a12d13bc623b"),
+                            CriadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 880, DateTimeKind.Utc).AddTicks(1135),
+                            ForaDeUso = false,
+                            Nome = "Café da manhã",
+                            Sinonimos = "Cafe da manha"
+                        },
+                        new
+                        {
+                            Id = new Guid("d4b68030-acfb-4132-b4a9-21ae2ad692a6"),
+                            AtualizadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 880, DateTimeKind.Utc).AddTicks(1319),
+                            CategoriaPaiId = new Guid("54be2e31-e394-4dc8-a5ef-a12d13bc623b"),
+                            CriadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 880, DateTimeKind.Utc).AddTicks(1315),
+                            ForaDeUso = false,
+                            Nome = "Jantar",
+                            Sinonimos = "Categoria Raiz dos Jantares"
+                        });
                 });
 
             modelBuilder.Entity("SaveTheCookTower.Domain.Models.EquivalenciaEntreUnidadesDeMedida", b =>
                 {
-                    b.Property<Guid?>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("id")
                         .HasColumnType("uniqueidentifier");
@@ -214,25 +275,25 @@ namespace SaveTheCookTower.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("0f1da101-6a3f-426c-8af6-8fc762037b4e"),
-                            AtualizadoEmUtc = new DateTime(2020, 4, 12, 20, 8, 31, 545, DateTimeKind.Utc).AddTicks(1548),
-                            CriadoEmUtc = new DateTime(2020, 4, 12, 20, 8, 31, 545, DateTimeKind.Utc).AddTicks(1540),
-                            DestinoId = new Guid("bd55f7d9-6fd5-42f3-a9b2-dc4075a5d050"),
+                            Id = new Guid("5e4a0fa3-e450-444b-9fdb-0b4745f7f689"),
+                            AtualizadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 878, DateTimeKind.Utc).AddTicks(8271),
+                            CriadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 878, DateTimeKind.Utc).AddTicks(8260),
+                            DestinoId = new Guid("b6a495ab-d3ed-4086-8c56-3a78767fbdb4"),
                             ForaDeUso = false,
                             Nome = "metro para milimetros",
-                            OrigemId = new Guid("8264cadc-84ac-4d10-86f1-a6d97a76bcee"),
+                            OrigemId = new Guid("7f4bd4f8-e2dd-4829-948f-23e4126f9a87"),
                             RazaoOrigemDestino = 0.001,
                             Sinonimos = "razão m/ml, metro para milimetros,m para ml"
                         },
                         new
                         {
-                            Id = new Guid("68bf6e23-a6ad-4688-b535-2f91eb8d3c38"),
-                            AtualizadoEmUtc = new DateTime(2020, 4, 12, 20, 8, 31, 545, DateTimeKind.Utc).AddTicks(6102),
-                            CriadoEmUtc = new DateTime(2020, 4, 12, 20, 8, 31, 545, DateTimeKind.Utc).AddTicks(6094),
-                            DestinoId = new Guid("afc884e4-4d8c-46f7-8c86-481db5f2808d"),
+                            Id = new Guid("f86cd186-ef27-4bb4-9e08-b4eba89b4f27"),
+                            AtualizadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 879, DateTimeKind.Utc).AddTicks(5667),
+                            CriadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 879, DateTimeKind.Utc).AddTicks(5645),
+                            DestinoId = new Guid("0842234b-4cd9-4b3a-bd08-886daff27f16"),
                             ForaDeUso = false,
                             Nome = "xícaras de chá pra litros",
-                            OrigemId = new Guid("7bb61175-c019-4f8a-8f9f-4a431a065ed5"),
+                            OrigemId = new Guid("ee21c099-374f-41db-92b1-54c73ac80ecf"),
                             RazaoOrigemDestino = 0.25,
                             Sinonimos = "razão xíc/l, xícara de chá apra litros,xíc para l,xic para l"
                         });
@@ -240,7 +301,7 @@ namespace SaveTheCookTower.Data.Migrations
 
             modelBuilder.Entity("SaveTheCookTower.Domain.Models.EtapaDePreparo", b =>
                 {
-                    b.Property<Guid?>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("id")
                         .HasColumnType("uniqueidentifier");
@@ -301,7 +362,7 @@ namespace SaveTheCookTower.Data.Migrations
 
             modelBuilder.Entity("SaveTheCookTower.Domain.Models.FontePropriedadeIntelectual", b =>
                 {
-                    b.Property<Guid?>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("id")
                         .HasColumnType("uniqueidentifier");
@@ -376,7 +437,7 @@ namespace SaveTheCookTower.Data.Migrations
 
             modelBuilder.Entity("SaveTheCookTower.Domain.Models.InformacaoNutricional", b =>
                 {
-                    b.Property<Guid?>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("id")
                         .HasColumnType("uniqueidentifier");
@@ -444,7 +505,7 @@ namespace SaveTheCookTower.Data.Migrations
 
             modelBuilder.Entity("SaveTheCookTower.Domain.Models.Ingrediente", b =>
                 {
-                    b.Property<Guid?>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("id")
                         .HasColumnType("uniqueidentifier");
@@ -497,11 +558,53 @@ namespace SaveTheCookTower.Data.Migrations
                     b.HasIndex("CategoriaId");
 
                     b.ToTable("ingrediente");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("a9ff59b2-ed86-411c-846a-ef146263e9cd"),
+                            AtualizadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 880, DateTimeKind.Utc).AddTicks(2503),
+                            CategoriaId = new Guid("99302cab-7501-4ac6-94ef-a738a1edbc31"),
+                            CriadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 880, DateTimeKind.Utc).AddTicks(2492),
+                            ForaDeUso = false,
+                            Nome = "Farinha de Trigo",
+                            Sinonimos = "Trigo"
+                        },
+                        new
+                        {
+                            Id = new Guid("c06746fd-cb4b-4405-8a1d-a367fc4df506"),
+                            AtualizadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 880, DateTimeKind.Utc).AddTicks(3968),
+                            CategoriaId = new Guid("99302cab-7501-4ac6-94ef-a738a1edbc31"),
+                            CriadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 880, DateTimeKind.Utc).AddTicks(3959),
+                            ForaDeUso = false,
+                            Nome = "Fermento para Pão",
+                            Sinonimos = "Fermento biológico"
+                        },
+                        new
+                        {
+                            Id = new Guid("1c43a6c1-f1d6-4860-b654-3a9c972361f8"),
+                            AtualizadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 880, DateTimeKind.Utc).AddTicks(4090),
+                            CategoriaId = new Guid("99302cab-7501-4ac6-94ef-a738a1edbc31"),
+                            CriadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 880, DateTimeKind.Utc).AddTicks(4086),
+                            ForaDeUso = false,
+                            Nome = "Ovo de galinha",
+                            Sinonimos = "Ovo"
+                        },
+                        new
+                        {
+                            Id = new Guid("ad8e82d2-84a1-4bca-8b11-29ff87034636"),
+                            AtualizadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 880, DateTimeKind.Utc).AddTicks(4164),
+                            CategoriaId = new Guid("99302cab-7501-4ac6-94ef-a738a1edbc31"),
+                            CriadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 880, DateTimeKind.Utc).AddTicks(4161),
+                            ForaDeUso = false,
+                            Nome = "Água",
+                            Sinonimos = "Agua"
+                        });
                 });
 
             modelBuilder.Entity("SaveTheCookTower.Domain.Models.ItemListaIngredientes", b =>
                 {
-                    b.Property<Guid?>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("id")
                         .HasColumnType("uniqueidentifier");
@@ -570,11 +673,78 @@ namespace SaveTheCookTower.Data.Migrations
                     b.HasIndex("UnidadeMedidaId");
 
                     b.ToTable("item_lista_ingrediente");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("0e6e5a5b-8c66-4fc3-82c9-69205ba957e6"),
+                            AtualizadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 881, DateTimeKind.Utc).AddTicks(2470),
+                            CriadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 881, DateTimeKind.Utc).AddTicks(2457),
+                            ForaDeUso = false,
+                            IngredienteId = new Guid("a9ff59b2-ed86-411c-846a-ef146263e9cd"),
+                            Nome = "Farinha de Trigo",
+                            Ordem = 0,
+                            Quantidade = 3.0,
+                            ReceitaId = new Guid("2cbc0ee5-be06-4e78-b094-70e9f21b55a2"),
+                            UnidadeMedidaId = new Guid("ee21c099-374f-41db-92b1-54c73ac80ecf")
+                        },
+                        new
+                        {
+                            Id = new Guid("2c649115-d4f2-4ea7-9c1e-8d47506b4a15"),
+                            AtualizadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 881, DateTimeKind.Utc).AddTicks(8335),
+                            CriadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 881, DateTimeKind.Utc).AddTicks(8324),
+                            ForaDeUso = false,
+                            IngredienteId = new Guid("a9ff59b2-ed86-411c-846a-ef146263e9cd"),
+                            Nome = "Farinha de Trigo",
+                            Ordem = 0,
+                            Quantidade = 3.0,
+                            ReceitaId = new Guid("2cbc0ee5-be06-4e78-b094-70e9f21b55a2"),
+                            UnidadeMedidaId = new Guid("ee21c099-374f-41db-92b1-54c73ac80ecf")
+                        },
+                        new
+                        {
+                            Id = new Guid("5703b3b6-7948-4811-b314-0adad8f0ffec"),
+                            AtualizadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 881, DateTimeKind.Utc).AddTicks(8531),
+                            CriadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 881, DateTimeKind.Utc).AddTicks(8526),
+                            ForaDeUso = false,
+                            IngredienteId = new Guid("c06746fd-cb4b-4405-8a1d-a367fc4df506"),
+                            Nome = "Fermento para Pão",
+                            Ordem = 1,
+                            Quantidade = 1.0,
+                            ReceitaId = new Guid("2cbc0ee5-be06-4e78-b094-70e9f21b55a2"),
+                            UnidadeMedidaId = new Guid("ee21c099-374f-41db-92b1-54c73ac80ecf")
+                        },
+                        new
+                        {
+                            Id = new Guid("620808ef-ee31-4747-8b41-df2fb1d1145c"),
+                            AtualizadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 881, DateTimeKind.Utc).AddTicks(8607),
+                            CriadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 881, DateTimeKind.Utc).AddTicks(8603),
+                            ForaDeUso = false,
+                            IngredienteId = new Guid("1c43a6c1-f1d6-4860-b654-3a9c972361f8"),
+                            Nome = "Ovo de galinha",
+                            Ordem = 2,
+                            Quantidade = 5.0,
+                            ReceitaId = new Guid("2cbc0ee5-be06-4e78-b094-70e9f21b55a2"),
+                            UnidadeMedidaId = new Guid("16029883-a148-4cf7-970f-8a276daf5fe5")
+                        },
+                        new
+                        {
+                            Id = new Guid("469b1a76-8a82-4761-939f-53db9317e70f"),
+                            AtualizadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 881, DateTimeKind.Utc).AddTicks(8676),
+                            CriadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 881, DateTimeKind.Utc).AddTicks(8673),
+                            ForaDeUso = false,
+                            IngredienteId = new Guid("ad8e82d2-84a1-4bca-8b11-29ff87034636"),
+                            Nome = "Água",
+                            Ordem = 3,
+                            Quantidade = 0.5,
+                            ReceitaId = new Guid("2cbc0ee5-be06-4e78-b094-70e9f21b55a2"),
+                            UnidadeMedidaId = new Guid("0842234b-4cd9-4b3a-bd08-886daff27f16")
+                        });
                 });
 
             modelBuilder.Entity("SaveTheCookTower.Domain.Models.Receita", b =>
                 {
-                    b.Property<Guid?>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("id")
                         .HasColumnType("uniqueidentifier");
@@ -588,7 +758,7 @@ namespace SaveTheCookTower.Data.Migrations
                         .HasColumnName("id_Usu_atualizacao")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("AvaliacaoMediaId")
+                    b.Property<Guid?>("AvaliacaoMediaId")
                         .HasColumnName("id_avaliacao_media")
                         .HasColumnType("uniqueidentifier");
 
@@ -609,7 +779,7 @@ namespace SaveTheCookTower.Data.Migrations
                         .HasColumnName("descricao")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("FonteId")
+                    b.Property<Guid?>("FonteId")
                         .HasColumnName("id_fonte")
                         .HasColumnType("uniqueidentifier");
 
@@ -659,11 +829,25 @@ namespace SaveTheCookTower.Data.Migrations
                     b.HasIndex("ReceitaPaiId");
 
                     b.ToTable("receita");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("2cbc0ee5-be06-4e78-b094-70e9f21b55a2"),
+                            AtualizadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 880, DateTimeKind.Utc).AddTicks(5198),
+                            CategoriaId = new Guid("433e8455-4724-4e30-bedd-7ae9c8ce50c1"),
+                            CriadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 880, DateTimeKind.Utc).AddTicks(5189),
+                            ForaDeUso = false,
+                            Nome = "Pão de Forma",
+                            RendimentoPorcoes = 5,
+                            Sinonimos = "Pão assado",
+                            TempoPreparoMinutos = 120
+                        });
                 });
 
             modelBuilder.Entity("SaveTheCookTower.Domain.Models.UnidadeMedida", b =>
                 {
-                    b.Property<Guid?>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("id")
                         .HasColumnType("uniqueidentifier");
@@ -718,9 +902,20 @@ namespace SaveTheCookTower.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("4ac7a168-bd0f-4b2c-b804-2fa3505f3df7"),
-                            AtualizadoEmUtc = new DateTime(2020, 4, 12, 20, 8, 31, 544, DateTimeKind.Utc).AddTicks(6865),
-                            CriadoEmUtc = new DateTime(2020, 4, 12, 20, 8, 31, 544, DateTimeKind.Utc).AddTicks(6855),
+                            Id = new Guid("16029883-a148-4cf7-970f-8a276daf5fe5"),
+                            AtualizadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 877, DateTimeKind.Utc).AddTicks(7955),
+                            CriadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 877, DateTimeKind.Utc).AddTicks(7944),
+                            ForaDeUso = false,
+                            Nome = "unidade",
+                            NomeResumido = "un",
+                            Sinonimos = "unidades,unidade(un)",
+                            Tipo = 2
+                        },
+                        new
+                        {
+                            Id = new Guid("52895e0c-c100-433b-9357-6571433ca979"),
+                            AtualizadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 878, DateTimeKind.Utc).AddTicks(5872),
+                            CriadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 878, DateTimeKind.Utc).AddTicks(5848),
                             ForaDeUso = false,
                             Nome = "grama",
                             NomeResumido = "g",
@@ -729,9 +924,9 @@ namespace SaveTheCookTower.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c71cbb3f-fd40-4d4c-a870-c8566d3c9cb3"),
-                            AtualizadoEmUtc = new DateTime(2020, 4, 12, 20, 8, 31, 545, DateTimeKind.Utc).AddTicks(114),
-                            CriadoEmUtc = new DateTime(2020, 4, 12, 20, 8, 31, 545, DateTimeKind.Utc).AddTicks(106),
+                            Id = new Guid("215fdea2-3fdc-484f-a4a6-3d751f6375a2"),
+                            AtualizadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 878, DateTimeKind.Utc).AddTicks(6096),
+                            CriadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 878, DateTimeKind.Utc).AddTicks(6090),
                             ForaDeUso = false,
                             Nome = "kilograma",
                             NomeResumido = "kg",
@@ -740,9 +935,9 @@ namespace SaveTheCookTower.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("afc884e4-4d8c-46f7-8c86-481db5f2808d"),
-                            AtualizadoEmUtc = new DateTime(2020, 4, 12, 20, 8, 31, 545, DateTimeKind.Utc).AddTicks(218),
-                            CriadoEmUtc = new DateTime(2020, 4, 12, 20, 8, 31, 545, DateTimeKind.Utc).AddTicks(216),
+                            Id = new Guid("0842234b-4cd9-4b3a-bd08-886daff27f16"),
+                            AtualizadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 878, DateTimeKind.Utc).AddTicks(6119),
+                            CriadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 878, DateTimeKind.Utc).AddTicks(6116),
                             ForaDeUso = false,
                             Nome = "litro",
                             NomeResumido = "l",
@@ -751,9 +946,9 @@ namespace SaveTheCookTower.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("7bb61175-c019-4f8a-8f9f-4a431a065ed5"),
-                            AtualizadoEmUtc = new DateTime(2020, 4, 12, 20, 8, 31, 545, DateTimeKind.Utc).AddTicks(303),
-                            CriadoEmUtc = new DateTime(2020, 4, 12, 20, 8, 31, 545, DateTimeKind.Utc).AddTicks(300),
+                            Id = new Guid("ee21c099-374f-41db-92b1-54c73ac80ecf"),
+                            AtualizadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 878, DateTimeKind.Utc).AddTicks(6233),
+                            CriadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 878, DateTimeKind.Utc).AddTicks(6228),
                             ForaDeUso = false,
                             Nome = "xícara de chá",
                             NomeResumido = "xíc",
@@ -762,9 +957,9 @@ namespace SaveTheCookTower.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("8264cadc-84ac-4d10-86f1-a6d97a76bcee"),
-                            AtualizadoEmUtc = new DateTime(2020, 4, 12, 20, 8, 31, 545, DateTimeKind.Utc).AddTicks(366),
-                            CriadoEmUtc = new DateTime(2020, 4, 12, 20, 8, 31, 545, DateTimeKind.Utc).AddTicks(363),
+                            Id = new Guid("7f4bd4f8-e2dd-4829-948f-23e4126f9a87"),
+                            AtualizadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 878, DateTimeKind.Utc).AddTicks(6416),
+                            CriadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 878, DateTimeKind.Utc).AddTicks(6411),
                             ForaDeUso = false,
                             Nome = "metro",
                             NomeResumido = "m",
@@ -773,9 +968,9 @@ namespace SaveTheCookTower.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("bd55f7d9-6fd5-42f3-a9b2-dc4075a5d050"),
-                            AtualizadoEmUtc = new DateTime(2020, 4, 12, 20, 8, 31, 545, DateTimeKind.Utc).AddTicks(435),
-                            CriadoEmUtc = new DateTime(2020, 4, 12, 20, 8, 31, 545, DateTimeKind.Utc).AddTicks(432),
+                            Id = new Guid("b6a495ab-d3ed-4086-8c56-3a78767fbdb4"),
+                            AtualizadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 878, DateTimeKind.Utc).AddTicks(6531),
+                            CriadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 878, DateTimeKind.Utc).AddTicks(6526),
                             ForaDeUso = false,
                             Nome = "milimetro",
                             NomeResumido = "mm",
@@ -786,7 +981,7 @@ namespace SaveTheCookTower.Data.Migrations
 
             modelBuilder.Entity("SaveTheCookTower.Domain.Models.Usuario", b =>
                 {
-                    b.Property<Guid?>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("id")
                         .HasColumnType("uniqueidentifier");
@@ -849,9 +1044,9 @@ namespace SaveTheCookTower.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("64c3f76a-26df-41b5-8c04-0d57ea4164ed"),
-                            AtualizadoEmUtc = new DateTime(2020, 4, 12, 20, 8, 31, 534, DateTimeKind.Utc).AddTicks(3787),
-                            CriadoEmUtc = new DateTime(2020, 4, 12, 20, 8, 31, 534, DateTimeKind.Utc).AddTicks(2550),
+                            Id = new Guid("c71f5695-1eaa-4659-8b26-e7635ec820c1"),
+                            AtualizadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 866, DateTimeKind.Utc).AddTicks(5839),
+                            CriadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 866, DateTimeKind.Utc).AddTicks(4174),
                             Email = "adm@adm.com",
                             ForaDeUso = false,
                             Login = "adm",
@@ -860,9 +1055,9 @@ namespace SaveTheCookTower.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("09eac9e8-9274-4fe1-b621-a23da0b29e23"),
-                            AtualizadoEmUtc = new DateTime(2020, 4, 12, 20, 8, 31, 544, DateTimeKind.Utc).AddTicks(4773),
-                            CriadoEmUtc = new DateTime(2020, 4, 12, 20, 8, 31, 544, DateTimeKind.Utc).AddTicks(4737),
+                            Id = new Guid("f232ec53-810e-4465-91b6-ddf0efd5ad5b"),
+                            AtualizadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 877, DateTimeKind.Utc).AddTicks(5741),
+                            CriadoEmUtc = new DateTime(2020, 4, 15, 5, 2, 23, 877, DateTimeKind.Utc).AddTicks(5700),
                             Email = "teste@teste.com",
                             ForaDeUso = false,
                             Login = "string",
@@ -894,8 +1089,7 @@ namespace SaveTheCookTower.Data.Migrations
                     b.HasOne("SaveTheCookTower.Domain.Models.Categoria", "CategoriaPai")
                         .WithMany("CategoriasFilhas")
                         .HasForeignKey("CategoriaPaiId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
 
             modelBuilder.Entity("SaveTheCookTower.Domain.Models.EquivalenciaEntreUnidadesDeMedida", b =>
@@ -981,9 +1175,7 @@ namespace SaveTheCookTower.Data.Migrations
 
                     b.HasOne("SaveTheCookTower.Domain.Models.FontePropriedadeIntelectual", "Fonte")
                         .WithMany("Receitas")
-                        .HasForeignKey("FonteId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("FonteId");
 
                     b.HasOne("SaveTheCookTower.Domain.Models.Receita", "ReceitaPai")
                         .WithMany("ReceitasFilhas")

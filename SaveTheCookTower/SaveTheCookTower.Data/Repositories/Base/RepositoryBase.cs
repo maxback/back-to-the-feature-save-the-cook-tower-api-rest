@@ -31,37 +31,25 @@ namespace SaveTheCookTower.Data.Repositories.Base
 			return obj;
 		}
 
-		protected virtual int DoFind(out IList<TModel> result, Expression<Func<TModel, bool>> predicate, int? fromIndex = 0, int? toIndex = 0, bool onlyCount = false)
+		protected virtual int DoFind(out IList<TModel> result, Expression<Func<TModel, bool>> predicate, int? fromIndex = -1, int? toIndex = -1, bool onlyCount = false)
 		{
-			int skip = fromIndex.GetValueOrDefault();
-			int take = toIndex.GetValueOrDefault() - skip;
+			int from = fromIndex ?? -1;
+			int to = toIndex ?? -1;
 
 			result = new List<TModel>();
 
-			if (take <= 0)
-			{
-				if (onlyCount)
-				{
-					return _context.Set<TModel>().Where(predicate).ToList().Count();
-				}
-				else
-				{
-					result = _context.Set<TModel>().Where(predicate).ToList();
-					return result.Count();
-				}
-			}
-
-			take += 1;
-
 			if (onlyCount)
 			{
-				return _context.Set<TModel>().Where(predicate).Take(take).Skip(skip).ToList().Count();
+				return _context.Set<TModel>().Where(predicate).ToList().Count();
 			}
-			else
+			else if ( (to < 0) || (from < 0) | (to < from))
 			{
-				result = _context.Set<TModel>().Where(predicate).Take(take).Skip(skip).ToList();
+				result = _context.Set<TModel>().Where(predicate).ToList();
 				return result.Count();
 			}
+
+			result = _context.Set<TModel>().Where(predicate).Take(to+1).Skip(from).ToList();
+			return result.Count();
 		}
 
 		public IList<TModel> Find(Expression<Func<TModel, bool>> predicate, int? fromIndex = 0, int? toIndex = 0)

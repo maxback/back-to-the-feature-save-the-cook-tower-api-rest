@@ -30,6 +30,36 @@ namespace SaveTheCookTower.Application.ApplicationServices
 			return _mapper.Map<EquivalenciaEntreUnidadesDeMedidaViewModel>(modelObj);
 		}
 
+		public IList<EquivalenciaEntreUnidadesDeMedidaViewModel> Find(string text, int? fromIndex = null, int? toIndex = null)
+		{
+			IList<EquivalenciaEntreUnidadesDeMedida> modelObjs = null;
+
+			if (string.IsNullOrEmpty(text))
+			{
+				modelObjs = _service.Find(p => true, fromIndex, toIndex);
+			}
+			else
+			{
+				modelObjs = _service.Find(
+				   p => (p.Nome.ToLower().Contains(text.ToLower()))
+
+				   || (p.Origem.Id.ToString().ToLower().Contains(text.ToLower()))
+				   || (p.Origem.Nome.ToLower().Contains(text.ToLower()))
+				   || (p.Origem.NomeResumido.ToLower().Contains(text.ToLower()))
+				   || (p.Origem.Sinonimos.ToLower().Contains(text.ToLower()))
+
+				   || (p.Destino.Id.ToString().ToLower().Contains(text.ToLower()))
+				   || (p.Destino.Nome.ToLower().Contains(text.ToLower()))
+				   || (p.Destino.NomeResumido.ToLower().Contains(text.ToLower()))
+				   || (p.Destino.Sinonimos.ToLower().Contains(text.ToLower()))
+
+				   || (p.Sinonimos.ToLower().Contains(text.ToLower()))
+				   , fromIndex, toIndex);
+			}
+			return _mapper.Map<List<EquivalenciaEntreUnidadesDeMedidaViewModel>>(modelObjs);
+
+		}
+
 		public IList<EquivalenciaEntreUnidadesDeMedidaViewModel> Find(Expression<Func<EquivalenciaEntreUnidadesDeMedidaViewModel, bool>> predicate, int? fromIndex, int? toIndex)
 		{
 			var newPredicate = _mapper.Map<Expression<Func<EquivalenciaEntreUnidadesDeMedida, bool>>>(predicate);

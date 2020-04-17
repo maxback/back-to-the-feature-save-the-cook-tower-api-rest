@@ -30,6 +30,28 @@ namespace SaveTheCookTower.Application.ApplicationServices
 			return _mapper.Map<FontePropriedadeIntelectualViewModel>(modelObj);
 		}
 
+
+		public IList<FontePropriedadeIntelectualViewModel> Find(string text, int? fromIndex = null, int? toIndex = null)
+		{
+			IList<FontePropriedadeIntelectual> modelObjs = null;
+
+			if (string.IsNullOrEmpty(text))
+			{
+				modelObjs = _service.Find(p => true, fromIndex, toIndex);
+			}
+			else
+			{
+				modelObjs = _service.Find(
+				   p => (p.Nome.ToLower().Contains(text.ToLower()))
+				   || (p.EdicaoDoLivro.ToLower().Contains(text.ToLower()))
+				   || (p.Titulo.ToLower().Contains(text.ToLower()))
+				   || (p.Sinonimos.ToLower().Contains(text.ToLower()))
+				   , fromIndex, toIndex);
+			}
+			return _mapper.Map<List<FontePropriedadeIntelectualViewModel>>(modelObjs);
+
+		}
+
 		public IList<FontePropriedadeIntelectualViewModel> Find(Expression<Func<FontePropriedadeIntelectualViewModel, bool>> predicate, int? fromIndex, int? toIndex)
 		{
 			var newPredicate = _mapper.Map<Expression<Func<FontePropriedadeIntelectual, bool>>>(predicate);

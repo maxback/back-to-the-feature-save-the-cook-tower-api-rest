@@ -7,7 +7,7 @@ namespace SaveTheCookTower.Domain.Models
 	public class Categoria : ModelBase
 	{
 		public virtual Categoria CategoriaPai { get; set; }
-		public Guid CategoriaPaiId { get; set; }
+		public Guid? CategoriaPaiId { get; set; }
 
 		public virtual List<Categoria> CategoriasFilhas { get; }
 

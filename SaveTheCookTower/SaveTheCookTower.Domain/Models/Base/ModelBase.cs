@@ -6,7 +6,7 @@ namespace SaveTheCookTower.Domain.Models.Base
 {
 	public class ModelBase
 	{
-		public Guid? Id { get; set; }
+		public Guid Id { get; set; }
 		public DateTime? CriadoEmUtc { get; set; }
 		public Guid? CriadoPorId { get; set; }
 		public DateTime? AtualizadoEmUtc { get; set; }
