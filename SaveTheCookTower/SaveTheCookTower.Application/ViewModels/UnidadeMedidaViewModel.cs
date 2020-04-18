@@ -1,4 +1,5 @@
-﻿using SaveTheCookTower.CrossCutting.Utils.Enumerations;
+﻿using SaveTheCookTower.CrossCutting.Utils;
+using SaveTheCookTower.CrossCutting.Utils.Enumerations;
 using System;
 using System.Collections.Generic;
 
@@ -16,6 +17,17 @@ namespace SaveTheCookTower.Application.ViewModels
 		/// Indica que tipo de unidade é esta. Ver TiposDeUnidadesDeMedida
 		/// </summary>
 		public TiposDeUnidadesDeMedida Tipo { get; set; }
+
+		/// <summary>
+		/// Retorna a descrição calculada de acordo com o tipo
+		/// </summary>
+		public string DescricaoTipo
+		{
+			get
+			{
+				return Utils.GetDescription<TiposDeUnidadesDeMedida>(Tipo);
+			}
+		}
 
 		/// <summary>
 		/// Possibilita definir o nome da unidade de forma resumida (como geralmente é usada)

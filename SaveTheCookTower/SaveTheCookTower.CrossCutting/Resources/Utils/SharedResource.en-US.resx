@@ -185,9 +185,17 @@
     <value>An error occurred while fetching the record data for {0} with id {1}. {2}</value>
     <comment>DefaultControllerForAppServiceController</comment>
   </data>
+  <data name="Ocorreu um erro ao montar lista de {0}.{1}" xml:space="preserve">
+    <value>An error occurred while mounting list of {0}. {1}</value>
+    <comment>TiposDeUnidadesDeMedidaController</comment>
+  </data>
   <data name="Receita" xml:space="preserve">
     <value>Recipe</value>
     <comment>ReceitaController</comment>
+  </data>
+  <data name="Tipos de Unidade de Medida" xml:space="preserve">
+    <value>Types of Unit of Measure</value>
+    <comment>TiposDeUnidadesDeMedidaController</comment>
   </data>
   <data name="Unidade de Medida" xml:space="preserve">
     <value>Unit of Measurement</value>
