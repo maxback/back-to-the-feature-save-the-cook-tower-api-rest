@@ -84,6 +84,10 @@ namespace SaveTheCookTower.Api
 			// config do Context (EF)
 			services.AddDbContext<SaveTheCookTowerContext>(opions => opions.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+			// adicionando CORS
+			services.AddCors();
+
+
 			// Configuração da autenticação
 			ConfigureAuth(services);
 
@@ -182,7 +186,7 @@ namespace SaveTheCookTower.Api
 			app.UseRequestLocalization(options.Value);
 
 
-			//app.UseHttpsRedirection();
+			app.UseHttpsRedirection();
 
 			// global cors policy
 			app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
@@ -197,6 +201,7 @@ namespace SaveTheCookTower.Api
 			});
 			
 			app.UseRouting();
+
 
 			app.UseAuthentication();
 			app.UseAuthorization();

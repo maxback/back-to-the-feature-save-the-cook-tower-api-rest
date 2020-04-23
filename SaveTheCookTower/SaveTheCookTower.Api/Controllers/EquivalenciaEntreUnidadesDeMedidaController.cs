@@ -9,7 +9,7 @@ using System;
 
 namespace SaveTheCookTower.Api.Controllers
 {
-	[Authorize]
+	//[Authorize]
 	[Route("api/[controller]")]
 	[Route("api/UnitsMeasureEquivalence")]
 	[Route("api/umeq")]

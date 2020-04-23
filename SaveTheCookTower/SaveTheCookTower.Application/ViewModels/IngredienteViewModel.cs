@@ -14,6 +14,13 @@ namespace SaveTheCookTower.Application.ViewModels
 
 		public virtual CategoriaViewModel Categoria { get; set; }
 		public Guid CategoriaId { get; set; }
+
+		public string NomeCategoria { 
+			get {
+				return Categoria != null ? Categoria.Nome : "";  
+			} 
+		}
+
 		/// <summary>
 		/// Texto com URLs acessíveis do ingrediente, separadas por ';' Sendo a primeira a principal a adequada a miniaturas
 		/// ou exibições.

@@ -12,7 +12,7 @@ using SaveTheCookTower.CrossCutting.Utils;
 
 namespace SaveTheCookTower.Api.Controllers
 {
-	[Authorize]
+	//[Authorize]
 	[ApiController]
 	[Route("api/[controller]")]
 	[Route("api/Ingredient")]

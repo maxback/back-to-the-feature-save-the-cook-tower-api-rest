@@ -8,7 +8,7 @@ using SaveTheCookTower.CrossCutting.Utils;
 
 namespace SaveTheCookTower.Api.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     [Route("api/NutritionalInformation")]
     [Route("api/NutriInfo")]

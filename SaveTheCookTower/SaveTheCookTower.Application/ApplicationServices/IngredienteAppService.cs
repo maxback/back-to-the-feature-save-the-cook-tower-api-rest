@@ -43,6 +43,11 @@ namespace SaveTheCookTower.Application.ApplicationServices
 				modelObjs = _service.Find(
 				   p => (p.Nome.ToLower().Contains(text.ToLower()))
 				   || (p.Sinonimos.ToLower().Contains(text.ToLower()))
+
+//				   || ((p.CategoriaId ?? Guid.Empty).ToString().ToLower().Contains(text.ToLower()))
+				   || (p.Categoria == null ? false : p.Categoria.Nome.ToLower().Contains(text.ToLower()))
+
+
 				   , fromIndex, toIndex);
 			}
 			return _mapper.Map<List<IngredienteViewModel>>(modelObjs);
