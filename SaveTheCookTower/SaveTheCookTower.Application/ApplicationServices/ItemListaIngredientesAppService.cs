@@ -40,8 +40,14 @@ namespace SaveTheCookTower.Application.ApplicationServices
 			{
 				modelObjs = _service.Find(p => true, fromIndex, toIndex);
 			}
-			else
+			else if (text.ToLower().Contains("receitaid="))
 			{
+				var receitaId = text.Substring(10);
+
+				modelObjs = _service.Find(p => p.ReceitaId.ToString() == receitaId , fromIndex, toIndex);
+			}
+			else
+			{ 
 				modelObjs = _service.Find(
 				   p => (p.Nome.ToLower().Contains(text.ToLower()))
 				   || (p.Sinonimos.ToLower().Contains(text.ToLower()))
@@ -58,6 +64,30 @@ namespace SaveTheCookTower.Application.ApplicationServices
 			var modelObjs = _service.Find(newPredicate, fromIndex, toIndex);
 
 			return _mapper.Map<List<ItemListaIngredientesViewModel>>(modelObjs);
+		}
+
+		public IList<ItemListaIngredientesViewModel> FindChildrenOf(Guid idPai, string text, int? from, int? to)
+		{
+			IList<ItemListaIngredientes> modelObjs = null;
+
+			if (string.IsNullOrEmpty(text))
+			{
+				modelObjs = _service.Find(p => p.CriadoPorId == idPai || p.UnidadeMedidaId == idPai ||
+				p.ReceitaId == idPai || p.IngredienteId == idPai, from, to);
+			}
+			else
+			{
+				modelObjs = _service.Find(
+				   p => (p.CriadoPorId == idPai || p.UnidadeMedidaId == idPai ||
+				         p.ReceitaId == idPai || p.IngredienteId == idPai) &&
+				(
+				  (p.Nome.ToLower().Contains(text.ToLower()))
+				   || (p.Sinonimos.ToLower().Contains(text.ToLower()))
+				)
+				   , from, to);
+			}
+			return _mapper.Map<List<ItemListaIngredientesViewModel>>(modelObjs);
+
 		}
 
 		public IList<ItemListaIngredientesViewModel> GetAll()

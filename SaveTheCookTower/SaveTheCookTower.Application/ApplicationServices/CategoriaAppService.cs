@@ -60,6 +60,31 @@ namespace SaveTheCookTower.Application.ApplicationServices
 			return _mapper.Map<List<CategoriaViewModel>>(modelObjs);
 		}
 
+		public IList<CategoriaViewModel> FindChildrenOf(Guid idPai, string text, int? from, int? to)
+		{
+			IList<Categoria> modelObjs = null;
+
+			if (string.IsNullOrEmpty(text))
+			{
+				modelObjs = _service.Find(p => p.CriadoPorId == idPai || p.CategoriaPaiId == idPai, from, to);
+			}
+			else
+			{
+				modelObjs = _service.Find(
+				   p => (p.CriadoPorId == idPai || p.CategoriaPaiId == idPai) &&
+				   (
+					   (p.Nome.ToLower().Contains(text.ToLower()))
+
+					   || ((p.CategoriaPaiId ?? Guid.Empty).ToString().ToLower().Contains(text.ToLower()))
+					   || (p.CategoriaPai == null ? false : p.CategoriaPai.Nome.ToLower().Contains(text.ToLower()))
+
+					   || (p.Sinonimos.ToLower().Contains(text.ToLower()))
+				   )
+				   , from, to);
+			}
+			return _mapper.Map<List<CategoriaViewModel>>(modelObjs);
+		}
+
 		public IList<CategoriaViewModel> GetAll()
 		{
 			var mdelObjs = _service.GetAll();

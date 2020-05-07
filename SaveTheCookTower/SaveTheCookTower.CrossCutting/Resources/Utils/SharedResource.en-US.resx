@@ -125,6 +125,10 @@
     <value>User Rating</value>
     <comment>AvaliacaoDoUsuarioController</comment>
   </data>
+  <data name="Cardápio" xml:space="preserve">
+    <value>Menu</value>
+    <comment>CardapioController</comment>
+  </data>
   <data name="Categoria" xml:space="preserve">
     <value>Category</value>
     <comment>CategoriaController</comment>
@@ -152,6 +156,10 @@
   <data name="Ingrediente" xml:space="preserve">
     <value>Ingredient</value>
     <comment>IngredienteController</comment>
+  </data>
+  <data name="Item de Cardápio" xml:space="preserve">
+    <value>Menu Item</value>
+    <comment>ItemCardapioController</comment>
   </data>
   <data name="Item de Lista de Ingredientes" xml:space="preserve">
     <value>Ingredient List Item</value>
@@ -192,6 +200,10 @@
   <data name="Receita" xml:space="preserve">
     <value>Recipe</value>
     <comment>ReceitaController</comment>
+  </data>
+  <data name="Receita do Item de Cardápio" xml:space="preserve">
+    <value>Menu Item Recipe</value>
+    <comment>ItemCardapioReceitaController</comment>
   </data>
   <data name="Tipos de Unidade de Medida" xml:space="preserve">
     <value>Types of Unit of Measure</value>

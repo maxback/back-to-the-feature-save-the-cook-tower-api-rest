@@ -17,7 +17,7 @@ namespace SaveTheCookTower.Domain.Models
 		/// <summary>
 		/// Indica a unidade de medida da receita
 		/// </summary>
-		public UnidadeMedida UnidadeMedida { get; set; }
+		public virtual UnidadeMedida UnidadeMedida { get; set; }
 		public Guid UnidadeMedidaId { get; set; }
 		/// <summary>
 		/// Indica a ingrediente cadastrado a ser utilziado

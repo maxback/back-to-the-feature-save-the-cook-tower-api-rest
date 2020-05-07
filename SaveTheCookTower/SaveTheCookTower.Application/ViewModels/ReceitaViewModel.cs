@@ -19,7 +19,7 @@ namespace SaveTheCookTower.Application.ViewModels
 		/// <summary>
 		/// Referencia ao objeto da receita pai
 		/// </summary>
-		public ReceitaViewModel ReceitaPai { get; set; }
+		public ReceitaViewModel? ReceitaPai { get; set; }
 		/// <summary>
 		/// Id da receita pai
 		/// </summary>
@@ -27,12 +27,20 @@ namespace SaveTheCookTower.Application.ViewModels
 		/// <summary>
 		/// Idica a categoria da receita. Exemplo: Carnes, Massas, Sobremesas
 		/// </summary>
-		public CategoriaViewModel Categoria { get; set; }
+		public CategoriaViewModel? Categoria { get; set; }
 
 		/// <summary>
 		/// Id da  categoria
 		/// </summary>
-		public Guid CategoriaId { get; set; }
+		public Guid? CategoriaId { get; set; }
+
+		public string NomeCategoria
+		{
+			get
+			{
+				return Categoria != null ? Categoria.Nome : "";
+			}
+		}
 
 		/// <summary>
 		/// Trata-se de uma breve descrição do alimento e da receita.
@@ -53,16 +61,16 @@ namespace SaveTheCookTower.Application.ViewModels
 		/// <summary>
 		/// Permite indicar a fonte da receita, ou seja, quem é seu autor. Para respeitaros remeditos e remeter até ao site de origem
 		/// </summary>
-		public FontePropriedadeIntelectualViewModel Fonte { get; set; }
+		public FontePropriedadeIntelectualViewModel? Fonte { get; set; }
 		/// <summary>
 		/// Id da fonte
 		/// </summary>
-		public Guid FonteId { get; set; }
+		public Guid? FonteId { get; set; }
 		/// <summary>
 		/// Descreve a avaliação geral (media) da receita
 		/// </summary>
-		public AvaliacaoDoUsuarioViewModel AvaliacaoMedia { get; set; }
-		public Guid AvaliacaoMediaId { get; set; }
+		public AvaliacaoDoUsuarioViewModel? AvaliacaoMedia { get; set; }
+		public Guid? AvaliacaoMediaId { get; set; }
 		/// <summary>
 		/// Lista de todas as avaliações de usuários para a receita
 		/// </summary>
@@ -71,6 +79,9 @@ namespace SaveTheCookTower.Application.ViewModels
 		/// Lista de todos os igredientes da receita. Se ela possuir receita filha, os igredientes devem ser acessados por ReceitasFilhas[].Ingredientes
 		/// </summary>
 		public List<ItemListaIngredientesViewModel> Ingredientes { get; }
+
+		public string IngredientesAsStr { get; set; }
+
 		/// <summary>
 		/// Lista de todas as etapas para preparo dareceita. Se ela possuir receita filha, as etapas devem ser acessados por ReceitasFilhas[].Etapas
 		/// </summary>

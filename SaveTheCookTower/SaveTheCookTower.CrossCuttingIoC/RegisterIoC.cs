@@ -31,6 +31,9 @@ namespace SaveTheCookTower.CrossCuttingIoC
 			serviceCollection.AddScoped<IUnidadeMedidaAppService, UnidadeMedidaAppService>();
 			serviceCollection.AddScoped<IUnidadeMedidaAppService, UnidadeMedidaAppService>();
 			serviceCollection.AddScoped<IUsuarioAppService, UsuarioAppService>();
+			serviceCollection.AddScoped<ICardapioAppService, CardapioAppService>();
+			serviceCollection.AddScoped<IItemCardapioAppService, ItemCardapioAppService>();
+			serviceCollection.AddScoped<IItemCardapioReceitaAppService, ItemCardapioReceitaAppService>();
 
 
 			serviceCollection.AddScoped<IAppServiceBase<AvaliacaoDoUsuarioViewModel>, AvaliacaoDoUsuarioAppService>();
@@ -44,6 +47,9 @@ namespace SaveTheCookTower.CrossCuttingIoC
 			serviceCollection.AddScoped<IAppServiceBase<ReceitaViewModel>, ReceitaAppService>();
 			serviceCollection.AddScoped<IAppServiceBase<UsuarioViewModel>, UsuarioAppService>();
 			serviceCollection.AddScoped<IAppServiceBase<UnidadeMedidaViewModel>, UnidadeMedidaAppService>();
+			serviceCollection.AddScoped<IAppServiceBase<CardapioViewModel>, CardapioAppService>();
+			serviceCollection.AddScoped<IAppServiceBase<ItemCardapioViewModel>, ItemCardapioAppService>();
+			serviceCollection.AddScoped<IAppServiceBase<ItemCardapioReceitaViewModel>, ItemCardapioReceitaAppService>();
 
 			// services
 			serviceCollection.AddScoped<IServiceBase<AvaliacaoDoUsuario>, ServiceBase<AvaliacaoDoUsuario>>();
@@ -57,6 +63,9 @@ namespace SaveTheCookTower.CrossCuttingIoC
 			serviceCollection.AddScoped<IServiceBase<Receita>, ServiceBase<Receita>>();
 			serviceCollection.AddScoped<IServiceBase<UnidadeMedida>, ServiceBase<UnidadeMedida>>();
 			serviceCollection.AddScoped<IServiceBase<Usuario>, ServiceBase<Usuario>>();
+			serviceCollection.AddScoped<IServiceBase<Cardapio>, ServiceBase<Cardapio>>();
+			serviceCollection.AddScoped<IServiceBase<ItemCardapio>, ServiceBase<ItemCardapio>>();
+			serviceCollection.AddScoped<IServiceBase<ItemCardapioReceita>, ServiceBase<ItemCardapioReceita>>();
 
 			// repositories
 			serviceCollection.AddScoped<IRepositoryBase<AvaliacaoDoUsuario>, RepositoryBase<AvaliacaoDoUsuario>> ();
@@ -70,6 +79,9 @@ namespace SaveTheCookTower.CrossCuttingIoC
 			serviceCollection.AddScoped<IRepositoryBase<Receita>, RepositoryBase<Receita>>();
 			serviceCollection.AddScoped<IRepositoryBase<UnidadeMedida>, RepositoryBase<UnidadeMedida>>();
 			serviceCollection.AddScoped<IRepositoryBase<Usuario>, RepositoryBase<Usuario>>();
+			serviceCollection.AddScoped<IRepositoryBase<Cardapio>, RepositoryBase<Cardapio>>();
+			serviceCollection.AddScoped<IRepositoryBase<ItemCardapio>, RepositoryBase<ItemCardapio>>();
+			serviceCollection.AddScoped<IRepositoryBase<ItemCardapioReceita>, RepositoryBase<ItemCardapioReceita>>();
 
 		}
 	}

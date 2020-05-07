@@ -68,6 +68,39 @@ namespace SaveTheCookTower.Application.ApplicationServices
 			return _mapper.Map<List<AvaliacaoDoUsuarioViewModel>>(modelObjs);
 		}
 
+		public IList<AvaliacaoDoUsuarioViewModel> FindChildrenOf(Guid idPai, string text, int? from, int? to)
+		{
+			IList<AvaliacaoDoUsuario> modelObjs = null;
+
+			if (string.IsNullOrEmpty(text))
+			{
+				modelObjs = _service.Find(p => p.CriadoPorId == idPai || p.ReceitaId == idPai || p.UsuarioId == idPai, from, to);
+			}
+			else
+			{
+				modelObjs = _service.Find(
+				   p => (p.CriadoPorId == idPai || p.ReceitaId == idPai || p.UsuarioId == idPai) &&
+				     (
+					   (p.Nome.ToLower().Contains(text.ToLower()))
+
+					   || (p.UsuarioId.ToString().ToLower().Contains(text.ToLower()))
+					   || (p.Usuario.Nome.ToLower().Contains(text.ToLower()))
+
+					   || ((p.ReceitaId ?? Guid.Empty).ToString().ToLower().Contains(text.ToLower()))
+					   || (p.Receita == null ? false : p.Receita.Nome.ToLower().Contains(text.ToLower()))
+
+					   || ((p.ReceitaDeQuemEhAvaliacaoMediaId ?? Guid.Empty).ToString().ToLower().Contains(text.ToLower()))
+					   || (p.ReceitaDeQuemEhAvaliacaoMedia == null ? false : p.ReceitaDeQuemEhAvaliacaoMedia.Nome.ToLower().Contains(text.ToLower()))
+
+					   || (p.QuantidadeEstrelas.ToString().ToLower().Contains(text.ToLower()))
+
+					   || (p.Sinonimos.ToLower().Contains(text.ToLower()))
+				   )
+				   , from, to);
+			}
+			return _mapper.Map<List<AvaliacaoDoUsuarioViewModel>>(modelObjs);
+		}
+
 		public IList<AvaliacaoDoUsuarioViewModel> GetAll()
 		{
 			var mdelObjs = _service.GetAll();

@@ -61,6 +61,29 @@ namespace SaveTheCookTower.Application.ApplicationServices
 			return _mapper.Map<List<FontePropriedadeIntelectualViewModel>>(modelObjs);
 		}
 
+		public IList<FontePropriedadeIntelectualViewModel> FindChildrenOf(Guid idPai, string text, int? from, int? to)
+		{
+			IList<FontePropriedadeIntelectual> modelObjs = null;
+
+			if (string.IsNullOrEmpty(text))
+			{
+				modelObjs = _service.Find(p => p.CriadoPorId == idPai, from, to);
+			}
+			else
+			{
+				modelObjs = _service.Find(
+				   p => (p.CriadoPorId == idPai) &&
+				   (
+					   (p.Nome.ToLower().Contains(text.ToLower()))
+					   || (p.EdicaoDoLivro.ToLower().Contains(text.ToLower()))
+					   || (p.Titulo.ToLower().Contains(text.ToLower()))
+					   || (p.Sinonimos.ToLower().Contains(text.ToLower()))
+				   )
+				   , from, to);
+			}
+			return _mapper.Map<List<FontePropriedadeIntelectualViewModel>>(modelObjs);
+		}
+
 		public IList<FontePropriedadeIntelectualViewModel> GetAll()
 		{
 			var mdelObjs = _service.GetAll();

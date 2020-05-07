@@ -69,6 +69,40 @@ namespace SaveTheCookTower.Application.ApplicationServices
 			return _mapper.Map<List<EquivalenciaEntreUnidadesDeMedidaViewModel>>(modelObjs);
 		}
 
+		public IList<EquivalenciaEntreUnidadesDeMedidaViewModel> FindChildrenOf(Guid idPai, string text, int? from, int? to)
+		{
+			IList<EquivalenciaEntreUnidadesDeMedida> modelObjs = null;
+
+			if (string.IsNullOrEmpty(text))
+			{
+				modelObjs = _service.Find(p => p.CriadoPorId == idPai || p.DestinoId == idPai || p.OrigemId == idPai, from, to);
+			}
+			else
+			{
+				modelObjs = _service.Find(
+				   p => 
+				   (p.CriadoPorId == idPai || p.DestinoId == idPai || p.OrigemId == idPai) &&
+				   (
+					   (p.Nome.ToLower().Contains(text.ToLower()))
+
+					   || (p.Origem.Id.ToString().ToLower().Contains(text.ToLower()))
+					   || (p.Origem.Nome.ToLower().Contains(text.ToLower()))
+					   || (p.Origem.NomeResumido.ToLower().Contains(text.ToLower()))
+					   || (p.Origem.Sinonimos.ToLower().Contains(text.ToLower()))
+
+					   || (p.Destino.Id.ToString().ToLower().Contains(text.ToLower()))
+					   || (p.Destino.Nome.ToLower().Contains(text.ToLower()))
+					   || (p.Destino.NomeResumido.ToLower().Contains(text.ToLower()))
+					   || (p.Destino.Sinonimos.ToLower().Contains(text.ToLower()))
+
+					   || (p.Sinonimos.ToLower().Contains(text.ToLower()))
+					)
+				   , from, to);
+			}
+			return _mapper.Map<List<EquivalenciaEntreUnidadesDeMedidaViewModel>>(modelObjs);
+
+		}
+
 		public IList<EquivalenciaEntreUnidadesDeMedidaViewModel> GetAll()
 		{
 			var mdelObjs = _service.GetAll();

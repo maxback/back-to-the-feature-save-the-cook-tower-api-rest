@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using SaveTheCookTower.Domain.Models;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using SaveTheCookTower.CrossCutting.Utils;
+using System.Collections.Generic;
 
 namespace SaveTheCookTower.Data.Context
 {
@@ -26,12 +26,17 @@ namespace SaveTheCookTower.Data.Context
 		public DbSet<Receita> Receitas { get; set; }
 		public DbSet<UnidadeMedida> UnidadesMedida { get; set; }
 		public DbSet<Usuario> Usuarios { get; set; }
-
+		public DbSet<Cardapio> Cardapios { get; set; }
+		public DbSet<ItemCardapio> ItensCadapio { get; set; }
+		public DbSet<ItemCardapioReceita> ItensCadapioReceita { get; set; }
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
 			base.OnConfiguring(optionsBuilder);
 
 			optionsBuilder.UseLazyLoadingProxies();
+
+			//para maior diagnostico
+			optionsBuilder.EnableSensitiveDataLogging(true);
 		}
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -94,6 +99,46 @@ namespace SaveTheCookTower.Data.Context
 			modelBuilder.Entity<UnidadeMedida>().HasData(xic);
 
 
+			var pt = new UnidadeMedida
+			{
+				Nome = "pitada",
+				NomeResumido = "pt",
+				Sinonimos = "pitada,punhadinho,cadinho",
+				Tipo = CrossCutting.Utils.Enumerations.TiposDeUnidadesDeMedida.Volume
+			};
+			modelBuilder.Entity<UnidadeMedida>().HasData(pt);
+
+			var cch = new UnidadeMedida
+			{
+				Nome = "colher de chá",
+				NomeResumido = "ccha",
+				Sinonimos = "colher pequena",
+				Tipo = CrossCutting.Utils.Enumerations.TiposDeUnidadesDeMedida.Volume
+			};
+			modelBuilder.Entity<UnidadeMedida>().HasData(new UnidadeMedida
+			{
+				Nome = "colher de sopa",
+				NomeResumido = "cso",
+				Sinonimos = "colher media",
+				Tipo = CrossCutting.Utils.Enumerations.TiposDeUnidadesDeMedida.Volume
+			});
+			modelBuilder.Entity<UnidadeMedida>().HasData(new UnidadeMedida
+			{
+				Nome = "fatia",
+				NomeResumido = "fat",
+				Sinonimos = "fatia",
+				Tipo = CrossCutting.Utils.Enumerations.TiposDeUnidadesDeMedida.Volume
+			});
+			modelBuilder.Entity<UnidadeMedida>().HasData(new UnidadeMedida
+			{
+				Nome = "unidade",
+				NomeResumido = "un",
+				Sinonimos = "unidade",
+				Tipo = CrossCutting.Utils.Enumerations.TiposDeUnidadesDeMedida.Unidades
+			});
+
+			modelBuilder.Entity<UnidadeMedida>().HasData(cch);
+
 			var m = new UnidadeMedida
 			{
 				Nome = "metro",
@@ -150,6 +195,15 @@ namespace SaveTheCookTower.Data.Context
 			};
 
 			modelBuilder.Entity<Categoria>().HasData(cat_ing);
+
+			var cat_cardapio = new Categoria
+			{
+				Nome = "Cardápios",
+				Sinonimos = "Categoria Raiz dos Cardápios",
+				CategoriaPaiId = cp.Id
+			};
+
+			modelBuilder.Entity<Categoria>().HasData(cat_cardapio);
 
 			var rec = new Categoria
 			{
@@ -239,13 +293,57 @@ namespace SaveTheCookTower.Data.Context
 			var li5 = new ItemListaIngredientes { ReceitaId = rec1.Id, Nome = agua.Nome, IngredienteId = agua.Id, Ordem = 3, Quantidade = 0.5, UnidadeMedidaId = l.Id };
 			modelBuilder.Entity<ItemListaIngredientes>().HasData(li5);
 
-			/*
-			rec1.Ingredientes.Add(new ItemListaIngredientes {  });
-			rec1.Ingredientes.Add(new ItemListaIngredientes {  });
-			rec1.Ingredientes.Add(new ItemListaIngredientes {  });
-			rec1.Ingredientes.Add(new ItemListaIngredientes {  });
-			*/
 
+			var cardapio1 = new Cardapio()
+			{
+				Nome = "Comendo pão no café da manhã todo dia (mensal)",
+				Sinonimos = "café",
+				Descricao = "Dieta abase de pão comum",
+				CategoriaId = cat_cardapio.Id
+			};
+			modelBuilder.Entity<Cardapio>().HasData(cardapio1);
+
+			int semana, dia;
+			var diasS = new string[] { "Domingo", "Segunda-feira",
+				"Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira",
+				"Sábado"};
+
+
+			var itens = new List<ItemCardapio>();
+
+			for (semana = 1; semana < 5; semana++) {
+				for (dia = 0; dia < 7; dia++) {
+					var tipo =
+						CrossCutting.Utils.Enumerations.TipoItemCardapio.CafeDaManha;
+
+					var s = Utils.GetDescription<
+						CrossCutting.Utils.Enumerations.TipoItemCardapio>(tipo);
+
+					var item = new ItemCardapio()
+					{
+						CardapioId = cardapio1.Id,
+						Tipo = tipo,
+						Porcoes = 1,
+						Semana = semana,
+						DiaDaSemana = dia + 1,
+						Nome = $"{diasS[dia]} da semana ${semana} - ${s}"
+					};
+
+					modelBuilder.Entity<ItemCardapio>().HasData(item);
+
+					itens.Add(item);
+				}
+			}
+
+			foreach(var ic in itens)
+			{
+				modelBuilder.Entity<ItemCardapioReceita>().HasData(new ItemCardapioReceita()
+				{
+					Nome = $"Rel. Item Cardápio({ic.Nome}) x Receita({rec1.Nome})",
+					ItemCardapioId = ic.Id,
+					ReceitaId = rec1.Id
+				}); 
+			}
 		}
 	}
 }

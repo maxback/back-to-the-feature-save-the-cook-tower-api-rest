@@ -11,6 +11,10 @@ namespace SaveTheCookTower.Application.Mapping
 	{
 		public AutoMappingViewModelToDomain()
 		{
+			CreateMap<CardapioViewModel, Cardapio>();
+			CreateMap<ItemCardapioViewModel, ItemCardapio>();
+			CreateMap<ItemCardapioReceitaViewModel, ItemCardapioReceita>();
+
 			CreateMap<AvaliacaoDoUsuarioViewModel, AvaliacaoDoUsuario>();
 			CreateMap<CategoriaViewModel, Categoria>();
 			CreateMap<EquivalenciaEntreUnidadesDeMedidaViewModel, EquivalenciaEntreUnidadesDeMedida>();

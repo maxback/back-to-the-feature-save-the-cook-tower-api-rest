@@ -44,7 +44,6 @@ namespace SaveTheCookTower.Application.ApplicationServices
 				   p => (p.Nome.ToLower().Contains(text.ToLower()))
 				   || (p.Sinonimos.ToLower().Contains(text.ToLower()))
 
-//				   || ((p.CategoriaId ?? Guid.Empty).ToString().ToLower().Contains(text.ToLower()))
 				   || (p.Categoria == null ? false : p.Categoria.Nome.ToLower().Contains(text.ToLower()))
 
 
@@ -60,6 +59,29 @@ namespace SaveTheCookTower.Application.ApplicationServices
 
 			var modelObjs = _service.Find(newPredicate, fromIndex, toIndex);
 
+			return _mapper.Map<List<IngredienteViewModel>>(modelObjs);
+		}
+
+		public IList<IngredienteViewModel> FindChildrenOf(Guid idPai, string text, int? from, int? to)
+		{
+			IList<Ingrediente> modelObjs = null;
+
+			if (string.IsNullOrEmpty(text))
+			{
+				modelObjs = _service.Find(p => p.CriadoPorId == idPai || p.CategoriaId == idPai, from, to);
+			}
+			else
+			{
+				modelObjs = _service.Find(
+				   p => (p.CriadoPorId == idPai || p.CategoriaId == idPai) &&
+				   (
+				     (p.Nome.ToLower().Contains(text.ToLower()))
+				     || (p.Sinonimos.ToLower().Contains(text.ToLower()))
+
+				     || (p.Categoria == null ? false : p.Categoria.Nome.ToLower().Contains(text.ToLower()))
+				   )
+				   , from, to);
+			}
 			return _mapper.Map<List<IngredienteViewModel>>(modelObjs);
 		}
 

@@ -5,7 +5,9 @@ using System.Text;
 
 namespace SaveTheCookTower.CrossCutting.Utils.Enumerations
 {
-
+	/// <summary>
+	/// Valores possíveis para o tipo de unidade de medida
+	/// </summary>
 	public enum TiposDeUnidadesDeMedida : Int32
 	{
 		[Description("Selecione")]
@@ -24,5 +26,25 @@ namespace SaveTheCookTower.CrossCutting.Utils.Enumerations
 		Repeticoes,  //10 vezes
 		[Description("Valor Energético")]
 		ValorEnergetico  // 74 kcal 
+	};
+
+	public enum TipoItemCardapio : Int32
+	{
+		[Description("Selecione")]
+		Desconhecida,
+		[Description("Café da Manhã")]
+		CafeDaManha,
+		[Description("Lanche da Manhã")]
+		LancheDaManha,
+		[Description("Almoço")]
+		Almoco,
+		[Description("Café da Tarde")]
+		CafeDaTarde,
+		[Description("Jantar")]
+		Jantar,
+		[Description("Ceia")]
+		Ceia,
+		[Description("Genérico")]
+		GHenerico
 	}
 }

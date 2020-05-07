@@ -23,7 +23,7 @@ namespace SaveTheCookTower.Domain.Models
 		/// <summary>
 		/// Unidade de medida da informação nutricional
 		/// </summary>
-		public UnidadeMedida UnidadeMedida { get; set; }
+		public virtual UnidadeMedida UnidadeMedida { get; set; }
 
 		/// <summary>
 		/// Referência ao registro da unidade de medida

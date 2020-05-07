@@ -122,5 +122,28 @@ namespace SaveTheCookTower.Application.ApplicationServices
 
 			_service.Update(modelObj);
 		}
+
+		public IList<UsuarioViewModel> FindChildrenOf(Guid idPai, string text, int? from, int? to)
+		{
+			IList<Usuario> modelObjs = null;
+
+			if (string.IsNullOrEmpty(text))
+			{
+				modelObjs = _service.Find(p => p.CriadoPorId == idPai, from, to);
+			}
+			else
+			{
+				modelObjs = _service.Find(
+				   p => (p.CriadoPorId == idPai) &&
+				   (
+				     (p.Nome.ToLower().Contains(text.ToLower()))
+				     || (p.Login.ToLower().Contains(text.ToLower()))
+				     || (p.Token.ToLower().Contains(text.ToLower()))
+				     || (p.Sinonimos.ToLower().Contains(text.ToLower()))
+				   )
+				   , from, to);
+			}
+			return _mapper.Map<List<UsuarioViewModel>>(modelObjs);
+		}
 	}
 }

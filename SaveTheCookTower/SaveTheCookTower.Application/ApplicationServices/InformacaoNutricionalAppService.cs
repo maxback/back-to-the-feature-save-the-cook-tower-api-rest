@@ -57,6 +57,29 @@ namespace SaveTheCookTower.Application.ApplicationServices
 			return _mapper.Map<List<InformacaoNutricionalViewModel>>(modelObjs);
 		}
 
+		public IList<InformacaoNutricionalViewModel> FindChildrenOf(Guid idPai, string text, int? from, int? to)
+		{
+			IList<InformacaoNutricional> modelObjs = null;
+
+			if (string.IsNullOrEmpty(text))
+			{
+				modelObjs = _service.Find(p => p.CriadoPorId == idPai || p.IngredienteId == idPai || 
+				                               p.ReceitaId == idPai || p.UnidadeMedidaId == idPai, from, to);
+			}
+			else
+			{
+				modelObjs = _service.Find(
+				   p => (p.CriadoPorId == idPai || p.IngredienteId == idPai ||
+                        p.ReceitaId == idPai || p.UnidadeMedidaId == idPai) &&
+				   (
+				     (p.Nome.ToLower().Contains(text.ToLower()))
+				     || (p.Sinonimos.ToLower().Contains(text.ToLower()))
+				   )
+				   , from, to);
+			}
+			return _mapper.Map<List<InformacaoNutricionalViewModel>>(modelObjs);
+		}
+
 		public IList<InformacaoNutricionalViewModel> GetAll()
 		{
 			var mdelObjs = _service.GetAll();

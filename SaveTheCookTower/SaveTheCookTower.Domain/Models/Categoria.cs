@@ -8,11 +8,9 @@ namespace SaveTheCookTower.Domain.Models
 	{
 		public virtual Categoria CategoriaPai { get; set; }
 		public Guid? CategoriaPaiId { get; set; }
-
 		public virtual List<Categoria> CategoriasFilhas { get; }
-
 		public virtual List<Receita> Receitas { get;  }
-
 		public virtual List<Ingrediente> Ingredientes { get;  }
+		public virtual List<Cardapio> Cardapios { get; }
 	}
 }

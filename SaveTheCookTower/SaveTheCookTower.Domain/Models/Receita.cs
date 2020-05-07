@@ -90,5 +90,11 @@ namespace SaveTheCookTower.Domain.Models
 		/// e dos valores consolidados de todas as receitas filhas (que computam seus igredientes e de eventuais receitas filhas)
 		/// </summary>
 		public virtual List<InformacaoNutricional> InformacoesNutricionaisConsolidadas { get; }
+
+		/// <summary>
+		/// Referencia aos itens de cardápio que usam a receita
+		/// </summary>
+		public virtual List<ItemCardapioReceita> ItensCardapioReceita { get; }
+
 	}
 }

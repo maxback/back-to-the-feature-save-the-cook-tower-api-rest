@@ -89,8 +89,6 @@ namespace SaveTheCookTower.Api.Controllers
 
                 result = result.Where<TipoEnumeradoViewModel>(p => p.Codigo == codigo).ToList();
                 return Ok(result);
-
-                return Ok(result);
             }
             catch (Exception e)
             {
