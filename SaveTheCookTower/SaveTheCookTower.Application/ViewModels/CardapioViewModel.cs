@@ -6,6 +6,8 @@ namespace SaveTheCookTower.Application.ViewModels
 {
 	public class CardapioViewModel
 	{
+		public DateTime? CriadoEmUtc { get; set; }
+		public DateTime? AtualizadoEmUtc { get; set; }
 		public Guid? Id { get; set; }
 		public string Nome { get; set; }
 		public string Sinonimos { get; set; }
@@ -31,6 +33,11 @@ namespace SaveTheCookTower.Application.ViewModels
 		/// Armazena os itens do cardápio com seus atribuitos
 		/// </summary>
 		public virtual List<ItemCardapioViewModel> Itens { get; }
+
+		/// <summary>
+		/// Permite subir os itens do cardápio como string
+		/// </summary>
+		public string ItensAsStr { get; set; }
 
 		/// <summary>
 		/// Lista de Uris para acessar imagens da receita. A primeira poderia ser a de capa e as demais complementares

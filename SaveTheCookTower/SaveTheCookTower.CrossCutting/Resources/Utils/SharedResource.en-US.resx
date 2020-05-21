@@ -137,6 +137,10 @@
     <value>Units of Measure Equivalence</value>
     <comment>EquivalenciaEntreUnidadesDeMedidaController</comment>
   </data>
+  <data name="Esperado um Id de receita no item {0} da lista de receitas do item de cardápio." xml:space="preserve">
+    <value>A recipe Id is expected on item {0} in the menu item's recipe list.</value>
+    <comment>CardapioController</comment>
+  </data>
   <data name="Etapa de Preparo" xml:space="preserve">
     <value>Preparation Step</value>
     <comment>EtapaDePreparoViewModel</comment>
@@ -172,6 +176,14 @@
   <data name="Objeto não localizado para excluir {0}" xml:space="preserve">
     <value>Object not found to delete {0}</value>
     <comment>RepositoryBase</comment>
+  </data>
+  <data name="Ocorreu algum erro ao importar o registro de texto para a tabela {0}." xml:space="preserve">
+    <value>"An error occurred while importing the text record into table {0}."</value>
+    <comment>Valios controllers</comment>
+  </data>
+  <data name="Ocorreu algum erro ao importar o registro de texto para a tabela {0}.{1}" xml:space="preserve">
+    <value>There was an error importing the text record into table {0}. {1}</value>
+    <comment>Vários controllers</comment>
   </data>
   <data name="Ocorreu um erro ao adicionar os dados do registro de {0} com id {1}.{2}" xml:space="preserve">
     <value>An error occurred while adding the record data for {0} with id {1}. {2}</value>

@@ -6,6 +6,8 @@ namespace SaveTheCookTower.Application.ViewModels
 {
 	public class EtapaDePreparoViewModel
 	{
+		public DateTime? CriadoEmUtc { get; set; }
+		public DateTime? AtualizadoEmUtc { get; set; }
 		public Guid? Id { get; set; }
 		public string Nome { get; set; }
 		public string Sinonimos { get; set; }

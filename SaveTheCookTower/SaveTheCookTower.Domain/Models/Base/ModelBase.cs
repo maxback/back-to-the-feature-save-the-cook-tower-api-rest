@@ -28,9 +28,10 @@ namespace SaveTheCookTower.Domain.Models.Base
 			IncializarNovoObjeto();
 		}
 
-		public void IncializarNovoObjeto()
+		public void IncializarNovoObjeto(bool criarId = true)
 		{
-			Id = Guid.NewGuid();
+			if(criarId)
+			  Id = Guid.NewGuid();
 			CriadoEmUtc = DateTime.UtcNow;
 			AtualizadoEmUtc = DateTime.UtcNow;
 			ForaDeUso = false;

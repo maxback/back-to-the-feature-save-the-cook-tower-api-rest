@@ -60,10 +60,14 @@ namespace SaveTheCookTower.Application.ApplicationServices
 		{
 			IList<ItemCardapioReceita> modelObjs = null;
 
-			if (string.IsNullOrEmpty(text))
+			if (text == "*") //indica relacao de pais diversas
 			{
 				modelObjs = _service.Find(p => p.CriadoPorId == idPai || p.ItemCardapioId == idPai ||
 				(p.ItemCardapio != null && p.ItemCardapio.CardapioId == idPai), from, to);
+			}
+			if (string.IsNullOrEmpty(text))
+			{
+				modelObjs = _service.Find(p => p.ItemCardapioId == idPai, from, to);
 			}
 			else
 			{

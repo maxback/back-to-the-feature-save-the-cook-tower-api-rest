@@ -5,11 +5,16 @@ using System.Text;
 
 namespace SaveTheCookTower.Domain.Models
 {
+
 	/// <summary>
 	/// Dados de um Cardápio (que é uma programação de refeições distribuida nos dias)
 	/// </summary>
 	public class Cardapio: ModelBase
 	{
+		public Cardapio()
+		{
+			Itens = new List<ItemCardapio>();
+		}
 		/// <summary>
 		/// Idica a categoria da receita. Exemplo: Carnes, Massas, Sobremesas
 		/// </summary>

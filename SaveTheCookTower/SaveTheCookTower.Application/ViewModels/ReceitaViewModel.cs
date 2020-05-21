@@ -6,6 +6,8 @@ namespace SaveTheCookTower.Application.ViewModels
 {
 	public class ReceitaViewModel
 	{
+		public DateTime? CriadoEmUtc { get; set; }
+		public DateTime? AtualizadoEmUtc { get; set; }
 		public Guid? Id { get; set; }
 		public string Nome { get; set; }
 		public string Sinonimos { get; set; }
@@ -80,6 +82,9 @@ namespace SaveTheCookTower.Application.ViewModels
 		/// </summary>
 		public List<ItemListaIngredientesViewModel> Ingredientes { get; }
 
+		/// <summary>
+		/// Para subir para o servidor o texto dos ingredientes inseridos como texto
+		/// </summary>
 		public string IngredientesAsStr { get; set; }
 
 		/// <summary>

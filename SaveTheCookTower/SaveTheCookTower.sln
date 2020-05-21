@@ -11,22 +11,24 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infra", "4 - Infra", "{5C0906D2-EDAC-4959-9BBD-5C97AFA4D64C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaveTheCookTower.Api", "SaveTheCookTower.Api\SaveTheCookTower.Api.csproj", "{3F434F40-7CD8-4031-8BD9-1C068D379955}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaveTheCookTower.Api", "SaveTheCookTower.Api\SaveTheCookTower.Api.csproj", "{3F434F40-7CD8-4031-8BD9-1C068D379955}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaveTheCookTower.Application", "SaveTheCookTower.Application\SaveTheCookTower.Application.csproj", "{069FE91C-5EB3-4AF6-8C42-B1155595537C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaveTheCookTower.Application", "SaveTheCookTower.Application\SaveTheCookTower.Application.csproj", "{069FE91C-5EB3-4AF6-8C42-B1155595537C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaveTheCookTower.Domain", "SaveTheCookTower.Domain\SaveTheCookTower.Domain.csproj", "{6184B501-7319-48DA-9A16-F73AE06F8E5A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaveTheCookTower.Domain", "SaveTheCookTower.Domain\SaveTheCookTower.Domain.csproj", "{6184B501-7319-48DA-9A16-F73AE06F8E5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaveTheCookTower.CrossCutting", "SaveTheCookTower.CrossCutting\SaveTheCookTower.CrossCutting.csproj", "{B938C16D-D58D-467F-9F6E-A9053ABD5D44}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaveTheCookTower.CrossCutting", "SaveTheCookTower.CrossCutting\SaveTheCookTower.CrossCutting.csproj", "{B938C16D-D58D-467F-9F6E-A9053ABD5D44}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaveTheCookTower.CrossCuttingIoC", "SaveTheCookTower.CrossCuttingIoC\SaveTheCookTower.CrossCuttingIoC.csproj", "{DC132058-8C46-474B-BAAB-694076387551}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaveTheCookTower.CrossCuttingIoC", "SaveTheCookTower.CrossCuttingIoC\SaveTheCookTower.CrossCuttingIoC.csproj", "{DC132058-8C46-474B-BAAB-694076387551}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaveTheCookTower.Data", "SaveTheCookTower.Data\SaveTheCookTower.Data.csproj", "{4E2C36F9-6853-4F63-9D15-DE997A910811}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaveTheCookTower.Data", "SaveTheCookTower.Data\SaveTheCookTower.Data.csproj", "{4E2C36F9-6853-4F63-9D15-DE997A910811}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7726CE94-6E97-4D9C-8296-5216C6CE5E50}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaveTheCookTower.Application.XUnitTests", "Tests\SaveTheCookTower.Application.XUnitTests\SaveTheCookTower.Application.XUnitTests.csproj", "{EB03FD89-0E6D-4CD8-833A-0CA80DA8E150}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -58,6 +60,10 @@ Global
 		{4E2C36F9-6853-4F63-9D15-DE997A910811}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E2C36F9-6853-4F63-9D15-DE997A910811}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E2C36F9-6853-4F63-9D15-DE997A910811}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB03FD89-0E6D-4CD8-833A-0CA80DA8E150}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB03FD89-0E6D-4CD8-833A-0CA80DA8E150}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB03FD89-0E6D-4CD8-833A-0CA80DA8E150}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB03FD89-0E6D-4CD8-833A-0CA80DA8E150}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,6 +75,7 @@ Global
 		{B938C16D-D58D-467F-9F6E-A9053ABD5D44} = {5C0906D2-EDAC-4959-9BBD-5C97AFA4D64C}
 		{DC132058-8C46-474B-BAAB-694076387551} = {5C0906D2-EDAC-4959-9BBD-5C97AFA4D64C}
 		{4E2C36F9-6853-4F63-9D15-DE997A910811} = {5C0906D2-EDAC-4959-9BBD-5C97AFA4D64C}
+		{EB03FD89-0E6D-4CD8-833A-0CA80DA8E150} = {5C0906D2-EDAC-4959-9BBD-5C97AFA4D64C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EA88EC6A-AD24-4703-93D4-8BAFC2664E6A}

@@ -184,7 +184,6 @@ namespace SaveTheCookTower.Data.Context
 				Sinonimos = "Categoria Raiz",
 				CategoriaPai = null
 			};
-
 			modelBuilder.Entity<Categoria>().HasData(cp);
 
 			var cat_ing = new Categoria
@@ -193,8 +192,33 @@ namespace SaveTheCookTower.Data.Context
 				Sinonimos = "Categoria Raiz dos Ingredientes",
 				CategoriaPaiId = cp.Id
 			};
-
 			modelBuilder.Entity<Categoria>().HasData(cat_ing);
+
+
+     		var cat_ing_carnes = new Categoria
+			{
+				Nome = "Carnes",
+				Sinonimos = "carnes",
+				CategoriaPaiId = cat_ing.Id
+			};
+			modelBuilder.Entity<Categoria>().HasData(cat_ing_carnes);
+
+			var cat_ing_hortifruti = new Categoria
+			{
+				Nome = "hortifrutigranjeiro",
+				Sinonimos = "hortaliças,frutas,verduras,ovos,hortifruti",
+				CategoriaPaiId = cat_ing.Id
+			};
+			modelBuilder.Entity<Categoria>().HasData(cat_ing_hortifruti);
+
+			var cat_ing_geral = new Categoria
+			{
+				Nome = "geral",
+				Sinonimos = "geral",
+				CategoriaPaiId = cat_ing.Id
+			};
+			modelBuilder.Entity<Categoria>().HasData(cat_ing_geral);
+
 
 			var cat_cardapio = new Categoria
 			{
@@ -237,10 +261,14 @@ namespace SaveTheCookTower.Data.Context
 				CategoriaPaiId = rec.Id
 			});
 
+
+
+
+
 			var farinha = new Ingrediente
 			{
 				Nome = "Farinha de Trigo",
-				CategoriaId = cat_ing.Id,
+				CategoriaId = cat_ing_geral.Id,
 				Sinonimos = "Trigo"
 			};
 			modelBuilder.Entity<Ingrediente>().HasData(farinha);
@@ -248,7 +276,7 @@ namespace SaveTheCookTower.Data.Context
 			var fermento = new Ingrediente
 			{
 				Nome = "Fermento para Pão",
-				CategoriaId = cat_ing.Id,
+				CategoriaId = cat_ing_geral.Id,
 				Sinonimos = "Fermento biológico"
 			};
 			modelBuilder.Entity<Ingrediente>().HasData(fermento);
@@ -256,7 +284,7 @@ namespace SaveTheCookTower.Data.Context
 			var ovo = new Ingrediente
 			{
 				Nome = "Ovo de galinha",
-				CategoriaId = cat_ing.Id,
+				CategoriaId = cat_ing_hortifruti.Id,
 				Sinonimos = "Ovo"
 			};
 			modelBuilder.Entity<Ingrediente>().HasData(ovo);
@@ -264,7 +292,7 @@ namespace SaveTheCookTower.Data.Context
 			var agua = new Ingrediente
 			{
 				Nome = "Água",
-				CategoriaId = cat_ing.Id,
+				CategoriaId = cat_ing_geral.Id,
 				Sinonimos = "Agua"
 			};
 			modelBuilder.Entity<Ingrediente>().HasData(agua);
@@ -326,7 +354,7 @@ namespace SaveTheCookTower.Data.Context
 						Porcoes = 1,
 						Semana = semana,
 						DiaDaSemana = dia + 1,
-						Nome = $"{diasS[dia]} da semana ${semana} - ${s}"
+						Nome = "{diasS[dia]} da semana {semana} - {s}"
 					};
 
 					modelBuilder.Entity<ItemCardapio>().HasData(item);

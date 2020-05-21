@@ -10,6 +10,11 @@ namespace SaveTheCookTower.Domain.Models
 	/// </summary>
 	public class Receita: ModelBase
 	{
+		public Receita()
+		{
+			Ingredientes = new List<ItemListaIngredientes>();
+			EstapasDePreparo = new List<EtapaDePreparo>();
+		}
 		/// <summary>
 		/// Lista das eventuais receitas filhas, como um molho ou cobertura
 		/// </summary>
@@ -47,7 +52,7 @@ namespace SaveTheCookTower.Domain.Models
 		/// Indica quantas porções (equivalente a quantidade de pessoas que poderiam ser servidas) a receita faz.
 		/// Esta informação deve ser levada em conta para calculos em si, como calorias ou igredientes.
 		/// </summary>
-		public int? RendimentoPorcoes { get; set; }
+		public int RendimentoPorcoes { get; set; }
 		/// <summary>
 		/// Permite indicar a fonte da receita, ou seja, quem é seu autor. Para respeitaros remeditos e remeter até ao site de origem
 		/// </summary>

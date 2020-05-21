@@ -11,12 +11,12 @@ using System.Text;
 
 namespace SaveTheCookTower.Application.ApplicationServices
 {
-	public class ItemListaIngredientesAppServiceAppService : IItemListaIngredientesAppService
+	public class ItemListaIngredientesAppService : IItemListaIngredientesAppService
 	{
 		private readonly IServiceBase<ItemListaIngredientes> _service;
 		private readonly IMapper _mapper;
 
-		public ItemListaIngredientesAppServiceAppService(IServiceBase<ItemListaIngredientes> IngredienteService, IMapper mapper)
+		public ItemListaIngredientesAppService(IServiceBase<ItemListaIngredientes> IngredienteService, IMapper mapper)
 		{
 			_service = IngredienteService;
 			_mapper = mapper;

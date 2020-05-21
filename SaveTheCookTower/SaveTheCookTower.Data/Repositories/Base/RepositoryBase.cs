@@ -23,7 +23,8 @@ namespace SaveTheCookTower.Data.Repositories.Base
 
 		public TModel Add(TModel obj)
 		{
-			obj.IncializarNovoObjeto();
+
+			obj.IncializarNovoObjeto(obj.Id == null);
 
 			_context.Set<TModel>().Add(obj);
 			_context.SaveChanges();

@@ -7,11 +7,18 @@ namespace SaveTheCookTower.Application.ViewModels
 	public class ItemListaIngredientesViewModel
 	{
 
-		public void LercamposDaString(string strKeyvalueSepVitgula)
+		public void LercamposDaString(string strKeyvalueSepVirgula)
 		{
-			var itens = strKeyvalueSepVitgula.Split(",");
+			var itens = strKeyvalueSepVirgula.Split(",");
 			foreach(var s in itens)
 			{
+				if (s.Contains("id=") && (s.Length > 3))
+				{
+					Guid umId;
+					Guid.TryParse(s.Split("=")[1], out umId);
+					Id = umId;
+				}
+
 				if (s.Contains("nome=")) Nome = s.Split("=")[1];
 				if (s.Contains("sinonimos=")) Sinonimos = s.Split("=")[1];
 				//if (s.Contains("itemUri=")) ItemUri = s.Split("=")[1];
@@ -19,21 +26,21 @@ namespace SaveTheCookTower.Application.ViewModels
 				if (s.Contains("ordem=")) Ordem = Convert.ToInt32(s.Split("=")[1]);
 				if (s.Contains("quantidade=")) Quantidade = Convert.ToDouble(s.Split("=")[1]);
 
-				if (s.Contains("unidadeMedidaId="))
+				if (s.Contains("unidadeMedidaId=") && (s.Length > 16))
 				{
 					Guid umId;
 					Guid.TryParse(s.Split("=")[1], out umId);
 					UnidadeMedidaId = umId;
 				}
 
-				if (s.Contains("ingredienteId="))
+				if (s.Contains("ingredienteId=") && (s.Length > 14))
 				{
 					Guid ingId;
 					Guid.TryParse(s.Split("=")[1], out ingId);
 					IngredienteId = ingId;
 				}
 
-				if (s.Contains("receitaId="))
+				if (s.Contains("receitaId=") && (s.Length > 10))
 				{
 					Guid recId;
 					Guid.TryParse(s.Split("=")[1], out recId);
@@ -41,6 +48,8 @@ namespace SaveTheCookTower.Application.ViewModels
 				}
 			}
 	}
+		public DateTime? CriadoEmUtc { get; set; }
+		public DateTime? AtualizadoEmUtc { get; set; }
 
 		public Guid? Id { get; set; }
 		public string Nome { get; set; }

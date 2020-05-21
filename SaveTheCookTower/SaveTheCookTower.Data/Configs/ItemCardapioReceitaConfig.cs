@@ -14,7 +14,7 @@ namespace SaveTheCookTower.Data.Configs
 			builder.DefineBasicConfigs(tableName: "item_cardapio_receita");
 
 
-			builder.HasOne(p => p.ItemCardapio).WithMany(p => p.Receitas).HasForeignKey(p => p.ItemCardapioId)
+			builder.HasOne(p => p.ItemCardapio).WithMany(p => p.ItensCardapioReceita).HasForeignKey(p => p.ItemCardapioId)
 				.OnDelete(DeleteBehavior.Restrict);
 
 			builder.HasOne(p => p.Receita).WithMany(p => p.ItensCardapioReceita).HasForeignKey(p => p.ReceitaId);

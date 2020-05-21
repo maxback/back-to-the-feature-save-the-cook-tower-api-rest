@@ -10,6 +10,10 @@ namespace SaveTheCookTower.Domain.Models
 	/// </summary>
 	public class ItemCardapio : ModelBase
 	{
+		public ItemCardapio()
+		{
+			ItensCardapioReceita = new List<ItemCardapioReceita>();
+		}
 		/// <summary>
 		/// Indica o tipo do item, indicando a que se aplica (café da manhã, almoço, etc)
 		/// </summary>
@@ -45,6 +49,6 @@ namespace SaveTheCookTower.Domain.Models
 		/// diferente de porções para uam receita, deve-se criar um novo ItemCardapio com Porcoes 
 		/// diferente e sua própria lsitra de receitas.
 		/// </summary>
-		public virtual List<ItemCardapioReceita> Receitas { get; }
+		public virtual List<ItemCardapioReceita> ItensCardapioReceita { get; }
 	}
 }

@@ -59,5 +59,36 @@ namespace SaveTheCookTower.Application.ViewModels
 		/// Sei, é terrível. Queria fugir disto
 		/// </summary>
 		public List<ItemListaIngredientesViewModel> ItensListaIngredientes { get; }
+
+
+		public void LercamposDaString(string strKeyvalueSepVirgula)
+		{
+			var itens = strKeyvalueSepVirgula.Split(",");
+			foreach (var s in itens)
+			{
+				if (s.Contains("id="))
+				{
+					Guid umId;
+					Guid.TryParse(s.Split("=")[1], out umId);
+					Id = umId;
+				}
+
+				if (s.Contains("nome=")) Nome = s.Split("=")[1];
+				if (s.Contains("sinonimos=")) Sinonimos = s.Split("=")[1];
+				//if (s.Contains("itemUri=")) ItemUri = s.Split("=")[1];
+				if (s.Contains("foraDeUso=")) ForaDeUso = s.Split("=")[1] == "true";
+				if (s.Contains("nomeResumido=")) NomeResumido = s.Split("=")[1];
+
+				if (s.Contains("tipo="))
+				{
+					var t = Convert.ToInt32(s.Split("=")[1]);
+					Tipo = (TiposDeUnidadesDeMedida) t;
+				}
+			}
+		}
+
 	}
+
+
+
 }

@@ -161,10 +161,10 @@ namespace SaveTheCookTower.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("65069fcf-c2d3-4dba-8abe-fb8664d77dc4"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 786, DateTimeKind.Utc).AddTicks(190),
-                            CategoriaId = new Guid("10faa48a-deae-4967-8399-b20f413f0e54"),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 786, DateTimeKind.Utc).AddTicks(182),
+                            Id = new Guid("80f4e723-4987-4e7a-be9d-85ee03a149f4"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 918, DateTimeKind.Utc).AddTicks(8541),
+                            CategoriaId = new Guid("70ff797f-14c8-43d0-a7e4-8a2b2f5d6692"),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 918, DateTimeKind.Utc).AddTicks(8530),
                             Descricao = "Dieta abase de pão comum",
                             ForaDeUso = false,
                             Nome = "Comendo pão no café da manhã todo dia (mensal)",
@@ -227,69 +227,99 @@ namespace SaveTheCookTower.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("44c85429-abfe-44d4-9e4a-3dde505d8515"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 784, DateTimeKind.Utc).AddTicks(2696),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 784, DateTimeKind.Utc).AddTicks(2688),
+                            Id = new Guid("8cbb65ef-21bf-4751-8239-0b018b154b71"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 916, DateTimeKind.Utc).AddTicks(2948),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 916, DateTimeKind.Utc).AddTicks(2939),
                             ForaDeUso = false,
                             Nome = "Categorias",
                             Sinonimos = "Categoria Raiz"
                         },
                         new
                         {
-                            Id = new Guid("ad93c813-de74-4bf8-9383-d405a8ada49c"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 784, DateTimeKind.Utc).AddTicks(3928),
-                            CategoriaPaiId = new Guid("44c85429-abfe-44d4-9e4a-3dde505d8515"),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 784, DateTimeKind.Utc).AddTicks(3920),
+                            Id = new Guid("aeb5ead3-79e4-4595-b3a9-f5caa92ca058"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 916, DateTimeKind.Utc).AddTicks(4261),
+                            CategoriaPaiId = new Guid("8cbb65ef-21bf-4751-8239-0b018b154b71"),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 916, DateTimeKind.Utc).AddTicks(4253),
                             ForaDeUso = false,
                             Nome = "Ingredientes",
                             Sinonimos = "Categoria Raiz dos Ingredientes"
                         },
                         new
                         {
-                            Id = new Guid("10faa48a-deae-4967-8399-b20f413f0e54"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 784, DateTimeKind.Utc).AddTicks(5107),
-                            CategoriaPaiId = new Guid("44c85429-abfe-44d4-9e4a-3dde505d8515"),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 784, DateTimeKind.Utc).AddTicks(5100),
+                            Id = new Guid("b68be1c1-27d4-4c48-b667-e163d26eb681"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 916, DateTimeKind.Utc).AddTicks(5508),
+                            CategoriaPaiId = new Guid("aeb5ead3-79e4-4595-b3a9-f5caa92ca058"),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 916, DateTimeKind.Utc).AddTicks(5500),
+                            ForaDeUso = false,
+                            Nome = "Carnes",
+                            Sinonimos = "carnes"
+                        },
+                        new
+                        {
+                            Id = new Guid("08e1e5ad-9ae2-4729-8fbb-77f1426f3d05"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 916, DateTimeKind.Utc).AddTicks(5660),
+                            CategoriaPaiId = new Guid("aeb5ead3-79e4-4595-b3a9-f5caa92ca058"),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 916, DateTimeKind.Utc).AddTicks(5656),
+                            ForaDeUso = false,
+                            Nome = "hortifrutigranjeiro",
+                            Sinonimos = "hortaliças,frutas,verduras,ovos,hortifruti"
+                        },
+                        new
+                        {
+                            Id = new Guid("2ddd92e1-ad5c-45d2-bb2d-ca4148f6fdf9"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 916, DateTimeKind.Utc).AddTicks(5731),
+                            CategoriaPaiId = new Guid("aeb5ead3-79e4-4595-b3a9-f5caa92ca058"),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 916, DateTimeKind.Utc).AddTicks(5728),
+                            ForaDeUso = false,
+                            Nome = "geral",
+                            Sinonimos = "geral"
+                        },
+                        new
+                        {
+                            Id = new Guid("70ff797f-14c8-43d0-a7e4-8a2b2f5d6692"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 916, DateTimeKind.Utc).AddTicks(5900),
+                            CategoriaPaiId = new Guid("8cbb65ef-21bf-4751-8239-0b018b154b71"),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 916, DateTimeKind.Utc).AddTicks(5895),
                             ForaDeUso = false,
                             Nome = "Cardápios",
                             Sinonimos = "Categoria Raiz dos Cardápios"
                         },
                         new
                         {
-                            Id = new Guid("d25189af-510c-43b8-b225-89a7c8518067"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 784, DateTimeKind.Utc).AddTicks(5212),
-                            CategoriaPaiId = new Guid("44c85429-abfe-44d4-9e4a-3dde505d8515"),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 784, DateTimeKind.Utc).AddTicks(5209),
+                            Id = new Guid("f782113b-c4e6-4918-b69e-df0f74b929b4"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 916, DateTimeKind.Utc).AddTicks(5982),
+                            CategoriaPaiId = new Guid("8cbb65ef-21bf-4751-8239-0b018b154b71"),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 916, DateTimeKind.Utc).AddTicks(5979),
                             ForaDeUso = false,
                             Nome = "Receitas",
                             Sinonimos = "Categoria Raiz das Receitas"
                         },
                         new
                         {
-                            Id = new Guid("26267275-8c0a-4d91-b7eb-2587249b85dd"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 784, DateTimeKind.Utc).AddTicks(5311),
-                            CategoriaPaiId = new Guid("d25189af-510c-43b8-b225-89a7c8518067"),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 784, DateTimeKind.Utc).AddTicks(5308),
+                            Id = new Guid("280092d9-a30f-418d-a066-1fb81197e245"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 916, DateTimeKind.Utc).AddTicks(6091),
+                            CategoriaPaiId = new Guid("f782113b-c4e6-4918-b69e-df0f74b929b4"),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 916, DateTimeKind.Utc).AddTicks(6088),
                             ForaDeUso = false,
                             Nome = "Tortas",
                             Sinonimos = "Categoria Raiz das tortas"
                         },
                         new
                         {
-                            Id = new Guid("62074504-b97e-4b2d-bdf0-bb40265024e5"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 784, DateTimeKind.Utc).AddTicks(5331),
-                            CategoriaPaiId = new Guid("d25189af-510c-43b8-b225-89a7c8518067"),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 784, DateTimeKind.Utc).AddTicks(5330),
+                            Id = new Guid("0dcf5246-fbc6-43c5-a28d-11b443fb367e"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 916, DateTimeKind.Utc).AddTicks(6102),
+                            CategoriaPaiId = new Guid("f782113b-c4e6-4918-b69e-df0f74b929b4"),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 916, DateTimeKind.Utc).AddTicks(6101),
                             ForaDeUso = false,
                             Nome = "Café da manhã",
                             Sinonimos = "Cafe da manha"
                         },
                         new
                         {
-                            Id = new Guid("fc4e215b-6dfc-4db0-8c9b-e4a35e6e750d"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 784, DateTimeKind.Utc).AddTicks(5455),
-                            CategoriaPaiId = new Guid("d25189af-510c-43b8-b225-89a7c8518067"),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 784, DateTimeKind.Utc).AddTicks(5452),
+                            Id = new Guid("29546daa-16eb-4c3a-9281-c56f83c127ce"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 916, DateTimeKind.Utc).AddTicks(6212),
+                            CategoriaPaiId = new Guid("f782113b-c4e6-4918-b69e-df0f74b929b4"),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 916, DateTimeKind.Utc).AddTicks(6209),
                             ForaDeUso = false,
                             Nome = "Jantar",
                             Sinonimos = "Categoria Raiz dos Jantares"
@@ -361,25 +391,25 @@ namespace SaveTheCookTower.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("502e2046-a681-47be-8cc9-34ab9c796b52"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 783, DateTimeKind.Utc).AddTicks(7087),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 783, DateTimeKind.Utc).AddTicks(7079),
-                            DestinoId = new Guid("78be9b06-a0e1-47c5-8f40-5c13061eb1f2"),
+                            Id = new Guid("1982a2f6-8d26-429a-8719-cb739b5325da"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 915, DateTimeKind.Utc).AddTicks(7035),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 915, DateTimeKind.Utc).AddTicks(7025),
+                            DestinoId = new Guid("8793a798-75b8-41f9-9f5b-fca8d3d5340b"),
                             ForaDeUso = false,
                             Nome = "metro para milimetros",
-                            OrigemId = new Guid("937cb99e-d87f-40df-9009-3b5abecf2d84"),
+                            OrigemId = new Guid("b6883dbe-e132-42f3-a0a1-01a355d209bf"),
                             RazaoOrigemDestino = 0.001,
                             Sinonimos = "razão m/ml, metro para milimetros,m para ml"
                         },
                         new
                         {
-                            Id = new Guid("b9824e28-8622-4e17-9ec1-f7f379254d1a"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 784, DateTimeKind.Utc).AddTicks(1628),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 784, DateTimeKind.Utc).AddTicks(1620),
-                            DestinoId = new Guid("9c9fb002-47ec-4322-92b9-c035fa8d69dd"),
+                            Id = new Guid("6dea2b1a-2d07-4c9b-9223-f6cb5844ce6e"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 916, DateTimeKind.Utc).AddTicks(1759),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 916, DateTimeKind.Utc).AddTicks(1745),
+                            DestinoId = new Guid("f76caf8a-2ebe-49d7-8235-a3950904c106"),
                             ForaDeUso = false,
                             Nome = "xícaras de chá pra litros",
-                            OrigemId = new Guid("3231aeff-289a-4b95-a354-d8fe019e6366"),
+                            OrigemId = new Guid("21e64e53-3b7a-4f37-afe6-62c42f6119e8"),
                             RazaoOrigemDestino = 0.25,
                             Sinonimos = "razão xíc/l, xícara de chá apra litros,xíc para l,xic para l"
                         });
@@ -648,40 +678,40 @@ namespace SaveTheCookTower.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("8061d894-dc40-4315-a1bd-f32eb6a13fc0"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 784, DateTimeKind.Utc).AddTicks(6342),
-                            CategoriaId = new Guid("ad93c813-de74-4bf8-9383-d405a8ada49c"),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 784, DateTimeKind.Utc).AddTicks(6334),
+                            Id = new Guid("f952a08b-f489-412a-8fd1-ea30fb499145"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 916, DateTimeKind.Utc).AddTicks(7153),
+                            CategoriaId = new Guid("2ddd92e1-ad5c-45d2-bb2d-ca4148f6fdf9"),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 916, DateTimeKind.Utc).AddTicks(7144),
                             ForaDeUso = false,
                             Nome = "Farinha de Trigo",
                             Sinonimos = "Trigo"
                         },
                         new
                         {
-                            Id = new Guid("c24449e8-03f4-423d-a0b4-bffc207021c0"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 784, DateTimeKind.Utc).AddTicks(7621),
-                            CategoriaId = new Guid("ad93c813-de74-4bf8-9383-d405a8ada49c"),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 784, DateTimeKind.Utc).AddTicks(7614),
+                            Id = new Guid("a8a6d044-8a7e-4314-a5de-ca0dc92e964e"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 916, DateTimeKind.Utc).AddTicks(8594),
+                            CategoriaId = new Guid("2ddd92e1-ad5c-45d2-bb2d-ca4148f6fdf9"),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 916, DateTimeKind.Utc).AddTicks(8583),
                             ForaDeUso = false,
                             Nome = "Fermento para Pão",
                             Sinonimos = "Fermento biológico"
                         },
                         new
                         {
-                            Id = new Guid("fff275f4-152f-43e0-bd2c-f3a86be650fc"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 784, DateTimeKind.Utc).AddTicks(7725),
-                            CategoriaId = new Guid("ad93c813-de74-4bf8-9383-d405a8ada49c"),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 784, DateTimeKind.Utc).AddTicks(7722),
+                            Id = new Guid("ed943cd6-7806-4e24-81a8-e38b8349b858"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 916, DateTimeKind.Utc).AddTicks(8821),
+                            CategoriaId = new Guid("08e1e5ad-9ae2-4729-8fbb-77f1426f3d05"),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 916, DateTimeKind.Utc).AddTicks(8813),
                             ForaDeUso = false,
                             Nome = "Ovo de galinha",
                             Sinonimos = "Ovo"
                         },
                         new
                         {
-                            Id = new Guid("42a1cdca-3015-44f3-a1ea-ca6b832b3e38"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 784, DateTimeKind.Utc).AddTicks(7784),
-                            CategoriaId = new Guid("ad93c813-de74-4bf8-9383-d405a8ada49c"),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 784, DateTimeKind.Utc).AddTicks(7781),
+                            Id = new Guid("681a4fad-2829-47e4-ac61-d0406a4c7f36"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 916, DateTimeKind.Utc).AddTicks(8948),
+                            CategoriaId = new Guid("2ddd92e1-ad5c-45d2-bb2d-ca4148f6fdf9"),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 916, DateTimeKind.Utc).AddTicks(8941),
                             ForaDeUso = false,
                             Nome = "Água",
                             Sinonimos = "Agua"
@@ -757,364 +787,364 @@ namespace SaveTheCookTower.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("e3f3f47d-7524-428e-b32b-aadd9341fae1"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 787, DateTimeKind.Utc).AddTicks(1787),
-                            CardapioId = new Guid("65069fcf-c2d3-4dba-8abe-fb8664d77dc4"),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 787, DateTimeKind.Utc).AddTicks(1752),
+                            Id = new Guid("01f65feb-e709-41d8-b9ff-9243bf2d4058"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 920, DateTimeKind.Utc).AddTicks(2010),
+                            CardapioId = new Guid("80f4e723-4987-4e7a-be9d-85ee03a149f4"),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 920, DateTimeKind.Utc).AddTicks(1992),
                             DiaDaSemana = 1,
                             ForaDeUso = false,
-                            Nome = "Domingo da semana $1 - $Café da Manhã",
+                            Nome = "{diasS[dia]} da semana {semana} - {s}",
                             Porcoes = 1,
                             Semana = 1,
                             Tipo = 1
                         },
                         new
                         {
-                            Id = new Guid("6197df82-2aa3-4d36-8fda-6d5362f01790"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 787, DateTimeKind.Utc).AddTicks(7163),
-                            CardapioId = new Guid("65069fcf-c2d3-4dba-8abe-fb8664d77dc4"),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 787, DateTimeKind.Utc).AddTicks(7154),
+                            Id = new Guid("8f242d5c-240a-4c96-9fcc-4677902c3c5a"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 920, DateTimeKind.Utc).AddTicks(7632),
+                            CardapioId = new Guid("80f4e723-4987-4e7a-be9d-85ee03a149f4"),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 920, DateTimeKind.Utc).AddTicks(7622),
                             DiaDaSemana = 2,
                             ForaDeUso = false,
-                            Nome = "Segunda-feira da semana $1 - $Café da Manhã",
+                            Nome = "{diasS[dia]} da semana {semana} - {s}",
                             Porcoes = 1,
                             Semana = 1,
                             Tipo = 1
                         },
                         new
                         {
-                            Id = new Guid("e268dc25-b04e-4fb4-b11c-ad5ebab15f3c"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 787, DateTimeKind.Utc).AddTicks(7534),
-                            CardapioId = new Guid("65069fcf-c2d3-4dba-8abe-fb8664d77dc4"),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 787, DateTimeKind.Utc).AddTicks(7528),
+                            Id = new Guid("e2c8a624-bdb3-47a4-8cf4-fca0bcb947a9"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 920, DateTimeKind.Utc).AddTicks(8030),
+                            CardapioId = new Guid("80f4e723-4987-4e7a-be9d-85ee03a149f4"),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 920, DateTimeKind.Utc).AddTicks(8024),
                             DiaDaSemana = 3,
                             ForaDeUso = false,
-                            Nome = "Terça-feira da semana $1 - $Café da Manhã",
+                            Nome = "{diasS[dia]} da semana {semana} - {s}",
                             Porcoes = 1,
                             Semana = 1,
                             Tipo = 1
                         },
                         new
                         {
-                            Id = new Guid("ca4a6ab6-e4af-49bc-b539-068295555ec3"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 787, DateTimeKind.Utc).AddTicks(7778),
-                            CardapioId = new Guid("65069fcf-c2d3-4dba-8abe-fb8664d77dc4"),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 787, DateTimeKind.Utc).AddTicks(7774),
+                            Id = new Guid("8d7f0bb2-5235-48fc-9ba9-a4b1191024a9"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 920, DateTimeKind.Utc).AddTicks(8258),
+                            CardapioId = new Guid("80f4e723-4987-4e7a-be9d-85ee03a149f4"),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 920, DateTimeKind.Utc).AddTicks(8253),
                             DiaDaSemana = 4,
                             ForaDeUso = false,
-                            Nome = "Quarta-feira da semana $1 - $Café da Manhã",
+                            Nome = "{diasS[dia]} da semana {semana} - {s}",
                             Porcoes = 1,
                             Semana = 1,
                             Tipo = 1
                         },
                         new
                         {
-                            Id = new Guid("d915e019-c1db-47b6-a0c9-4d3fd39daab2"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 787, DateTimeKind.Utc).AddTicks(8025),
-                            CardapioId = new Guid("65069fcf-c2d3-4dba-8abe-fb8664d77dc4"),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 787, DateTimeKind.Utc).AddTicks(8020),
+                            Id = new Guid("1c06861c-dc95-4916-844d-46d6f74122fb"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 920, DateTimeKind.Utc).AddTicks(8473),
+                            CardapioId = new Guid("80f4e723-4987-4e7a-be9d-85ee03a149f4"),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 920, DateTimeKind.Utc).AddTicks(8468),
                             DiaDaSemana = 5,
                             ForaDeUso = false,
-                            Nome = "Quinta-feira da semana $1 - $Café da Manhã",
+                            Nome = "{diasS[dia]} da semana {semana} - {s}",
                             Porcoes = 1,
                             Semana = 1,
                             Tipo = 1
                         },
                         new
                         {
-                            Id = new Guid("e40af40f-4b1b-4576-bbac-25211ec68a39"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 787, DateTimeKind.Utc).AddTicks(8247),
-                            CardapioId = new Guid("65069fcf-c2d3-4dba-8abe-fb8664d77dc4"),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 787, DateTimeKind.Utc).AddTicks(8243),
+                            Id = new Guid("3c5fa394-112a-4b6c-a55f-ac7b841f0591"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 920, DateTimeKind.Utc).AddTicks(8695),
+                            CardapioId = new Guid("80f4e723-4987-4e7a-be9d-85ee03a149f4"),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 920, DateTimeKind.Utc).AddTicks(8690),
                             DiaDaSemana = 6,
                             ForaDeUso = false,
-                            Nome = "Sexta-feira da semana $1 - $Café da Manhã",
+                            Nome = "{diasS[dia]} da semana {semana} - {s}",
                             Porcoes = 1,
                             Semana = 1,
                             Tipo = 1
                         },
                         new
                         {
-                            Id = new Guid("7c3afe4d-2907-4ccb-8ed2-ff6443ed22af"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 787, DateTimeKind.Utc).AddTicks(8451),
-                            CardapioId = new Guid("65069fcf-c2d3-4dba-8abe-fb8664d77dc4"),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 787, DateTimeKind.Utc).AddTicks(8446),
+                            Id = new Guid("003e1cf4-55b2-41ab-93f7-b1ce9c14a1e3"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 920, DateTimeKind.Utc).AddTicks(8919),
+                            CardapioId = new Guid("80f4e723-4987-4e7a-be9d-85ee03a149f4"),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 920, DateTimeKind.Utc).AddTicks(8914),
                             DiaDaSemana = 7,
                             ForaDeUso = false,
-                            Nome = "Sábado da semana $1 - $Café da Manhã",
+                            Nome = "{diasS[dia]} da semana {semana} - {s}",
                             Porcoes = 1,
                             Semana = 1,
                             Tipo = 1
                         },
                         new
                         {
-                            Id = new Guid("10343b07-8b1c-46f0-9a7b-4a61f45fa006"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 787, DateTimeKind.Utc).AddTicks(8654),
-                            CardapioId = new Guid("65069fcf-c2d3-4dba-8abe-fb8664d77dc4"),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 787, DateTimeKind.Utc).AddTicks(8650),
+                            Id = new Guid("080d1885-d957-4ff7-8ac3-4504783a6a8e"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 920, DateTimeKind.Utc).AddTicks(9129),
+                            CardapioId = new Guid("80f4e723-4987-4e7a-be9d-85ee03a149f4"),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 920, DateTimeKind.Utc).AddTicks(9125),
                             DiaDaSemana = 1,
                             ForaDeUso = false,
-                            Nome = "Domingo da semana $2 - $Café da Manhã",
+                            Nome = "{diasS[dia]} da semana {semana} - {s}",
                             Porcoes = 1,
                             Semana = 2,
                             Tipo = 1
                         },
                         new
                         {
-                            Id = new Guid("2c2fe350-9c5d-4f0a-8d53-8ac4bf7f32f6"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 787, DateTimeKind.Utc).AddTicks(8856),
-                            CardapioId = new Guid("65069fcf-c2d3-4dba-8abe-fb8664d77dc4"),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 787, DateTimeKind.Utc).AddTicks(8852),
+                            Id = new Guid("9074c307-7b70-4426-87e9-47a355db1164"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 920, DateTimeKind.Utc).AddTicks(9366),
+                            CardapioId = new Guid("80f4e723-4987-4e7a-be9d-85ee03a149f4"),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 920, DateTimeKind.Utc).AddTicks(9360),
                             DiaDaSemana = 2,
                             ForaDeUso = false,
-                            Nome = "Segunda-feira da semana $2 - $Café da Manhã",
+                            Nome = "{diasS[dia]} da semana {semana} - {s}",
                             Porcoes = 1,
                             Semana = 2,
                             Tipo = 1
                         },
                         new
                         {
-                            Id = new Guid("45c7a224-7153-40f0-aaa0-e50e9204351c"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 787, DateTimeKind.Utc).AddTicks(9067),
-                            CardapioId = new Guid("65069fcf-c2d3-4dba-8abe-fb8664d77dc4"),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 787, DateTimeKind.Utc).AddTicks(9063),
+                            Id = new Guid("fa85277e-19a0-45d6-9a0d-86eb6e014ed6"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 920, DateTimeKind.Utc).AddTicks(9586),
+                            CardapioId = new Guid("80f4e723-4987-4e7a-be9d-85ee03a149f4"),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 920, DateTimeKind.Utc).AddTicks(9581),
                             DiaDaSemana = 3,
                             ForaDeUso = false,
-                            Nome = "Terça-feira da semana $2 - $Café da Manhã",
+                            Nome = "{diasS[dia]} da semana {semana} - {s}",
                             Porcoes = 1,
                             Semana = 2,
                             Tipo = 1
                         },
                         new
                         {
-                            Id = new Guid("f2378410-219e-4c7a-ac03-8fa6522139da"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 787, DateTimeKind.Utc).AddTicks(9268),
-                            CardapioId = new Guid("65069fcf-c2d3-4dba-8abe-fb8664d77dc4"),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 787, DateTimeKind.Utc).AddTicks(9264),
+                            Id = new Guid("3a1dcdcb-560d-47d7-9a7a-fcb725b40d27"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 920, DateTimeKind.Utc).AddTicks(9996),
+                            CardapioId = new Guid("80f4e723-4987-4e7a-be9d-85ee03a149f4"),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 920, DateTimeKind.Utc).AddTicks(9987),
                             DiaDaSemana = 4,
                             ForaDeUso = false,
-                            Nome = "Quarta-feira da semana $2 - $Café da Manhã",
+                            Nome = "{diasS[dia]} da semana {semana} - {s}",
                             Porcoes = 1,
                             Semana = 2,
                             Tipo = 1
                         },
                         new
                         {
-                            Id = new Guid("cdeca2b5-0fb5-4c8c-8b39-e6f2d86abf73"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 787, DateTimeKind.Utc).AddTicks(9480),
-                            CardapioId = new Guid("65069fcf-c2d3-4dba-8abe-fb8664d77dc4"),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 787, DateTimeKind.Utc).AddTicks(9476),
+                            Id = new Guid("ac31a87e-702e-4aa1-8dea-df37f172cfe6"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(325),
+                            CardapioId = new Guid("80f4e723-4987-4e7a-be9d-85ee03a149f4"),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(320),
                             DiaDaSemana = 5,
                             ForaDeUso = false,
-                            Nome = "Quinta-feira da semana $2 - $Café da Manhã",
+                            Nome = "{diasS[dia]} da semana {semana} - {s}",
                             Porcoes = 1,
                             Semana = 2,
                             Tipo = 1
                         },
                         new
                         {
-                            Id = new Guid("fbabbce7-42a4-49c5-a939-30b5b4f50ea9"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 787, DateTimeKind.Utc).AddTicks(9706),
-                            CardapioId = new Guid("65069fcf-c2d3-4dba-8abe-fb8664d77dc4"),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 787, DateTimeKind.Utc).AddTicks(9701),
+                            Id = new Guid("040ace79-9c66-40c5-8d90-cf428b468e6a"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(641),
+                            CardapioId = new Guid("80f4e723-4987-4e7a-be9d-85ee03a149f4"),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(611),
                             DiaDaSemana = 6,
                             ForaDeUso = false,
-                            Nome = "Sexta-feira da semana $2 - $Café da Manhã",
+                            Nome = "{diasS[dia]} da semana {semana} - {s}",
                             Porcoes = 1,
                             Semana = 2,
                             Tipo = 1
                         },
                         new
                         {
-                            Id = new Guid("099683cc-5bc3-4c15-b407-1cb6de6c604d"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 787, DateTimeKind.Utc).AddTicks(9913),
-                            CardapioId = new Guid("65069fcf-c2d3-4dba-8abe-fb8664d77dc4"),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 787, DateTimeKind.Utc).AddTicks(9908),
+                            Id = new Guid("07ec8272-ec8e-4ba0-a5e0-ad1147a5a117"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(967),
+                            CardapioId = new Guid("80f4e723-4987-4e7a-be9d-85ee03a149f4"),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(962),
                             DiaDaSemana = 7,
                             ForaDeUso = false,
-                            Nome = "Sábado da semana $2 - $Café da Manhã",
+                            Nome = "{diasS[dia]} da semana {semana} - {s}",
                             Porcoes = 1,
                             Semana = 2,
                             Tipo = 1
                         },
                         new
                         {
-                            Id = new Guid("294a030d-e302-4d0c-a691-b90ef54dbc9a"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(114),
-                            CardapioId = new Guid("65069fcf-c2d3-4dba-8abe-fb8664d77dc4"),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(110),
+                            Id = new Guid("1366adb5-c08e-4fc9-a754-d95504f62b33"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(1193),
+                            CardapioId = new Guid("80f4e723-4987-4e7a-be9d-85ee03a149f4"),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(1189),
                             DiaDaSemana = 1,
                             ForaDeUso = false,
-                            Nome = "Domingo da semana $3 - $Café da Manhã",
+                            Nome = "{diasS[dia]} da semana {semana} - {s}",
                             Porcoes = 1,
                             Semana = 3,
                             Tipo = 1
                         },
                         new
                         {
-                            Id = new Guid("3288c56c-29c3-471f-bbbc-5c6b32819ff8"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(316),
-                            CardapioId = new Guid("65069fcf-c2d3-4dba-8abe-fb8664d77dc4"),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(312),
+                            Id = new Guid("7214f836-4bf6-4798-8912-756d9fc66615"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(1403),
+                            CardapioId = new Guid("80f4e723-4987-4e7a-be9d-85ee03a149f4"),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(1398),
                             DiaDaSemana = 2,
                             ForaDeUso = false,
-                            Nome = "Segunda-feira da semana $3 - $Café da Manhã",
+                            Nome = "{diasS[dia]} da semana {semana} - {s}",
                             Porcoes = 1,
                             Semana = 3,
                             Tipo = 1
                         },
                         new
                         {
-                            Id = new Guid("c3cf167d-1429-4c53-905b-0595a1a400a0"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(515),
-                            CardapioId = new Guid("65069fcf-c2d3-4dba-8abe-fb8664d77dc4"),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(511),
+                            Id = new Guid("7dae4518-90a0-405f-bd7c-83321aa8f070"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(1653),
+                            CardapioId = new Guid("80f4e723-4987-4e7a-be9d-85ee03a149f4"),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(1648),
                             DiaDaSemana = 3,
                             ForaDeUso = false,
-                            Nome = "Terça-feira da semana $3 - $Café da Manhã",
+                            Nome = "{diasS[dia]} da semana {semana} - {s}",
                             Porcoes = 1,
                             Semana = 3,
                             Tipo = 1
                         },
                         new
                         {
-                            Id = new Guid("0f6e9bfc-99ea-48c7-992e-ea648cd6df7e"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(722),
-                            CardapioId = new Guid("65069fcf-c2d3-4dba-8abe-fb8664d77dc4"),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(718),
+                            Id = new Guid("242fb063-0410-4b6e-8b7e-370ffee9edb8"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(1885),
+                            CardapioId = new Guid("80f4e723-4987-4e7a-be9d-85ee03a149f4"),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(1879),
                             DiaDaSemana = 4,
                             ForaDeUso = false,
-                            Nome = "Quarta-feira da semana $3 - $Café da Manhã",
+                            Nome = "{diasS[dia]} da semana {semana} - {s}",
                             Porcoes = 1,
                             Semana = 3,
                             Tipo = 1
                         },
                         new
                         {
-                            Id = new Guid("521ac6fc-9722-4a25-9b7b-ad966c7ee95a"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(921),
-                            CardapioId = new Guid("65069fcf-c2d3-4dba-8abe-fb8664d77dc4"),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(917),
+                            Id = new Guid("09c0b785-a043-4e19-b05b-e1f457a1403b"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(2095),
+                            CardapioId = new Guid("80f4e723-4987-4e7a-be9d-85ee03a149f4"),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(2090),
                             DiaDaSemana = 5,
                             ForaDeUso = false,
-                            Nome = "Quinta-feira da semana $3 - $Café da Manhã",
+                            Nome = "{diasS[dia]} da semana {semana} - {s}",
                             Porcoes = 1,
                             Semana = 3,
                             Tipo = 1
                         },
                         new
                         {
-                            Id = new Guid("33f51fd4-3ec9-4ee7-ab44-178f98d2160f"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(1169),
-                            CardapioId = new Guid("65069fcf-c2d3-4dba-8abe-fb8664d77dc4"),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(1165),
+                            Id = new Guid("1f9b0a12-b42f-4c6e-be4d-bffb9c222ddf"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(2301),
+                            CardapioId = new Guid("80f4e723-4987-4e7a-be9d-85ee03a149f4"),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(2296),
                             DiaDaSemana = 6,
                             ForaDeUso = false,
-                            Nome = "Sexta-feira da semana $3 - $Café da Manhã",
+                            Nome = "{diasS[dia]} da semana {semana} - {s}",
                             Porcoes = 1,
                             Semana = 3,
                             Tipo = 1
                         },
                         new
                         {
-                            Id = new Guid("cce88608-963e-4c0d-a20f-07ef5284be64"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(1405),
-                            CardapioId = new Guid("65069fcf-c2d3-4dba-8abe-fb8664d77dc4"),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(1400),
+                            Id = new Guid("c02879a1-42b5-4b11-832e-f9079456f46b"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(2506),
+                            CardapioId = new Guid("80f4e723-4987-4e7a-be9d-85ee03a149f4"),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(2501),
                             DiaDaSemana = 7,
                             ForaDeUso = false,
-                            Nome = "Sábado da semana $3 - $Café da Manhã",
+                            Nome = "{diasS[dia]} da semana {semana} - {s}",
                             Porcoes = 1,
                             Semana = 3,
                             Tipo = 1
                         },
                         new
                         {
-                            Id = new Guid("23c676bb-86d2-4317-bb8b-d918d4332bf5"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(1615),
-                            CardapioId = new Guid("65069fcf-c2d3-4dba-8abe-fb8664d77dc4"),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(1611),
+                            Id = new Guid("cc7a5c8f-2225-4dcb-b7da-209ed4663317"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(2969),
+                            CardapioId = new Guid("80f4e723-4987-4e7a-be9d-85ee03a149f4"),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(2935),
                             DiaDaSemana = 1,
                             ForaDeUso = false,
-                            Nome = "Domingo da semana $4 - $Café da Manhã",
+                            Nome = "{diasS[dia]} da semana {semana} - {s}",
                             Porcoes = 1,
                             Semana = 4,
                             Tipo = 1
                         },
                         new
                         {
-                            Id = new Guid("da1e1e03-e976-4c08-9819-99ceaded51ce"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(1817),
-                            CardapioId = new Guid("65069fcf-c2d3-4dba-8abe-fb8664d77dc4"),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(1813),
+                            Id = new Guid("cc9c0e14-2928-4e99-ab47-11dbc7aad542"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(3301),
+                            CardapioId = new Guid("80f4e723-4987-4e7a-be9d-85ee03a149f4"),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(3295),
                             DiaDaSemana = 2,
                             ForaDeUso = false,
-                            Nome = "Segunda-feira da semana $4 - $Café da Manhã",
+                            Nome = "{diasS[dia]} da semana {semana} - {s}",
                             Porcoes = 1,
                             Semana = 4,
                             Tipo = 1
                         },
                         new
                         {
-                            Id = new Guid("4edfcbec-b451-4041-9c61-c4dd1169c55e"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(2016),
-                            CardapioId = new Guid("65069fcf-c2d3-4dba-8abe-fb8664d77dc4"),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(2012),
+                            Id = new Guid("f357e058-7609-4993-a69a-51788a52f282"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(3529),
+                            CardapioId = new Guid("80f4e723-4987-4e7a-be9d-85ee03a149f4"),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(3525),
                             DiaDaSemana = 3,
                             ForaDeUso = false,
-                            Nome = "Terça-feira da semana $4 - $Café da Manhã",
+                            Nome = "{diasS[dia]} da semana {semana} - {s}",
                             Porcoes = 1,
                             Semana = 4,
                             Tipo = 1
                         },
                         new
                         {
-                            Id = new Guid("7cba3a13-a805-45b3-bc4b-59dc8751875a"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(2214),
-                            CardapioId = new Guid("65069fcf-c2d3-4dba-8abe-fb8664d77dc4"),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(2210),
+                            Id = new Guid("44e888c9-0cea-4ff5-98a4-08fec317386c"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(3765),
+                            CardapioId = new Guid("80f4e723-4987-4e7a-be9d-85ee03a149f4"),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(3760),
                             DiaDaSemana = 4,
                             ForaDeUso = false,
-                            Nome = "Quarta-feira da semana $4 - $Café da Manhã",
+                            Nome = "{diasS[dia]} da semana {semana} - {s}",
                             Porcoes = 1,
                             Semana = 4,
                             Tipo = 1
                         },
                         new
                         {
-                            Id = new Guid("aa221fac-a392-4472-8675-f4226e6246cc"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(2412),
-                            CardapioId = new Guid("65069fcf-c2d3-4dba-8abe-fb8664d77dc4"),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(2408),
+                            Id = new Guid("2d68599e-631f-4f84-b418-ff1c655a19bd"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(3983),
+                            CardapioId = new Guid("80f4e723-4987-4e7a-be9d-85ee03a149f4"),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(3978),
                             DiaDaSemana = 5,
                             ForaDeUso = false,
-                            Nome = "Quinta-feira da semana $4 - $Café da Manhã",
+                            Nome = "{diasS[dia]} da semana {semana} - {s}",
                             Porcoes = 1,
                             Semana = 4,
                             Tipo = 1
                         },
                         new
                         {
-                            Id = new Guid("25bc0d10-727b-4df9-b666-bb90a92e1cd6"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(2611),
-                            CardapioId = new Guid("65069fcf-c2d3-4dba-8abe-fb8664d77dc4"),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(2607),
+                            Id = new Guid("e99c3418-f6b6-4ccb-838d-afa459309513"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(4207),
+                            CardapioId = new Guid("80f4e723-4987-4e7a-be9d-85ee03a149f4"),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(4203),
                             DiaDaSemana = 6,
                             ForaDeUso = false,
-                            Nome = "Sexta-feira da semana $4 - $Café da Manhã",
+                            Nome = "{diasS[dia]} da semana {semana} - {s}",
                             Porcoes = 1,
                             Semana = 4,
                             Tipo = 1
                         },
                         new
                         {
-                            Id = new Guid("414b8c6a-524d-45e4-ae70-0da38d67b8b1"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(2809),
-                            CardapioId = new Guid("65069fcf-c2d3-4dba-8abe-fb8664d77dc4"),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(2805),
+                            Id = new Guid("bf577664-520f-45a4-b6a5-a8ea8b01f47f"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(4419),
+                            CardapioId = new Guid("80f4e723-4987-4e7a-be9d-85ee03a149f4"),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(4414),
                             DiaDaSemana = 7,
                             ForaDeUso = false,
-                            Nome = "Sábado da semana $4 - $Café da Manhã",
+                            Nome = "{diasS[dia]} da semana {semana} - {s}",
                             Porcoes = 1,
                             Semana = 4,
                             Tipo = 1
@@ -1180,283 +1210,283 @@ namespace SaveTheCookTower.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("aef2f02d-77c9-4013-93c2-642cb6068842"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(3938),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(3930),
+                            Id = new Guid("d58c496c-a0c6-443a-b8c1-9f768f2f7540"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(5756),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(5746),
                             ForaDeUso = false,
-                            ItemCardapioId = new Guid("e3f3f47d-7524-428e-b32b-aadd9341fae1"),
-                            Nome = "Rel. Item Cardápio(Domingo da semana $1 - $Café da Manhã) x Receita(Pão de Forma)",
-                            ReceitaId = new Guid("1d7082cc-3d8d-45d7-bdd3-b1f5170563df")
+                            ItemCardapioId = new Guid("01f65feb-e709-41d8-b9ff-9243bf2d4058"),
+                            Nome = "Rel. Item Cardápio({diasS[dia]} da semana {semana} - {s}) x Receita(Pão de Forma)",
+                            ReceitaId = new Guid("a9b2546b-fdc9-4752-9aea-225c680f1403")
                         },
                         new
                         {
-                            Id = new Guid("cad1e79c-74a7-437d-8ba3-7b3bfa0e186c"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(6219),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(6210),
+                            Id = new Guid("c99a53ef-3b64-4837-97c5-3fc1615a8824"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(8232),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(8224),
                             ForaDeUso = false,
-                            ItemCardapioId = new Guid("6197df82-2aa3-4d36-8fda-6d5362f01790"),
-                            Nome = "Rel. Item Cardápio(Segunda-feira da semana $1 - $Café da Manhã) x Receita(Pão de Forma)",
-                            ReceitaId = new Guid("1d7082cc-3d8d-45d7-bdd3-b1f5170563df")
+                            ItemCardapioId = new Guid("8f242d5c-240a-4c96-9fcc-4677902c3c5a"),
+                            Nome = "Rel. Item Cardápio({diasS[dia]} da semana {semana} - {s}) x Receita(Pão de Forma)",
+                            ReceitaId = new Guid("a9b2546b-fdc9-4752-9aea-225c680f1403")
                         },
                         new
                         {
-                            Id = new Guid("7b36a671-0b4c-469a-a440-709dc07ae1b5"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(6330),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(6327),
+                            Id = new Guid("ea9a2f0c-4fd4-4009-bf1a-2272726ea8be"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(8352),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(8348),
                             ForaDeUso = false,
-                            ItemCardapioId = new Guid("e268dc25-b04e-4fb4-b11c-ad5ebab15f3c"),
-                            Nome = "Rel. Item Cardápio(Terça-feira da semana $1 - $Café da Manhã) x Receita(Pão de Forma)",
-                            ReceitaId = new Guid("1d7082cc-3d8d-45d7-bdd3-b1f5170563df")
+                            ItemCardapioId = new Guid("e2c8a624-bdb3-47a4-8cf4-fca0bcb947a9"),
+                            Nome = "Rel. Item Cardápio({diasS[dia]} da semana {semana} - {s}) x Receita(Pão de Forma)",
+                            ReceitaId = new Guid("a9b2546b-fdc9-4752-9aea-225c680f1403")
                         },
                         new
                         {
-                            Id = new Guid("a7a0683f-5a4e-472d-86e9-a8fd4c630b6f"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(6394),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(6392),
+                            Id = new Guid("d4e01a9d-5c87-45b8-bd33-cd6459b58a66"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(8427),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(8424),
                             ForaDeUso = false,
-                            ItemCardapioId = new Guid("ca4a6ab6-e4af-49bc-b539-068295555ec3"),
-                            Nome = "Rel. Item Cardápio(Quarta-feira da semana $1 - $Café da Manhã) x Receita(Pão de Forma)",
-                            ReceitaId = new Guid("1d7082cc-3d8d-45d7-bdd3-b1f5170563df")
+                            ItemCardapioId = new Guid("8d7f0bb2-5235-48fc-9ba9-a4b1191024a9"),
+                            Nome = "Rel. Item Cardápio({diasS[dia]} da semana {semana} - {s}) x Receita(Pão de Forma)",
+                            ReceitaId = new Guid("a9b2546b-fdc9-4752-9aea-225c680f1403")
                         },
                         new
                         {
-                            Id = new Guid("13b0b013-e8d7-4eae-862c-42ab67a7e540"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(6458),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(6455),
+                            Id = new Guid("4f18de6f-c106-425f-aa18-eabbe7cb0e95"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(8527),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(8524),
                             ForaDeUso = false,
-                            ItemCardapioId = new Guid("d915e019-c1db-47b6-a0c9-4d3fd39daab2"),
-                            Nome = "Rel. Item Cardápio(Quinta-feira da semana $1 - $Café da Manhã) x Receita(Pão de Forma)",
-                            ReceitaId = new Guid("1d7082cc-3d8d-45d7-bdd3-b1f5170563df")
+                            ItemCardapioId = new Guid("1c06861c-dc95-4916-844d-46d6f74122fb"),
+                            Nome = "Rel. Item Cardápio({diasS[dia]} da semana {semana} - {s}) x Receita(Pão de Forma)",
+                            ReceitaId = new Guid("a9b2546b-fdc9-4752-9aea-225c680f1403")
                         },
                         new
                         {
-                            Id = new Guid("2e921695-3142-4283-88bb-16b99d1b58dd"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(6527),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(6524),
+                            Id = new Guid("d4ab30e5-0cb0-4800-b9ed-8c80c2c54989"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(8607),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(8604),
                             ForaDeUso = false,
-                            ItemCardapioId = new Guid("e40af40f-4b1b-4576-bbac-25211ec68a39"),
-                            Nome = "Rel. Item Cardápio(Sexta-feira da semana $1 - $Café da Manhã) x Receita(Pão de Forma)",
-                            ReceitaId = new Guid("1d7082cc-3d8d-45d7-bdd3-b1f5170563df")
+                            ItemCardapioId = new Guid("3c5fa394-112a-4b6c-a55f-ac7b841f0591"),
+                            Nome = "Rel. Item Cardápio({diasS[dia]} da semana {semana} - {s}) x Receita(Pão de Forma)",
+                            ReceitaId = new Guid("a9b2546b-fdc9-4752-9aea-225c680f1403")
                         },
                         new
                         {
-                            Id = new Guid("11229f3b-21c0-479c-8d53-12fc0b35ae8f"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(6588),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(6585),
+                            Id = new Guid("a33058a6-727c-4695-994f-72571cc0875b"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(8677),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(8674),
                             ForaDeUso = false,
-                            ItemCardapioId = new Guid("7c3afe4d-2907-4ccb-8ed2-ff6443ed22af"),
-                            Nome = "Rel. Item Cardápio(Sábado da semana $1 - $Café da Manhã) x Receita(Pão de Forma)",
-                            ReceitaId = new Guid("1d7082cc-3d8d-45d7-bdd3-b1f5170563df")
+                            ItemCardapioId = new Guid("003e1cf4-55b2-41ab-93f7-b1ce9c14a1e3"),
+                            Nome = "Rel. Item Cardápio({diasS[dia]} da semana {semana} - {s}) x Receita(Pão de Forma)",
+                            ReceitaId = new Guid("a9b2546b-fdc9-4752-9aea-225c680f1403")
                         },
                         new
                         {
-                            Id = new Guid("84cd1c95-61b2-4ef9-abe2-6e89b4bd67b8"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(6649),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(6646),
+                            Id = new Guid("caeb7668-53dd-4007-8f9b-2c0930aa911d"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(8745),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(8742),
                             ForaDeUso = false,
-                            ItemCardapioId = new Guid("10343b07-8b1c-46f0-9a7b-4a61f45fa006"),
-                            Nome = "Rel. Item Cardápio(Domingo da semana $2 - $Café da Manhã) x Receita(Pão de Forma)",
-                            ReceitaId = new Guid("1d7082cc-3d8d-45d7-bdd3-b1f5170563df")
+                            ItemCardapioId = new Guid("080d1885-d957-4ff7-8ac3-4504783a6a8e"),
+                            Nome = "Rel. Item Cardápio({diasS[dia]} da semana {semana} - {s}) x Receita(Pão de Forma)",
+                            ReceitaId = new Guid("a9b2546b-fdc9-4752-9aea-225c680f1403")
                         },
                         new
                         {
-                            Id = new Guid("a59aa095-0bae-4a41-ad5d-fe10ace3cea0"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(6736),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(6733),
+                            Id = new Guid("d18fff23-670a-432a-944a-ad9aac24ec0e"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(8813),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(8810),
                             ForaDeUso = false,
-                            ItemCardapioId = new Guid("2c2fe350-9c5d-4f0a-8d53-8ac4bf7f32f6"),
-                            Nome = "Rel. Item Cardápio(Segunda-feira da semana $2 - $Café da Manhã) x Receita(Pão de Forma)",
-                            ReceitaId = new Guid("1d7082cc-3d8d-45d7-bdd3-b1f5170563df")
+                            ItemCardapioId = new Guid("9074c307-7b70-4426-87e9-47a355db1164"),
+                            Nome = "Rel. Item Cardápio({diasS[dia]} da semana {semana} - {s}) x Receita(Pão de Forma)",
+                            ReceitaId = new Guid("a9b2546b-fdc9-4752-9aea-225c680f1403")
                         },
                         new
                         {
-                            Id = new Guid("56781146-fc59-4508-85ac-3f904ad0dc2f"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(6808),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(6805),
+                            Id = new Guid("35104d47-7191-40df-9ba2-2f896669b337"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(8900),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(8897),
                             ForaDeUso = false,
-                            ItemCardapioId = new Guid("45c7a224-7153-40f0-aaa0-e50e9204351c"),
-                            Nome = "Rel. Item Cardápio(Terça-feira da semana $2 - $Café da Manhã) x Receita(Pão de Forma)",
-                            ReceitaId = new Guid("1d7082cc-3d8d-45d7-bdd3-b1f5170563df")
+                            ItemCardapioId = new Guid("fa85277e-19a0-45d6-9a0d-86eb6e014ed6"),
+                            Nome = "Rel. Item Cardápio({diasS[dia]} da semana {semana} - {s}) x Receita(Pão de Forma)",
+                            ReceitaId = new Guid("a9b2546b-fdc9-4752-9aea-225c680f1403")
                         },
                         new
                         {
-                            Id = new Guid("5437f0ce-f1f5-4bd3-96d3-5cdadf14efb0"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(6870),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(6867),
+                            Id = new Guid("f7bce275-d300-4e3d-83c9-7d2d901f3344"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(8969),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(8966),
                             ForaDeUso = false,
-                            ItemCardapioId = new Guid("f2378410-219e-4c7a-ac03-8fa6522139da"),
-                            Nome = "Rel. Item Cardápio(Quarta-feira da semana $2 - $Café da Manhã) x Receita(Pão de Forma)",
-                            ReceitaId = new Guid("1d7082cc-3d8d-45d7-bdd3-b1f5170563df")
+                            ItemCardapioId = new Guid("3a1dcdcb-560d-47d7-9a7a-fcb725b40d27"),
+                            Nome = "Rel. Item Cardápio({diasS[dia]} da semana {semana} - {s}) x Receita(Pão de Forma)",
+                            ReceitaId = new Guid("a9b2546b-fdc9-4752-9aea-225c680f1403")
                         },
                         new
                         {
-                            Id = new Guid("d5856178-6358-4475-a9f7-9949277b5a54"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(6942),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(6939),
+                            Id = new Guid("e7504335-028d-4e61-b00e-e61c2202d5c5"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(9036),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(9033),
                             ForaDeUso = false,
-                            ItemCardapioId = new Guid("cdeca2b5-0fb5-4c8c-8b39-e6f2d86abf73"),
-                            Nome = "Rel. Item Cardápio(Quinta-feira da semana $2 - $Café da Manhã) x Receita(Pão de Forma)",
-                            ReceitaId = new Guid("1d7082cc-3d8d-45d7-bdd3-b1f5170563df")
+                            ItemCardapioId = new Guid("ac31a87e-702e-4aa1-8dea-df37f172cfe6"),
+                            Nome = "Rel. Item Cardápio({diasS[dia]} da semana {semana} - {s}) x Receita(Pão de Forma)",
+                            ReceitaId = new Guid("a9b2546b-fdc9-4752-9aea-225c680f1403")
                         },
                         new
                         {
-                            Id = new Guid("ce93177a-f175-4b1e-81e4-114cb9d6be1c"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(7007),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(7004),
+                            Id = new Guid("8fde6fe0-5700-447e-9282-b3ddb841bb84"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(9122),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(9119),
                             ForaDeUso = false,
-                            ItemCardapioId = new Guid("fbabbce7-42a4-49c5-a939-30b5b4f50ea9"),
-                            Nome = "Rel. Item Cardápio(Sexta-feira da semana $2 - $Café da Manhã) x Receita(Pão de Forma)",
-                            ReceitaId = new Guid("1d7082cc-3d8d-45d7-bdd3-b1f5170563df")
+                            ItemCardapioId = new Guid("040ace79-9c66-40c5-8d90-cf428b468e6a"),
+                            Nome = "Rel. Item Cardápio({diasS[dia]} da semana {semana} - {s}) x Receita(Pão de Forma)",
+                            ReceitaId = new Guid("a9b2546b-fdc9-4752-9aea-225c680f1403")
                         },
                         new
                         {
-                            Id = new Guid("e7771457-e3d8-45e1-9ea6-efa7ff8aa6c1"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(7068),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(7066),
+                            Id = new Guid("18a1566e-df13-4fc7-942b-72ec0f929d72"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(9194),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(9190),
                             ForaDeUso = false,
-                            ItemCardapioId = new Guid("099683cc-5bc3-4c15-b407-1cb6de6c604d"),
-                            Nome = "Rel. Item Cardápio(Sábado da semana $2 - $Café da Manhã) x Receita(Pão de Forma)",
-                            ReceitaId = new Guid("1d7082cc-3d8d-45d7-bdd3-b1f5170563df")
+                            ItemCardapioId = new Guid("07ec8272-ec8e-4ba0-a5e0-ad1147a5a117"),
+                            Nome = "Rel. Item Cardápio({diasS[dia]} da semana {semana} - {s}) x Receita(Pão de Forma)",
+                            ReceitaId = new Guid("a9b2546b-fdc9-4752-9aea-225c680f1403")
                         },
                         new
                         {
-                            Id = new Guid("0370a7dc-a902-468b-a19a-f18f46298b8c"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(7129),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(7126),
+                            Id = new Guid("f4881d80-6632-42f3-8fc4-7d0fad82c8ed"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(9261),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(9257),
                             ForaDeUso = false,
-                            ItemCardapioId = new Guid("294a030d-e302-4d0c-a691-b90ef54dbc9a"),
-                            Nome = "Rel. Item Cardápio(Domingo da semana $3 - $Café da Manhã) x Receita(Pão de Forma)",
-                            ReceitaId = new Guid("1d7082cc-3d8d-45d7-bdd3-b1f5170563df")
+                            ItemCardapioId = new Guid("1366adb5-c08e-4fc9-a754-d95504f62b33"),
+                            Nome = "Rel. Item Cardápio({diasS[dia]} da semana {semana} - {s}) x Receita(Pão de Forma)",
+                            ReceitaId = new Guid("a9b2546b-fdc9-4752-9aea-225c680f1403")
                         },
                         new
                         {
-                            Id = new Guid("3c113b7f-33c0-4624-9ad2-e5182e0ce101"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(7189),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(7187),
+                            Id = new Guid("07901eef-4a21-4a75-a0b1-a3b57f566985"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(9328),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(9325),
                             ForaDeUso = false,
-                            ItemCardapioId = new Guid("3288c56c-29c3-471f-bbbc-5c6b32819ff8"),
-                            Nome = "Rel. Item Cardápio(Segunda-feira da semana $3 - $Café da Manhã) x Receita(Pão de Forma)",
-                            ReceitaId = new Guid("1d7082cc-3d8d-45d7-bdd3-b1f5170563df")
+                            ItemCardapioId = new Guid("7214f836-4bf6-4798-8912-756d9fc66615"),
+                            Nome = "Rel. Item Cardápio({diasS[dia]} da semana {semana} - {s}) x Receita(Pão de Forma)",
+                            ReceitaId = new Guid("a9b2546b-fdc9-4752-9aea-225c680f1403")
                         },
                         new
                         {
-                            Id = new Guid("d1a6291a-02f4-4e2f-abea-2ab4fa1e72cb"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(7269),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(7266),
+                            Id = new Guid("270ce40e-87a2-4c3f-8b24-adbf4b71ff58"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(9394),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(9391),
                             ForaDeUso = false,
-                            ItemCardapioId = new Guid("c3cf167d-1429-4c53-905b-0595a1a400a0"),
-                            Nome = "Rel. Item Cardápio(Terça-feira da semana $3 - $Café da Manhã) x Receita(Pão de Forma)",
-                            ReceitaId = new Guid("1d7082cc-3d8d-45d7-bdd3-b1f5170563df")
+                            ItemCardapioId = new Guid("7dae4518-90a0-405f-bd7c-83321aa8f070"),
+                            Nome = "Rel. Item Cardápio({diasS[dia]} da semana {semana} - {s}) x Receita(Pão de Forma)",
+                            ReceitaId = new Guid("a9b2546b-fdc9-4752-9aea-225c680f1403")
                         },
                         new
                         {
-                            Id = new Guid("ae81e26d-074d-4f2f-b2b2-438a773fb85d"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(7338),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(7335),
+                            Id = new Guid("b065fc12-fd52-458b-8436-a1bf0f47a867"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(9466),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(9463),
                             ForaDeUso = false,
-                            ItemCardapioId = new Guid("0f6e9bfc-99ea-48c7-992e-ea648cd6df7e"),
-                            Nome = "Rel. Item Cardápio(Quarta-feira da semana $3 - $Café da Manhã) x Receita(Pão de Forma)",
-                            ReceitaId = new Guid("1d7082cc-3d8d-45d7-bdd3-b1f5170563df")
+                            ItemCardapioId = new Guid("242fb063-0410-4b6e-8b7e-370ffee9edb8"),
+                            Nome = "Rel. Item Cardápio({diasS[dia]} da semana {semana} - {s}) x Receita(Pão de Forma)",
+                            ReceitaId = new Guid("a9b2546b-fdc9-4752-9aea-225c680f1403")
                         },
                         new
                         {
-                            Id = new Guid("204ec46d-ee62-4ec8-836d-4bce6dac26c3"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(7399),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(7397),
+                            Id = new Guid("6f836e6c-5c72-475f-b8b2-bf5536745ae3"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(9533),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(9530),
                             ForaDeUso = false,
-                            ItemCardapioId = new Guid("521ac6fc-9722-4a25-9b7b-ad966c7ee95a"),
-                            Nome = "Rel. Item Cardápio(Quinta-feira da semana $3 - $Café da Manhã) x Receita(Pão de Forma)",
-                            ReceitaId = new Guid("1d7082cc-3d8d-45d7-bdd3-b1f5170563df")
+                            ItemCardapioId = new Guid("09c0b785-a043-4e19-b05b-e1f457a1403b"),
+                            Nome = "Rel. Item Cardápio({diasS[dia]} da semana {semana} - {s}) x Receita(Pão de Forma)",
+                            ReceitaId = new Guid("a9b2546b-fdc9-4752-9aea-225c680f1403")
                         },
                         new
                         {
-                            Id = new Guid("54cce02d-bde6-4dcf-9c2e-82072cfe88cb"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(7460),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(7457),
+                            Id = new Guid("39c41e01-c98d-4997-886b-072bdc9e5286"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(9599),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(9596),
                             ForaDeUso = false,
-                            ItemCardapioId = new Guid("33f51fd4-3ec9-4ee7-ab44-178f98d2160f"),
-                            Nome = "Rel. Item Cardápio(Sexta-feira da semana $3 - $Café da Manhã) x Receita(Pão de Forma)",
-                            ReceitaId = new Guid("1d7082cc-3d8d-45d7-bdd3-b1f5170563df")
+                            ItemCardapioId = new Guid("1f9b0a12-b42f-4c6e-be4d-bffb9c222ddf"),
+                            Nome = "Rel. Item Cardápio({diasS[dia]} da semana {semana} - {s}) x Receita(Pão de Forma)",
+                            ReceitaId = new Guid("a9b2546b-fdc9-4752-9aea-225c680f1403")
                         },
                         new
                         {
-                            Id = new Guid("8ef5b64c-7d0c-43fc-8e74-a83a1f017060"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(7522),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(7519),
+                            Id = new Guid("2b2bfe76-6327-4406-9d1c-689857133eb8"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(9708),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(9704),
                             ForaDeUso = false,
-                            ItemCardapioId = new Guid("cce88608-963e-4c0d-a20f-07ef5284be64"),
-                            Nome = "Rel. Item Cardápio(Sábado da semana $3 - $Café da Manhã) x Receita(Pão de Forma)",
-                            ReceitaId = new Guid("1d7082cc-3d8d-45d7-bdd3-b1f5170563df")
+                            ItemCardapioId = new Guid("c02879a1-42b5-4b11-832e-f9079456f46b"),
+                            Nome = "Rel. Item Cardápio({diasS[dia]} da semana {semana} - {s}) x Receita(Pão de Forma)",
+                            ReceitaId = new Guid("a9b2546b-fdc9-4752-9aea-225c680f1403")
                         },
                         new
                         {
-                            Id = new Guid("8995f09c-9681-4dcd-baee-bc8b1d9229aa"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(7582),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(7580),
+                            Id = new Guid("46c358eb-0820-46e7-9d90-6ace5d1c9b6d"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(9778),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(9775),
                             ForaDeUso = false,
-                            ItemCardapioId = new Guid("23c676bb-86d2-4317-bb8b-d918d4332bf5"),
-                            Nome = "Rel. Item Cardápio(Domingo da semana $4 - $Café da Manhã) x Receita(Pão de Forma)",
-                            ReceitaId = new Guid("1d7082cc-3d8d-45d7-bdd3-b1f5170563df")
+                            ItemCardapioId = new Guid("cc7a5c8f-2225-4dcb-b7da-209ed4663317"),
+                            Nome = "Rel. Item Cardápio({diasS[dia]} da semana {semana} - {s}) x Receita(Pão de Forma)",
+                            ReceitaId = new Guid("a9b2546b-fdc9-4752-9aea-225c680f1403")
                         },
                         new
                         {
-                            Id = new Guid("8d70b5fb-f02d-4449-b4e5-58da7ac383d8"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(7650),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(7648),
+                            Id = new Guid("014d9a3b-2605-439c-a0c9-34cf5b071ada"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(9843),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(9840),
                             ForaDeUso = false,
-                            ItemCardapioId = new Guid("da1e1e03-e976-4c08-9819-99ceaded51ce"),
-                            Nome = "Rel. Item Cardápio(Segunda-feira da semana $4 - $Café da Manhã) x Receita(Pão de Forma)",
-                            ReceitaId = new Guid("1d7082cc-3d8d-45d7-bdd3-b1f5170563df")
+                            ItemCardapioId = new Guid("cc9c0e14-2928-4e99-ab47-11dbc7aad542"),
+                            Nome = "Rel. Item Cardápio({diasS[dia]} da semana {semana} - {s}) x Receita(Pão de Forma)",
+                            ReceitaId = new Guid("a9b2546b-fdc9-4752-9aea-225c680f1403")
                         },
                         new
                         {
-                            Id = new Guid("58e6dafb-fbdb-4477-9052-df877b7373d8"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(7714),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(7712),
+                            Id = new Guid("e44f89bb-d60b-40ab-a40e-877b933dc539"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(9907),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(9905),
                             ForaDeUso = false,
-                            ItemCardapioId = new Guid("4edfcbec-b451-4041-9c61-c4dd1169c55e"),
-                            Nome = "Rel. Item Cardápio(Terça-feira da semana $4 - $Café da Manhã) x Receita(Pão de Forma)",
-                            ReceitaId = new Guid("1d7082cc-3d8d-45d7-bdd3-b1f5170563df")
+                            ItemCardapioId = new Guid("f357e058-7609-4993-a69a-51788a52f282"),
+                            Nome = "Rel. Item Cardápio({diasS[dia]} da semana {semana} - {s}) x Receita(Pão de Forma)",
+                            ReceitaId = new Guid("a9b2546b-fdc9-4752-9aea-225c680f1403")
                         },
                         new
                         {
-                            Id = new Guid("d08b268e-fe40-410f-b620-ce25a75a7df2"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(7794),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(7791),
+                            Id = new Guid("c230d160-ceed-4aef-9929-d20ca3e28b19"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(9973),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 921, DateTimeKind.Utc).AddTicks(9970),
                             ForaDeUso = false,
-                            ItemCardapioId = new Guid("7cba3a13-a805-45b3-bc4b-59dc8751875a"),
-                            Nome = "Rel. Item Cardápio(Quarta-feira da semana $4 - $Café da Manhã) x Receita(Pão de Forma)",
-                            ReceitaId = new Guid("1d7082cc-3d8d-45d7-bdd3-b1f5170563df")
+                            ItemCardapioId = new Guid("44e888c9-0cea-4ff5-98a4-08fec317386c"),
+                            Nome = "Rel. Item Cardápio({diasS[dia]} da semana {semana} - {s}) x Receita(Pão de Forma)",
+                            ReceitaId = new Guid("a9b2546b-fdc9-4752-9aea-225c680f1403")
                         },
                         new
                         {
-                            Id = new Guid("9b9b1dc8-9e1b-4464-b045-31f6b9d067f6"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(7860),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(7858),
+                            Id = new Guid("63f6bed8-e3a6-4532-88fa-5632b9304e95"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 922, DateTimeKind.Utc).AddTicks(39),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 922, DateTimeKind.Utc).AddTicks(36),
                             ForaDeUso = false,
-                            ItemCardapioId = new Guid("aa221fac-a392-4472-8675-f4226e6246cc"),
-                            Nome = "Rel. Item Cardápio(Quinta-feira da semana $4 - $Café da Manhã) x Receita(Pão de Forma)",
-                            ReceitaId = new Guid("1d7082cc-3d8d-45d7-bdd3-b1f5170563df")
+                            ItemCardapioId = new Guid("2d68599e-631f-4f84-b418-ff1c655a19bd"),
+                            Nome = "Rel. Item Cardápio({diasS[dia]} da semana {semana} - {s}) x Receita(Pão de Forma)",
+                            ReceitaId = new Guid("a9b2546b-fdc9-4752-9aea-225c680f1403")
                         },
                         new
                         {
-                            Id = new Guid("c8dbd15a-dc51-4113-b865-b5e7fea71dba"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(7922),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(7919),
+                            Id = new Guid("f0fe8711-441e-4c15-96c3-0b5cdc336d54"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 922, DateTimeKind.Utc).AddTicks(105),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 922, DateTimeKind.Utc).AddTicks(102),
                             ForaDeUso = false,
-                            ItemCardapioId = new Guid("25bc0d10-727b-4df9-b666-bb90a92e1cd6"),
-                            Nome = "Rel. Item Cardápio(Sexta-feira da semana $4 - $Café da Manhã) x Receita(Pão de Forma)",
-                            ReceitaId = new Guid("1d7082cc-3d8d-45d7-bdd3-b1f5170563df")
+                            ItemCardapioId = new Guid("e99c3418-f6b6-4ccb-838d-afa459309513"),
+                            Nome = "Rel. Item Cardápio({diasS[dia]} da semana {semana} - {s}) x Receita(Pão de Forma)",
+                            ReceitaId = new Guid("a9b2546b-fdc9-4752-9aea-225c680f1403")
                         },
                         new
                         {
-                            Id = new Guid("fb75ef4d-9b75-43bb-81d1-712cb5e57e24"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(7982),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 788, DateTimeKind.Utc).AddTicks(7979),
+                            Id = new Guid("02b9f432-4ecc-4bdb-bcd5-8a8c6d9ffd5a"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 922, DateTimeKind.Utc).AddTicks(169),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 922, DateTimeKind.Utc).AddTicks(167),
                             ForaDeUso = false,
-                            ItemCardapioId = new Guid("414b8c6a-524d-45e4-ae70-0da38d67b8b1"),
-                            Nome = "Rel. Item Cardápio(Sábado da semana $4 - $Café da Manhã) x Receita(Pão de Forma)",
-                            ReceitaId = new Guid("1d7082cc-3d8d-45d7-bdd3-b1f5170563df")
+                            ItemCardapioId = new Guid("bf577664-520f-45a4-b6a5-a8ea8b01f47f"),
+                            Nome = "Rel. Item Cardápio({diasS[dia]} da semana {semana} - {s}) x Receita(Pão de Forma)",
+                            ReceitaId = new Guid("a9b2546b-fdc9-4752-9aea-225c680f1403")
                         });
                 });
 
@@ -1535,68 +1565,68 @@ namespace SaveTheCookTower.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("b8dac617-e191-4999-a200-2d63b2e8ada9"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 785, DateTimeKind.Utc).AddTicks(3538),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 785, DateTimeKind.Utc).AddTicks(3529),
+                            Id = new Guid("9829953a-43af-4871-ab8d-86dc689b6f0b"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 917, DateTimeKind.Utc).AddTicks(8346),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 917, DateTimeKind.Utc).AddTicks(8331),
                             ForaDeUso = false,
-                            IngredienteId = new Guid("8061d894-dc40-4315-a1bd-f32eb6a13fc0"),
+                            IngredienteId = new Guid("f952a08b-f489-412a-8fd1-ea30fb499145"),
                             Nome = "Farinha de Trigo",
                             Ordem = 0,
                             Quantidade = 3.0,
-                            ReceitaId = new Guid("1d7082cc-3d8d-45d7-bdd3-b1f5170563df"),
-                            UnidadeMedidaId = new Guid("3231aeff-289a-4b95-a354-d8fe019e6366")
+                            ReceitaId = new Guid("a9b2546b-fdc9-4752-9aea-225c680f1403"),
+                            UnidadeMedidaId = new Guid("21e64e53-3b7a-4f37-afe6-62c42f6119e8")
                         },
                         new
                         {
-                            Id = new Guid("4fc55a97-7c62-4932-a827-9802fd684659"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 785, DateTimeKind.Utc).AddTicks(8916),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 785, DateTimeKind.Utc).AddTicks(8908),
+                            Id = new Guid("837524ee-3435-4b34-b92c-4301b6c61d79"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 918, DateTimeKind.Utc).AddTicks(6582),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 918, DateTimeKind.Utc).AddTicks(6569),
                             ForaDeUso = false,
-                            IngredienteId = new Guid("8061d894-dc40-4315-a1bd-f32eb6a13fc0"),
+                            IngredienteId = new Guid("f952a08b-f489-412a-8fd1-ea30fb499145"),
                             Nome = "Farinha de Trigo",
                             Ordem = 0,
                             Quantidade = 3.0,
-                            ReceitaId = new Guid("1d7082cc-3d8d-45d7-bdd3-b1f5170563df"),
-                            UnidadeMedidaId = new Guid("3231aeff-289a-4b95-a354-d8fe019e6366")
+                            ReceitaId = new Guid("a9b2546b-fdc9-4752-9aea-225c680f1403"),
+                            UnidadeMedidaId = new Guid("21e64e53-3b7a-4f37-afe6-62c42f6119e8")
                         },
                         new
                         {
-                            Id = new Guid("cdee2fce-8d9f-4a87-b8e5-aa97983bcee8"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 785, DateTimeKind.Utc).AddTicks(9110),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 785, DateTimeKind.Utc).AddTicks(9106),
+                            Id = new Guid("2e26e016-6d3c-4f53-953a-704d0a6a0ca8"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 918, DateTimeKind.Utc).AddTicks(6902),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 918, DateTimeKind.Utc).AddTicks(6895),
                             ForaDeUso = false,
-                            IngredienteId = new Guid("c24449e8-03f4-423d-a0b4-bffc207021c0"),
+                            IngredienteId = new Guid("a8a6d044-8a7e-4314-a5de-ca0dc92e964e"),
                             Nome = "Fermento para Pão",
                             Ordem = 1,
                             Quantidade = 1.0,
-                            ReceitaId = new Guid("1d7082cc-3d8d-45d7-bdd3-b1f5170563df"),
-                            UnidadeMedidaId = new Guid("3231aeff-289a-4b95-a354-d8fe019e6366")
+                            ReceitaId = new Guid("a9b2546b-fdc9-4752-9aea-225c680f1403"),
+                            UnidadeMedidaId = new Guid("21e64e53-3b7a-4f37-afe6-62c42f6119e8")
                         },
                         new
                         {
-                            Id = new Guid("028307ab-6407-4c81-aef9-6b35625997c5"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 785, DateTimeKind.Utc).AddTicks(9182),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 785, DateTimeKind.Utc).AddTicks(9179),
+                            Id = new Guid("9c601dd9-08dd-42b5-9a59-2be1d39ac4da"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 918, DateTimeKind.Utc).AddTicks(7039),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 918, DateTimeKind.Utc).AddTicks(7034),
                             ForaDeUso = false,
-                            IngredienteId = new Guid("fff275f4-152f-43e0-bd2c-f3a86be650fc"),
+                            IngredienteId = new Guid("ed943cd6-7806-4e24-81a8-e38b8349b858"),
                             Nome = "Ovo de galinha",
                             Ordem = 2,
                             Quantidade = 5.0,
-                            ReceitaId = new Guid("1d7082cc-3d8d-45d7-bdd3-b1f5170563df"),
-                            UnidadeMedidaId = new Guid("6fa17f5c-dafe-4356-9f36-41b9d36c5990")
+                            ReceitaId = new Guid("a9b2546b-fdc9-4752-9aea-225c680f1403"),
+                            UnidadeMedidaId = new Guid("e06c7d77-91d2-4ca4-bbae-3240889a058b")
                         },
                         new
                         {
-                            Id = new Guid("8930c51e-1c63-49bc-b411-14171b98e3f7"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 785, DateTimeKind.Utc).AddTicks(9248),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 785, DateTimeKind.Utc).AddTicks(9246),
+                            Id = new Guid("495f9ad3-f946-4c7d-b815-37ec223fd613"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 918, DateTimeKind.Utc).AddTicks(7171),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 918, DateTimeKind.Utc).AddTicks(7166),
                             ForaDeUso = false,
-                            IngredienteId = new Guid("42a1cdca-3015-44f3-a1ea-ca6b832b3e38"),
+                            IngredienteId = new Guid("681a4fad-2829-47e4-ac61-d0406a4c7f36"),
                             Nome = "Água",
                             Ordem = 3,
                             Quantidade = 0.5,
-                            ReceitaId = new Guid("1d7082cc-3d8d-45d7-bdd3-b1f5170563df"),
-                            UnidadeMedidaId = new Guid("9c9fb002-47ec-4322-92b9-c035fa8d69dd")
+                            ReceitaId = new Guid("a9b2546b-fdc9-4752-9aea-225c680f1403"),
+                            UnidadeMedidaId = new Guid("f76caf8a-2ebe-49d7-8235-a3950904c106")
                         });
                 });
 
@@ -1662,7 +1692,7 @@ namespace SaveTheCookTower.Data.Migrations
                         .HasColumnName("id_receita_pai")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int?>("RendimentoPorcoes")
+                    b.Property<int>("RendimentoPorcoes")
                         .HasColumnName("n_redimento_porcoes")
                         .HasColumnType("int");
 
@@ -1691,10 +1721,10 @@ namespace SaveTheCookTower.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("1d7082cc-3d8d-45d7-bdd3-b1f5170563df"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 784, DateTimeKind.Utc).AddTicks(8723),
-                            CategoriaId = new Guid("62074504-b97e-4b2d-bdf0-bb40265024e5"),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 784, DateTimeKind.Utc).AddTicks(8715),
+                            Id = new Guid("a9b2546b-fdc9-4752-9aea-225c680f1403"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 917, DateTimeKind.Utc).AddTicks(355),
+                            CategoriaId = new Guid("0dcf5246-fbc6-43c5-a28d-11b443fb367e"),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 917, DateTimeKind.Utc).AddTicks(345),
                             ForaDeUso = false,
                             Nome = "Pão de Forma",
                             RendimentoPorcoes = 5,
@@ -1760,9 +1790,9 @@ namespace SaveTheCookTower.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("6fa17f5c-dafe-4356-9f36-41b9d36c5990"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 783, DateTimeKind.Utc).AddTicks(2131),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 783, DateTimeKind.Utc).AddTicks(2122),
+                            Id = new Guid("e06c7d77-91d2-4ca4-bbae-3240889a058b"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 915, DateTimeKind.Utc).AddTicks(1146),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 915, DateTimeKind.Utc).AddTicks(1134),
                             ForaDeUso = false,
                             Nome = "unidade",
                             NomeResumido = "un",
@@ -1771,9 +1801,9 @@ namespace SaveTheCookTower.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("e54e8d0f-8f28-4323-a461-7d3fbed89db3"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 783, DateTimeKind.Utc).AddTicks(5353),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 783, DateTimeKind.Utc).AddTicks(5345),
+                            Id = new Guid("96c8ddb7-0e6e-48ac-8f5d-0842a84f1f6e"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 915, DateTimeKind.Utc).AddTicks(5052),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 915, DateTimeKind.Utc).AddTicks(5042),
                             ForaDeUso = false,
                             Nome = "grama",
                             NomeResumido = "g",
@@ -1782,9 +1812,9 @@ namespace SaveTheCookTower.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("e371b255-a9ed-4983-9df9-c2bbe17ab88e"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 783, DateTimeKind.Utc).AddTicks(5463),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 783, DateTimeKind.Utc).AddTicks(5460),
+                            Id = new Guid("98410cd2-ccd1-4d1e-9129-6c02ffe7d32e"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 915, DateTimeKind.Utc).AddTicks(5312),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 915, DateTimeKind.Utc).AddTicks(5308),
                             ForaDeUso = false,
                             Nome = "kilograma",
                             NomeResumido = "kg",
@@ -1793,9 +1823,9 @@ namespace SaveTheCookTower.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("9c9fb002-47ec-4322-92b9-c035fa8d69dd"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 783, DateTimeKind.Utc).AddTicks(5476),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 783, DateTimeKind.Utc).AddTicks(5474),
+                            Id = new Guid("f76caf8a-2ebe-49d7-8235-a3950904c106"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 915, DateTimeKind.Utc).AddTicks(5327),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 915, DateTimeKind.Utc).AddTicks(5326),
                             ForaDeUso = false,
                             Nome = "litro",
                             NomeResumido = "l",
@@ -1804,9 +1834,9 @@ namespace SaveTheCookTower.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("3231aeff-289a-4b95-a354-d8fe019e6366"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 783, DateTimeKind.Utc).AddTicks(5579),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 783, DateTimeKind.Utc).AddTicks(5576),
+                            Id = new Guid("21e64e53-3b7a-4f37-afe6-62c42f6119e8"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 915, DateTimeKind.Utc).AddTicks(5403),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 915, DateTimeKind.Utc).AddTicks(5400),
                             ForaDeUso = false,
                             Nome = "xícara de chá",
                             NomeResumido = "xíc",
@@ -1815,9 +1845,9 @@ namespace SaveTheCookTower.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("adcd900e-5317-45e6-a01b-3b15b560ecc8"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 783, DateTimeKind.Utc).AddTicks(5647),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 783, DateTimeKind.Utc).AddTicks(5644),
+                            Id = new Guid("572def3d-ed91-4f41-a1a4-75bda3efd345"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 915, DateTimeKind.Utc).AddTicks(5476),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 915, DateTimeKind.Utc).AddTicks(5474),
                             ForaDeUso = false,
                             Nome = "pitada",
                             NomeResumido = "pt",
@@ -1826,9 +1856,9 @@ namespace SaveTheCookTower.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("33a797f5-3c1d-4782-9984-a674a4c638dc"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 783, DateTimeKind.Utc).AddTicks(5750),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 783, DateTimeKind.Utc).AddTicks(5748),
+                            Id = new Guid("54700d38-4185-4214-98bc-699e03c5117d"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 915, DateTimeKind.Utc).AddTicks(5596),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 915, DateTimeKind.Utc).AddTicks(5594),
                             ForaDeUso = false,
                             Nome = "colher de sopa",
                             NomeResumido = "cso",
@@ -1837,9 +1867,9 @@ namespace SaveTheCookTower.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("9b82d705-1e78-4c8d-a639-b53096e70a31"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 783, DateTimeKind.Utc).AddTicks(5804),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 783, DateTimeKind.Utc).AddTicks(5802),
+                            Id = new Guid("a6db85da-bf6f-4082-aeb7-c48f2f1ac096"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 915, DateTimeKind.Utc).AddTicks(5659),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 915, DateTimeKind.Utc).AddTicks(5657),
                             ForaDeUso = false,
                             Nome = "fatia",
                             NomeResumido = "fat",
@@ -1848,9 +1878,9 @@ namespace SaveTheCookTower.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("08d88fcf-ea35-4b33-a870-599f0ce8cf32"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 783, DateTimeKind.Utc).AddTicks(5857),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 783, DateTimeKind.Utc).AddTicks(5855),
+                            Id = new Guid("5ff960a1-6ab7-45db-99ab-f61bfcbb639a"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 915, DateTimeKind.Utc).AddTicks(5750),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 915, DateTimeKind.Utc).AddTicks(5747),
                             ForaDeUso = false,
                             Nome = "unidade",
                             NomeResumido = "un",
@@ -1859,9 +1889,9 @@ namespace SaveTheCookTower.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("fc6dca5d-94c7-4a59-85e8-5739e7efa0fb"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 783, DateTimeKind.Utc).AddTicks(5701),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 783, DateTimeKind.Utc).AddTicks(5699),
+                            Id = new Guid("bcdc29b8-8308-4b2b-b61d-cc64ce49fbf4"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 915, DateTimeKind.Utc).AddTicks(5541),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 915, DateTimeKind.Utc).AddTicks(5538),
                             ForaDeUso = false,
                             Nome = "colher de chá",
                             NomeResumido = "ccha",
@@ -1870,9 +1900,9 @@ namespace SaveTheCookTower.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("937cb99e-d87f-40df-9009-3b5abecf2d84"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 783, DateTimeKind.Utc).AddTicks(5917),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 783, DateTimeKind.Utc).AddTicks(5915),
+                            Id = new Guid("b6883dbe-e132-42f3-a0a1-01a355d209bf"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 915, DateTimeKind.Utc).AddTicks(5826),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 915, DateTimeKind.Utc).AddTicks(5823),
                             ForaDeUso = false,
                             Nome = "metro",
                             NomeResumido = "m",
@@ -1881,9 +1911,9 @@ namespace SaveTheCookTower.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("78be9b06-a0e1-47c5-8f40-5c13061eb1f2"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 783, DateTimeKind.Utc).AddTicks(5990),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 783, DateTimeKind.Utc).AddTicks(5987),
+                            Id = new Guid("8793a798-75b8-41f9-9f5b-fca8d3d5340b"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 915, DateTimeKind.Utc).AddTicks(5886),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 915, DateTimeKind.Utc).AddTicks(5883),
                             ForaDeUso = false,
                             Nome = "milimetro",
                             NomeResumido = "mm",
@@ -1957,9 +1987,9 @@ namespace SaveTheCookTower.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("90aab973-14aa-48bd-bc54-441f18d29cdb"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 773, DateTimeKind.Utc).AddTicks(6209),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 773, DateTimeKind.Utc).AddTicks(4969),
+                            Id = new Guid("7a1dcce0-7548-4786-bb4e-a3f5235d8cde"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 901, DateTimeKind.Utc).AddTicks(8575),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 901, DateTimeKind.Utc).AddTicks(7287),
                             Email = "adm@adm.com",
                             ForaDeUso = false,
                             Login = "adm",
@@ -1968,9 +1998,9 @@ namespace SaveTheCookTower.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c3ba4922-4c86-4bae-be4b-0f036389b0cf"),
-                            AtualizadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 783, DateTimeKind.Utc).AddTicks(280),
-                            CriadoEmUtc = new DateTime(2020, 5, 5, 15, 2, 55, 783, DateTimeKind.Utc).AddTicks(242),
+                            Id = new Guid("b50c6fca-31d3-48ab-b1ef-b584d810bf36"),
+                            AtualizadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 914, DateTimeKind.Utc).AddTicks(8455),
+                            CriadoEmUtc = new DateTime(2020, 5, 20, 3, 8, 43, 914, DateTimeKind.Utc).AddTicks(8413),
                             Email = "teste@teste.com",
                             ForaDeUso = false,
                             Login = "string",
@@ -2032,7 +2062,7 @@ namespace SaveTheCookTower.Data.Migrations
                     b.HasOne("SaveTheCookTower.Domain.Models.Receita", "Receita")
                         .WithMany("EstapasDePreparo")
                         .HasForeignKey("ReceitaId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
                 });
 
@@ -2078,7 +2108,7 @@ namespace SaveTheCookTower.Data.Migrations
             modelBuilder.Entity("SaveTheCookTower.Domain.Models.ItemCardapioReceita", b =>
                 {
                     b.HasOne("SaveTheCookTower.Domain.Models.ItemCardapio", "ItemCardapio")
-                        .WithMany("Receitas")
+                        .WithMany("ItensCardapioReceita")
                         .HasForeignKey("ItemCardapioId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -2101,7 +2131,7 @@ namespace SaveTheCookTower.Data.Migrations
                     b.HasOne("SaveTheCookTower.Domain.Models.Receita", "Receita")
                         .WithMany("Ingredientes")
                         .HasForeignKey("ReceitaId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("SaveTheCookTower.Domain.Models.UnidadeMedida", "UnidadeMedida")

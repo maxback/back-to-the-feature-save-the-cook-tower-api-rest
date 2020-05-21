@@ -6,6 +6,8 @@ namespace SaveTheCookTower.Application.ViewModels
 {
 	public class IngredienteViewModel
 	{
+		public DateTime? CriadoEmUtc { get; set; }
+		public DateTime? AtualizadoEmUtc { get; set; }
 		public Guid? Id { get; set; }
 		public string Nome { get; set; }
 		public string Sinonimos { get; set; }
@@ -34,5 +36,34 @@ namespace SaveTheCookTower.Application.ViewModels
 		/// </summary>
 		public List<ItemListaIngredientesViewModel> ItensListaIngredientes { get; }
 
+		/// <summary>
+		/// Importa de registro no padrão string:
+		/// "id=,nome=,sinonimo=,foraDeUso=,(true/false),categoriaId=
+		/// </summary>
+		/// <param name="strKeyvalueSepVirgula"></param>
+		public void LercamposDaString(string strKeyvalueSepVirgula)
+		{
+			var itens = strKeyvalueSepVirgula.Split(",");
+			foreach (var s in itens)
+			{
+				if (s.Contains("id=") && (s.Length > 3))
+				{
+					Guid umId;
+					Guid.TryParse(s.Split("=")[1], out umId);
+					Id = umId;
+				}
+
+				if (s.Contains("nome=")) Nome = s.Split("=")[1];
+				if (s.Contains("sinonimos=")) Sinonimos = s.Split("=")[1];
+				//if (s.Contains("itemUri=")) ItemUri = s.Split("=")[1];
+				if (s.Contains("foraDeUso=")) ForaDeUso = s.Split("=")[1] == "true";
+				if (s.Contains("categoriaId=") && (s.Length > 12))
+				{
+					Guid umId;
+					Guid.TryParse(s.Split("=")[1], out umId);
+					CategoriaId = umId;
+				}
+			}
+		}
 	}
 }

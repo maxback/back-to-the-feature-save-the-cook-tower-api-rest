@@ -7,11 +7,61 @@ namespace SaveTheCookTower.Application.ViewModels
 {
 	public class ItemCardapioViewModel
 	{
+		public DateTime? CriadoEmUtc { get; set; }
+		public DateTime? AtualizadoEmUtc { get; set; }
 		public Guid? Id { get; set; }
 		public string Nome { get; set; }
 		public string Sinonimos { get; set; }
 		public Uri ItemUri { get; set; }
 		public bool ForaDeUso { get; set; }
+
+
+
+		public void LercamposDaString(string strKeyvalueSepVirgula)
+		{
+			var sep = ",";
+			if(strKeyvalueSepVirgula.Substring(0,1) == "\"")
+			{
+				sep = "\",\"";
+				strKeyvalueSepVirgula = strKeyvalueSepVirgula.Remove(0, 1);
+				if (strKeyvalueSepVirgula.Substring(strKeyvalueSepVirgula.Length - 1, 1) == "\"")
+    			  strKeyvalueSepVirgula = strKeyvalueSepVirgula.Remove(strKeyvalueSepVirgula.Length - 1, 1);
+			}
+
+			var itens = strKeyvalueSepVirgula.Split(sep);
+			
+			foreach (var s in itens)
+			{
+				if (s.Contains("id=") && (s.Length > 3))
+				{
+					Guid umId;
+					Guid.TryParse(s.Split("=")[1], out umId);
+					Id = umId;
+				}
+
+				if (s.Contains("nome=")) Nome = s.Split("=")[1];
+				if (s.Contains("sinonimos=")) Sinonimos = s.Split("=")[1];
+				//if (s.Contains("itemUri=")) ItemUri = s.Split("=")[1];
+				if (s.Contains("foraDeUso=")) ForaDeUso = s.Split("=")[1] == "true";
+
+
+
+				if (s.Contains("tipo=")) Tipo = (TipoItemCardapio)Convert.ToInt32(s.Split("=")[1]);
+
+				if (s.Contains("cardapioId=") && (s.Length > 16))
+				{
+					Guid umId;
+					Guid.TryParse(s.Split("=")[1], out umId);
+					CardapioId = umId;
+				}
+
+				if (s.Contains("semana=")) Semana = Convert.ToInt32(s.Split("=")[1]);
+				if (s.Contains("diaDaSemana=")) DiaDaSemana = Convert.ToInt32(s.Split("=")[1]);
+				if (s.Contains("porcoes=")) Porcoes = Convert.ToInt32(s.Split("=")[1]);
+				
+				if (s.Contains("listaIdsReceitas=")) ListaIdsReceitas = s.Split("=")[1];
+			}
+		}
 
 
 		/// <summary>
@@ -49,6 +99,12 @@ namespace SaveTheCookTower.Application.ViewModels
 		/// diferente de porções para uam receita, deve-se criar um novo ItemCardapio com Porcoes 
 		/// diferente e sua própria lsitra de receitas.
 		/// </summary>
-		public virtual List<ReceitaViewModel> Receitas { get; }
+		public virtual List<ItemCardapioReceitaViewModel> ItensCardapioReceita { get; }
+
+		/// <summary>
+		/// permite passar os itens de receitas copm os códigos das receitas simplesmente
+		/// para converter para ItensCardapioReceita
+		/// </summary>
+		public string ListaIdsReceitas { get; set; }
 	}
 }
