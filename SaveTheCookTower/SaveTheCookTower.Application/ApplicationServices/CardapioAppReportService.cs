@@ -187,7 +187,8 @@ namespace SaveTheCookTower.Application.ApplicationServices
 					if (grupo != null)
 					{
 						qtd++;
-						grupo.Registros.CommaTextRegisters.Add($"\"item={qtd}\",\"ing={ocor.NomeIngrediente}\",\"count={ocor.QuantidadeTotal}\",\"unit={ocor.NomeUnidadeMedida}\"");
+						var qtdTotal = Math.Round(ocor.QuantidadeTotal, 1, MidpointRounding.ToEven);
+						grupo.Registros.CommaTextRegisters.Add($"\"item={qtd}\",\"ing={ocor.NomeIngrediente}\",\"count={qtdTotal}\",\"unit={ocor.NomeUnidadeMedida}\"");
 					}
 				}
 
