@@ -42,5 +42,16 @@ namespace SaveTheCookTower.Domain.Models
 		/// Sei, é terrível. Queria fugir disto
 		/// </summary>
 		public virtual List<ItemListaIngredientes> ItensListaIngredientes { get; }
+
+		/// <summary>
+		/// Referencia aos ingredientes que tem esta unIdiade como default para lsita de ingrediente
+		/// </summary>
+		public virtual List<Ingrediente> IngredientesUnidadeDefaultList { get; set; }
+
+		/// <summary>
+		/// Referencia aos ingredientes que tem esta unIdiade como definida para lista de compras
+		/// </summary>
+		public virtual List<Ingrediente> IngredientesUnidadeListCompras { get; set; }
+
 	}
 }

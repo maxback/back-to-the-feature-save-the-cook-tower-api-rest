@@ -127,5 +127,14 @@ namespace SaveTheCookTower.Application.ApplicationServices
 
 			_service.Update(modelObj);
 		}
+
+		void IAppServiceBase<ItemListaIngredientesViewModel>.RemoveChildrenOf(Guid idPai, string text, int? from, int? to)
+		{
+			var lista = FindChildrenOf(idPai, text, from, to);
+			foreach (var i in lista)
+			{
+				_service.Remove(i.Id ?? Guid.Empty);
+			}
+		}
 	}
 }

@@ -27,6 +27,15 @@ namespace SaveTheCookTower.Application.Interfaces.Base
 		void Remove(Guid id);
 
 		/// <summary>
+		/// Procura os objetos do model que são filhos do pai passado em idPai, correspondetes ao predicado por texto, independente da propriedade do objeto e remove-os.
+		/// </summary>
+		/// <param name="idPai">Id do pai
+		/// <param name="text">texto para procura
+		/// <param name="fromIndex">Índice inicial do resultado. Se definido indica o offset do inicio subgrupo do resultado de predicado que deve resultar</param>
+		/// <param name="toIndex">Índice final do resultado. Se definido indica o final do inicio subgrupo do resultado de predicado que deve resultar</param>
+		void RemoveChildrenOf(Guid idPai, string text, int? from, int? to);
+
+		/// <summary>
 		/// Retorna um objeto do reposítório correspodnente ao id passado
 		/// </summary>
 		/// <param name="id"></param>

@@ -123,6 +123,45 @@ namespace SaveTheCookTower.Api.Controllers.Base
         }
 
 
+        [HttpDelete]
+        [Route("{idPai}/FilhosDe")]
+        [Route("{idPai}/ChildrenOf")]
+        [Route("{idPai}/cof")]
+        public ActionResult Delete(Guid idPai, [FromQuery] string? text, [FromQuery] int? from, [FromQuery] int? to)
+        {
+            try
+            {
+                bool temTexto = text != null;
+                bool temIndice = from != null && to != null;
+                if (temTexto || temIndice)
+                {
+                    if (temTexto)
+                    {
+                        _appService.RemoveChildrenOf(idPai, text, from, to);
+                        return Ok();
+                    }
+                    else
+                    {
+                        _appService.RemoveChildrenOf(idPai, string.Empty, from, to);
+                        return Ok();
+                    }
+                }
+                _appService.RemoveChildrenOf(idPai, string.Empty, 0, -1);
+
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                string s = INC_MSG_EXCEPTION ? " " + e.Message : "";
+                return BadRequest(new
+                {
+                    Mensagem = _localizer["Ocorreu um erro ao apagar os dados de {0}.{1}",
+                    _nomeParaUsuario, s].Value
+                });
+            }
+        }
+
+
         [HttpGet("{id}")]
         public ActionResult GetById(Guid id)
         {
@@ -171,66 +210,79 @@ namespace SaveTheCookTower.Api.Controllers.Base
         }
         
 
+
+        private void EncaminharSalvamentoBaseadoNasPropriedades(TViewTModel viewModel,
+            Guid id, out TViewTModel viewModelReconsultado)
+        {
+            Guid idObjFilho;
+
+            var dicionarioIdsPorNome = new Dictionary<string, Guid>();
+
+
+            var propList = viewModel.GetType().GetProperties();
+
+            foreach (var prop in propList)
+            {
+                var obj = prop.GetValue(viewModel, null);
+                if (obj == null)
+                    continue;
+
+                var tipo = obj.GetType().Name;
+                if (tipo.Contains("ViewModel") || prop.Name.Contains("AsStr"))
+                {
+                    if (SalvarObjetoFilho(obj, prop.Name, id, out idObjFilho))
+                    {
+                        //precisa guardar o idObjFilho para fazer um update no pai depois
+                        dicionarioIdsPorNome.Add(prop.Name, idObjFilho);
+                    }
+                }
+            }
+
+            if (dicionarioIdsPorNome.Count == 0)
+            {
+                viewModelReconsultado = null;
+                return; //Created($"{Request.Path.Value}/{id}", viewModelAposSalvar);
+            }
+
+            viewModelReconsultado = _appService.GetById(id);
+
+            //percorre dicionário para atribuir os ids dos filhos no objeto pai e mandar atualizar
+            foreach (var par in dicionarioIdsPorNome)
+            {
+                var nomePropId = par.Key + "Id";
+                var propId = viewModelReconsultado.GetType().GetProperties().FirstOrDefault(p => p.Name == nomePropId);
+
+                if (propId != null)
+                {
+                    propId.SetValue(viewModelReconsultado, par.Value);
+                }
+            }
+            //salva alteração
+            _appService.Update(viewModelReconsultado);
+        }
+
+
         [HttpPost]
         public ActionResult Post(TViewTModel viewModel)
         {
-            Guid indefinido = Guid.NewGuid();
-            Guid id = indefinido;
-            Guid idObjFilho;
-            var dicionarioIdsPorNome = new Dictionary<string, Guid>();
+            Guid id = Guid.Empty;
             try
             {
+                TViewTModel viewModelReconsultado;
                 var viewModelAposSalvar = _appService.Add(viewModel);
-
                 id = GetIdFrom(viewModelAposSalvar);
+
 
                 // Agora percorre pegando os objetos filhos de primeiro nível com reflection chamando
                 // SalvarObjetoFilho()
-                var propList = viewModel.GetType().GetProperties();
-
-                foreach(var prop in propList)
-                {
-                    var obj = prop.GetValue(viewModel, null);
-                    if (obj == null)
-                        continue;
-
-                    var tipo = obj.GetType().Name;
-                    if (tipo.Contains("ViewModel") || prop.Name.Contains("AsStr"))
-                    {
-                        if (SalvarObjetoFilho(obj, prop.Name, id, out idObjFilho))
-                        {
-                            //precisa guardar o idObjFilho para fazer um update no pai depois
-                            dicionarioIdsPorNome.Add(prop.Name, idObjFilho);
-                        }
-                    }
-                }
-
-                if(dicionarioIdsPorNome.Count == 0)
-                {
-                    return Created($"{Request.Path.Value}/{id}", viewModelAposSalvar);
-                }
-
-                var viewModelReconsultado = _appService.GetById(id);
-
-                //percorre dicionário para atribuir os ids dos filhos no objeto pai e mandar atualizar
-                foreach (var par in dicionarioIdsPorNome)
-                {
-                    var nomePropId = par.Key + "Id";
-                    var propId = viewModelReconsultado.GetType().GetProperties().FirstOrDefault(p => p.Name == nomePropId);
-
-                    if(propId != null)
-                    {
-                        propId.SetValue(viewModelReconsultado, par.Value);
-                    }
-                }
-                //salva alteração
-                _appService.Update(viewModelReconsultado);
+                EncaminharSalvamentoBaseadoNasPropriedades(viewModel, id,
+                    out viewModelReconsultado);
 
                 return Created($"{Request.Path.Value}/{id}", viewModelReconsultado);
             }
             catch (Exception e)
             {
-                string sid = id == indefinido ? "?" : id.ToString();
+                string sid = id == Guid.Empty ? "?" : id.ToString();
                 string s = INC_MSG_EXCEPTION ? " " + e.Message : "";
 
                 return BadRequest(new
@@ -253,6 +305,14 @@ namespace SaveTheCookTower.Api.Controllers.Base
                         id, idObj].Value);
 
                 _appService.Update(viewModel);
+
+                TViewTModel viewModelReconsultado;
+
+                // Agora percorre pegando os objetos filhos de primeiro nível com reflection chamando
+                // SalvarObjetoFilho()
+                EncaminharSalvamentoBaseadoNasPropriedades(viewModel, id,
+                    out viewModelReconsultado);
+
 
                 return Ok();
             }

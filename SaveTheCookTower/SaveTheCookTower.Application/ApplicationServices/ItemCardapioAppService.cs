@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using SaveTheCookTower.Application.Interfaces;
+using SaveTheCookTower.Application.Interfaces.Base;
 using SaveTheCookTower.Application.ViewModels;
 using SaveTheCookTower.Domain.Interfaces.Base;
 using SaveTheCookTower.Domain.Models;
@@ -114,6 +115,15 @@ namespace SaveTheCookTower.Application.ApplicationServices
 			var modelObj = _mapper.Map<ItemCardapio>(obj);
 
 			_service.Update(modelObj);
+		}
+
+		void IAppServiceBase<ItemCardapioViewModel>.RemoveChildrenOf(Guid idPai, string text, int? from, int? to)
+		{
+			var lista = FindChildrenOf(idPai, text, from, to);
+			foreach (var i in lista)
+			{
+				_service.Remove(i.Id ?? Guid.Empty);
+			}
 		}
 	}
 }

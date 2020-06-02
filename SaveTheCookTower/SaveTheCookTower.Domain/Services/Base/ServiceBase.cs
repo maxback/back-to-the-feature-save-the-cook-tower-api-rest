@@ -52,6 +52,8 @@ namespace SaveTheCookTower.Domain.Services.Base
 
 		public void Update(TModel obj)
 		{
+			obj.RegistrarAlteracao(null, DateTime.UtcNow);
+
 			_repositoryBase.Update(obj);
 		}
 	}

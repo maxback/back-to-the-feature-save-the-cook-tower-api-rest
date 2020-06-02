@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using SaveTheCookTower.Application.Interfaces;
+using SaveTheCookTower.Application.Interfaces.Base;
 using SaveTheCookTower.Application.ViewModels;
 using SaveTheCookTower.CrossCutting.Utils;
 using SaveTheCookTower.Domain.Interfaces.Base;
@@ -144,6 +145,16 @@ namespace SaveTheCookTower.Application.ApplicationServices
 				   , from, to);
 			}
 			return _mapper.Map<List<UsuarioViewModel>>(modelObjs);
+		}
+
+
+		void IAppServiceBase<UsuarioViewModel>.RemoveChildrenOf(Guid idPai, string text, int? from, int? to)
+		{
+			var lista = FindChildrenOf(idPai, text, from, to);
+			foreach (var i in lista)
+			{
+				_service.Remove(i.Id ?? Guid.Empty);
+			}
 		}
 	}
 }

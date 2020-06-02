@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+
 
 namespace SaveTheCookTower.Application.ViewModels
 {
@@ -36,6 +36,34 @@ namespace SaveTheCookTower.Application.ViewModels
 		/// </summary>
 		public List<ItemListaIngredientesViewModel> ItensListaIngredientes { get; }
 
+
+
+		/// <summary>
+		/// Indica a undiade de medida naturalmente usada para compras
+		/// </summary>
+		public virtual UnidadeMedidaViewModel UnidadeMedidaParaListaCompras { get; set; }
+
+		public Guid UnidadeMedidaParaListaComprasId { get; set; }
+
+
+		/// <summary>
+		/// Indica a undiade de medida default para elaborar lista
+		/// </summary>
+		public virtual UnidadeMedidaViewModel UnidadeMedidaDefaultParaListaIngredientes { get; set; }
+
+		public Guid UnidadeMedidaDefaultParaListaIngredientesId { get; set; }
+
+		/// <summary>
+		/// Indica a relação média entre massa e volume (kg/m3 no SI).  
+		/// Exemplos: 1 significa que para um litro de água temos 1 kiligrama de água
+		///           700 significa que para 1m3 de trigo temos 700 kilogramas de trigo.
+		///           ou para uma xicara de xá (0,0001479 m3) temos 103,53 gramas  (700 kg/m3 * 0.0001479 m3 = 0,10353 kg)
+		///             ** É apenas um exemplo, teria que cadastrar valores reais ***
+		/// Ver https://www.convert-me.com/pt/convert/volume/apteacup.html?u=apteacup&v=1
+		/// </summary>
+		public double Densidade { get; set; }
+
+
 		/// <summary>
 		/// Importa de registro no padrão string:
 		/// "id=,nome=,sinonimo=,foraDeUso=,(true/false),categoriaId=
@@ -63,6 +91,22 @@ namespace SaveTheCookTower.Application.ViewModels
 					Guid.TryParse(s.Split("=")[1], out umId);
 					CategoriaId = umId;
 				}
+
+				if (s.Contains("unidadeMedidaParaListaComprasId=") && (s.Length > 35))
+				{
+					Guid umId;
+					Guid.TryParse(s.Split("=")[1], out umId);
+					UnidadeMedidaParaListaComprasId = umId;
+				}
+
+				if (s.Contains("unidadeMedidaDefaultParaListaIngredientesId=") && (s.Length > 45))
+				{
+					Guid umId;
+					Guid.TryParse(s.Split("=")[1], out umId);
+					UnidadeMedidaDefaultParaListaIngredientesId = umId;
+				}
+				if (s.Contains("densidade=")) Densidade = Convert.ToDouble(s.Split("=")[1]);
+
 			}
 		}
 	}

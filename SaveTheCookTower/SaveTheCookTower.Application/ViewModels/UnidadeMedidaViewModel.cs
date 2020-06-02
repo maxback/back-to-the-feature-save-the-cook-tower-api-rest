@@ -7,6 +7,9 @@ namespace SaveTheCookTower.Application.ViewModels
 {
 	public class UnidadeMedidaViewModel
 	{
+		public DateTime? CriadoEmUtc { get; set; }
+		public DateTime? AtualizadoEmUtc { get; set; }
+
 		public Guid? Id { get; set; }
 		public string Nome { get; set; }
 		public string Sinonimos { get; set; }

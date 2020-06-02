@@ -25,7 +25,7 @@ namespace SaveTheCookTower.Application.ViewModels.relatorios
 		/// das receitas a serem consideradas. 
 		/// Se forp assado o cardápio esta lsita pdoe ser usada para limitar as receitas do cardápio.
 		/// </summary>
-		//public string[] ListaReceitas { get; set; }
+		public IList<string> ListaReceitas { get; set; }
 
 		/// <summary>
 		/// Se informado indica a quantidade de porções a serem consideradas para obter as quantidades de ingredientes
@@ -46,6 +46,9 @@ namespace SaveTheCookTower.Application.ViewModels.relatorios
 		/// </summary>
 		//public int[] IntevaloItensCardapio { get; set; }
 
-
+		/// <summary>
+		/// Deve ser ativo para retornar no resultado uma descrição de texto de como chegou ao valor.
+		/// </summary>
+		public bool MostrarDetalhesDoCalculo { get; set; }
 	}
 }

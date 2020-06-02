@@ -137,8 +137,8 @@
     <value>Units of Measure Equivalence</value>
     <comment>EquivalenciaEntreUnidadesDeMedidaController</comment>
   </data>
-  <data name="Esperado um Id de receita no item {0} da lista de receitas do item de cardápio." xml:space="preserve">
-    <value>A recipe Id is expected on item {0} in the menu item's recipe list.</value>
+  <data name="Esperado um Id de receita no {0}o item da lista de receitas do item de cardápio." xml:space="preserve">
+    <value>A recipe Id is expected on {0}th item in the menu item's recipe list.</value>
     <comment>CardapioController</comment>
   </data>
   <data name="Etapa de Preparo" xml:space="preserve">

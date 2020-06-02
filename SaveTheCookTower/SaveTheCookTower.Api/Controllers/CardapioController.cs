@@ -76,11 +76,11 @@ namespace SaveTheCookTower.Api.Controllers
                             var itemRec = new ItemCardapioReceitaViewModel();
                             Guid idRec;
                             if (!Guid.TryParse(rec, out idRec))
-                                throw new Exception(_localizer["Esperado um Id de receita no item {0} da lista de receitas do item de cardápio.", (i - 1)].Value);
+                                throw new Exception(_localizer["Esperado um Id de receita no {0}o item da lista de receitas do item de cardápio.", (i - 1)].Value);
 
                             var recConsultada = _appServiceReceita.GetById(idRec);
                             if(recConsultada == null)
-                                throw new Exception(_localizer["Esperado um Id de receita no item {0} da lista de receitas do item de cardápio.", (i - 1)].Value);
+                                throw new Exception(_localizer["Esperado um Id de receita no item {0}o da lista de receitas do item de cardápio.", (i - 1)].Value);
 
                             itemRec.ItemCardapioId = idItem;
                             itemRec.ReceitaId = idRec;
@@ -104,15 +104,60 @@ namespace SaveTheCookTower.Api.Controllers
         public ActionResult GetReportById(Guid id)
         {
             var relNome = _localizer["Lista de Ingredientes"].Value;
+            var param = new CardapioReportParamsViewModel();
+            param.CardapioId = id;
+            param.Titulo = relNome;
+            param.Subtitulo = _localizer["Por categoria, totalizando todas as receitas"].Value;
+            return GerarRelatorio(param);
+            /*
+            var result = _appReportService.Execute(param);
+
+            if (result != null)
+                return Ok(result);
+
+            return NoContent();
+            */
+        }
+
+        [HttpGet("{id}/{mostrarDetalhesDoCalculo}/reportex")]
+        public ActionResult GetReportExById(Guid id, bool mostrarDetalhesDoCalculo)
+        {
+            var relNome = _localizer["Lista de Ingredientes"].Value;
+            var param = new CardapioReportParamsViewModel();
+            param.CardapioId = id;
+            param.Titulo = relNome;
+            param.Subtitulo = _localizer["Por categoria, totalizando todas as receitas"].Value;
+            param.MostrarDetalhesDoCalculo = mostrarDetalhesDoCalculo;
+
+            return GerarRelatorio(param);
+            /*
+            var result = _appReportService.Execute(param);
+
+            if (result != null)
+                return Ok(result);
+
+            return NoContent();
+            */
+        }
+
+        [HttpPost()]
+        [Route("report")]
+        public ActionResult GetReportById(CardapioReportParamsViewModel param)
+        {
+            return GerarRelatorio(param);
+        }
+
+        private ActionResult GerarRelatorio(CardapioReportParamsViewModel param)
+        {
+            var relNome = param.Titulo == string.Empty ? _localizer["Lista de Ingredientes"].Value :
+                param.Titulo;
             try
             {
-                var param = new CardapioReportParamsViewModel();
 
-                param.CardapioId = id;
-
+                /*
                 param.Titulo = relNome;
                 param.Subtitulo = _localizer["Por categoria, totalizando todas as receitas"].Value;
-
+                */
 
                 var result = _appReportService.Execute(param);
 
@@ -125,12 +170,10 @@ namespace SaveTheCookTower.Api.Controllers
             {
                 return BadRequest(new
                 {
-                    Mensagem = _localizer["Ocorreu um erro ao gerar relatório \"{0}\" com id {1}.{2}",
-                    relNome, id, e.Message].Value
+                    Mensagem = _localizer["Ocorreu um erro ao gerar relatório \"{0}\".{1}",
+                    relNome, e.Message].Value
                 });
             }
         }
-
-
     }
 }

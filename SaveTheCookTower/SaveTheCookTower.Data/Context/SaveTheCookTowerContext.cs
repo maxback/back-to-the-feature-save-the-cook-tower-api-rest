@@ -71,13 +71,15 @@ namespace SaveTheCookTower.Data.Context
 			modelBuilder.Entity<UnidadeMedida>().HasData(new UnidadeMedida { Nome = "grama", NomeResumido = "g", 
 				Sinonimos = "gramas,grama(g)", Tipo = CrossCutting.Utils.Enumerations.TiposDeUnidadesDeMedida.Massa});
 
-			modelBuilder.Entity<UnidadeMedida>().HasData(new UnidadeMedida
+			var kilograma = new UnidadeMedida
 			{
 				Nome = "kilograma",
 				NomeResumido = "kg",
 				Sinonimos = "kilo,kilos,kilo gramas,kilogramas,kilograma(kg)",
 				Tipo = CrossCutting.Utils.Enumerations.TiposDeUnidadesDeMedida.Massa
-			});
+			};
+
+			modelBuilder.Entity<UnidadeMedida>().HasData(kilograma);
 
 			var l = new UnidadeMedida
 			{
@@ -269,7 +271,10 @@ namespace SaveTheCookTower.Data.Context
 			{
 				Nome = "Farinha de Trigo",
 				CategoriaId = cat_ing_geral.Id,
-				Sinonimos = "Trigo"
+				Sinonimos = "Trigo",
+				Densidade = 700,
+				UnidadeMedidaParaListaComprasId = kilograma.Id,
+				UnidadeMedidaDefaultParaListaIngredientesId = xic.Id
 			};
 			modelBuilder.Entity<Ingrediente>().HasData(farinha);
 
@@ -277,7 +282,10 @@ namespace SaveTheCookTower.Data.Context
 			{
 				Nome = "Fermento para Pão",
 				CategoriaId = cat_ing_geral.Id,
-				Sinonimos = "Fermento biológico"
+				Sinonimos = "Fermento biológico",
+				Densidade = 1000,
+				UnidadeMedidaParaListaComprasId = kilograma.Id,
+				UnidadeMedidaDefaultParaListaIngredientesId = xic.Id
 			};
 			modelBuilder.Entity<Ingrediente>().HasData(fermento);
 
@@ -285,7 +293,11 @@ namespace SaveTheCookTower.Data.Context
 			{
 				Nome = "Ovo de galinha",
 				CategoriaId = cat_ing_hortifruti.Id,
-				Sinonimos = "Ovo"
+				Sinonimos = "Ovo",
+				Densidade = 1,
+				UnidadeMedidaParaListaComprasId = unidade.Id,
+				UnidadeMedidaDefaultParaListaIngredientesId = unidade.Id
+
 			};
 			modelBuilder.Entity<Ingrediente>().HasData(ovo);
 
@@ -293,7 +305,10 @@ namespace SaveTheCookTower.Data.Context
 			{
 				Nome = "Água",
 				CategoriaId = cat_ing_geral.Id,
-				Sinonimos = "Agua"
+				Sinonimos = "Agua",
+				Densidade = 1,
+				UnidadeMedidaParaListaComprasId = l.Id,
+				UnidadeMedidaDefaultParaListaIngredientesId = l.Id
 			};
 			modelBuilder.Entity<Ingrediente>().HasData(agua);
 
@@ -354,7 +369,7 @@ namespace SaveTheCookTower.Data.Context
 						Porcoes = 1,
 						Semana = semana,
 						DiaDaSemana = dia + 1,
-						Nome = "{diasS[dia]} da semana {semana} - {s}"
+						Nome = $"{s}, {diasS[dia]} da {semana}a semana "
 					};
 
 					modelBuilder.Entity<ItemCardapio>().HasData(item);
