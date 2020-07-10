@@ -28,7 +28,7 @@ namespace SaveTheCookTower.Data.Configs
 
 			builder.HasMany(p => p.Ingredientes).WithOne(p => p.Receita).HasForeignKey(p => p.ReceitaId);
 
-			builder.HasMany(p => p.EstapasDePreparo).WithOne(p => p.Receita).HasForeignKey(p => p.ReceitaId);
+			builder.HasMany(p => p.EtapasDePreparo).WithOne(p => p.Receita).HasForeignKey(p => p.ReceitaId);
 
 			builder.HasMany(p => p.InformacoesNutricionaisConsolidadas).WithOne(p => p.Receita).HasForeignKey(p => p.ReceitaId);
 

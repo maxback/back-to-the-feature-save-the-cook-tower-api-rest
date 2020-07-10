@@ -90,12 +90,19 @@ namespace SaveTheCookTower.Application.ViewModels
 		/// <summary>
 		/// Lista de todas as etapas para preparo dareceita. Se ela possuir receita filha, as etapas devem ser acessados por ReceitasFilhas[].Etapas
 		/// </summary>
-		public List<EtapaDePreparoViewModel> EstapasDePreparo { get; }
+		public List<EtapaDePreparoViewModel> EtapasDePreparo { get; }
 
 		/// <summary>
 		/// Lista de Uris para acessar imagens da receita. A primeira poderia ser a de capa e as demais complementares
 		/// Verificar se podeser um repositório estático ou um caminho apra consultar a api com GET
 		/// </summary>
+		/// 
+
+		/// <summary>
+		/// Para subir para o servidor o texto dos ingredientes inseridos como texto
+		/// </summary>
+		public string EtapasDePreparoAsStr { get; set; }
+
 		public string ImagensUri { get; set; }
 		/// <summary>
 		/// Lista de Uris para acessar videos da receita.

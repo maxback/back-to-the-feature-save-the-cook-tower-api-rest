@@ -13,7 +13,7 @@ namespace SaveTheCookTower.Domain.Models
 		public Receita()
 		{
 			Ingredientes = new List<ItemListaIngredientes>();
-			EstapasDePreparo = new List<EtapaDePreparo>();
+			EtapasDePreparo = new List<EtapaDePreparo>();
 		}
 		/// <summary>
 		/// Lista das eventuais receitas filhas, como um molho ou cobertura
@@ -77,7 +77,7 @@ namespace SaveTheCookTower.Domain.Models
 		/// <summary>
 		/// Lista de todas as etapas para preparo dareceita. Se ela possuir receita filha, as etapas devem ser acessados por ReceitasFilhas[].Etapas
 		/// </summary>
-		public virtual List<EtapaDePreparo> EstapasDePreparo { get; }
+		public virtual List<EtapaDePreparo> EtapasDePreparo { get; }
 
 		/// <summary>
 		/// Lista de Uris para acessar imagens da receita. A primeira poderia ser a de capa e as demais complementares

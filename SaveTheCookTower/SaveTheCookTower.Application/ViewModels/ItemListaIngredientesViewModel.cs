@@ -1,13 +1,14 @@
-﻿using System;
+﻿using SaveTheCookTower.Application.ViewModels.Base;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace SaveTheCookTower.Application.ViewModels
 {
-	public class ItemListaIngredientesViewModel
+	public class ItemListaIngredientesViewModel : ViewModelBase
 	{
 
-		public void LercamposDaString(string strKeyvalueSepVirgula)
+		public override void LercamposDaString(string strKeyvalueSepVirgula)
 		{
 			var itens = strKeyvalueSepVirgula.Split(",");
 			foreach(var s in itens)
@@ -47,7 +48,7 @@ namespace SaveTheCookTower.Application.ViewModels
 					ReceitaId = recId;
 				}
 			}
-	}
+		}
 		public DateTime? CriadoEmUtc { get; set; }
 		public DateTime? AtualizadoEmUtc { get; set; }
 

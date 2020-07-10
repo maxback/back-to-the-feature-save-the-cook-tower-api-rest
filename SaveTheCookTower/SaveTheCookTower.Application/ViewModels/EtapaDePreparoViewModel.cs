@@ -1,11 +1,43 @@
-﻿using System;
+﻿using SaveTheCookTower.Application.ViewModels.Base;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace SaveTheCookTower.Application.ViewModels
 {
-	public class EtapaDePreparoViewModel
+	public class EtapaDePreparoViewModel : ViewModelBase
 	{
+
+		public override void LercamposDaString(string strKeyvalueSepVirgula)
+		{
+			var itens = strKeyvalueSepVirgula.Split(",");
+			foreach (var s in itens)
+			{
+				if (s.Contains("id=") && (s.Length > 3))
+				{
+					Guid umId;
+					Guid.TryParse(s.Split("=")[1], out umId);
+					Id = umId;
+				}
+
+				if (s.Contains("nome=")) Nome = s.Split("=")[1];
+				if (s.Contains("sinonimos=")) Sinonimos = s.Split("=")[1];
+				//if (s.Contains("itemUri=")) ItemUri = s.Split("=")[1];
+				if (s.Contains("foraDeUso=")) ForaDeUso = s.Split("=")[1] == "true";
+
+
+				if (s.Contains("ordem=")) Ordem = Convert.ToInt32(s.Split("=")[1]);
+				if (s.Contains("descricao=")) Descricao = s.Split("=")[1];
+
+				if (s.Contains("receitaId=") && (s.Length > 10))
+				{
+					Guid recId;
+					Guid.TryParse(s.Split("=")[1], out recId);
+					ReceitaId = recId;
+				}
+			}
+		}
+
 		public DateTime? CriadoEmUtc { get; set; }
 		public DateTime? AtualizadoEmUtc { get; set; }
 		public Guid? Id { get; set; }

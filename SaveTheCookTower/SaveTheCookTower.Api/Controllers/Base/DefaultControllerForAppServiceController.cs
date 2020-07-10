@@ -308,6 +308,8 @@ namespace SaveTheCookTower.Api.Controllers.Base
 
                 TViewTModel viewModelReconsultado;
 
+                //apaga filhos para inserí-los editados
+                ApagarObjetosFilho(id);
                 // Agora percorre pegando os objetos filhos de primeiro nível com reflection chamando
                 // SalvarObjetoFilho()
                 EncaminharSalvamentoBaseadoNasPropriedades(viewModel, id,
@@ -328,11 +330,17 @@ namespace SaveTheCookTower.Api.Controllers.Base
             }
         }
 
+        protected virtual void ApagarObjetosFilho(Guid guidObjetoPai)
+		{
+
+		}
+
         [HttpDelete("{id}")]
         public ActionResult Delete(Guid id)
         {
             try
             {
+                ApagarObjetosFilho(id);
                 _appService.Remove(id);
 
                 return Ok();
